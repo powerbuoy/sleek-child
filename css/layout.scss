@@ -1,6 +1,6 @@
 #header, 
 #footer {
-	@include section(#123);
+	@include section($inverted-bg);
 	color: $white-color;
 }
 
@@ -12,7 +12,7 @@ aside {
 		@include section;
 
 		&:nth-child(even) {
-			background: $gray-bg;
+			background: $alt-bg;
 		}
 	}
 }
