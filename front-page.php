@@ -2,7 +2,7 @@
 
 <main>
 
-	<h1>I'm a child of HTML5Base :)</h1>
+	<h1>I'm a child of SleekWP :)</h1>
 
 	<?php include TEMPLATEPATH . '/modules/post-content.php' ?>
 
