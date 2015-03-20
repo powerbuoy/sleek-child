@@ -4,7 +4,7 @@
 
 	<h1>I'm a child of SleekWP :)</h1>
 
-	<?php include TEMPLATEPATH . '/modules/post-content.php' ?>
+	<?php sleek_include_module('post-content') ?>
 
 </main>
 
