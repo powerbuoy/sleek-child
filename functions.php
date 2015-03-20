@@ -65,13 +65,13 @@ add_action('init', 'sleek_cleanup_head');
 # add_action('after_setup_theme', 'sleek_setup_lang');
 
 # Allow empty search
-add_filter('request', 'sleek_allow_empty_search');
+# add_filter('request', 'sleek_allow_empty_search');
 
 # Upgrade Browser warning for old versions of IE etc
 # add_action('wp_head', 'sleek_register_browser_update_js');
 
 # Show all post types when browsing author
-add_filter('pre_get_posts', 'sleek_show_all_post_types_for_author');
+# add_filter('pre_get_posts', 'sleek_show_all_post_types_for_author');
 
 # Remove HOME from Yoast Breadcrumbs
 # add_filter('wpseo_breadcrumb_links', 'sleek_remove_home_from_breadcrumb');
@@ -83,17 +83,23 @@ add_filter('pre_get_posts', 'sleek_show_all_post_types_for_author');
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
 # Add some fields to users
-# add_filter('user_contactmethods', 'sleek_add_user_fields');
+# add_filter('user_contactmethods', 'alcom_add_user_fields');
 
-# Short codes & Widgets
-# Get Posts short code, see sleek/inc/get-posts.php for details
-# add_shortcode('get-posts', 'sleek_shortcode_get_posts');
+function alcom_add_user_fields () {
+	$fields['googleplus'] = __('Google+', 'sleek');
+	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
+	$fields['github'] = __('GitHub', 'sleek');
 
-# Allow HTML in Widget Titles (with [tags])
-# add_filter('widget_title', 'sleek_html_in_widget_titles');
+	return $fields;
+}
 
-# Allow shortcodes in Widgets
-# add_action('init', 'sleek_allow_shortcodes_in_widgets');
+# Short codes
+# add_action('init', 'alcom_register_shortcodes');
 
-# Include - include any module through [include mod=random-testimonial]
-# add_shortcode('include', 'sleek_shortcode_include_module');
+function alcom_register_shortcodes () {
+	# Include - include any module through [include mod=random-testimonial]
+	add_shortcode('include', 'sleek_shortcode_include_module');
+
+	# Get Posts short code, see sleek/inc/get-posts.php for details
+	# add_shortcode('get-posts', 'sleek_shortcode_get_posts');
+}

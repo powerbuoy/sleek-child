@@ -4,7 +4,7 @@
 
 	<h1>I'm a child of SleekWP :)</h1>
 
-	<?php sleek_include_module('post-content') ?>
+	<?php sleek_get_module('post-content') ?>
 
 </main>
 
