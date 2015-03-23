@@ -61,6 +61,9 @@ function sleek_child_register_post_types () {
 # Cleanup HEAD
 add_action('init', 'sleek_cleanup_head');
 
+# Allow Markdown in excerpts and advanced custom fields
+# add_action('init', 'sleek_more_markdown');
+
 # Set up for translation (put your mo/po-files in your-theme/languages/ and uncomment this)
 # add_action('after_setup_theme', 'sleek_setup_lang');
 
