@@ -53,7 +53,10 @@ function sleek_child_register_post_types () {
 		array(
 			'genres' => array('movies'), 
 			'countries' => array('directors', 'movies')
-		)
+		), 
+
+		# Translation textdomain (for URLs)
+		'sleek_child'
 	);
 }
 
@@ -64,8 +67,12 @@ add_action('init', 'sleek_cleanup_head');
 # Allow Markdown in excerpts and advanced custom fields
 # add_action('init', 'sleek_more_markdown');
 
-# Set up for translation (put your mo/po-files in your-theme/languages/ and uncomment this)
-# add_action('after_setup_theme', 'sleek_setup_lang');
+# Set up for translation (put your mo/po-files in your-theme/lang/ and uncomment this)
+# add_action('after_setup_theme', 'sleek_child_setup_lang');
+
+function sleek_child_setup_lang () {
+	load_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+}
 
 # Allow empty search
 # add_filter('request', 'sleek_allow_empty_search');
