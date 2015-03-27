@@ -11,62 +11,64 @@ $bp-3-max: '(max-width: 799px)';
 $bp-4-max: '(max-width: 999px)';
 $bp-5-max: '(max-width: 1199px)';
 
-// Margins, widths etc
+// Site width and max width
 $site-width: 90%;
-$max-site-width: 1080px;// Max site width
-$margin: 25px;			// Standard margin for paragraphs, headings etc
-$gutter: 5%;			// Space between columns
-$border-radius: 4px;
+$max-site-width: 940px;
 
-// Fonts
-$default-font: Helvetica, sans-serif;
-$heading-font: Helvetica, sans-serif;
+// Margins, paddings and gutter
+$margin: 1.5rem;
+$gutter: 3rem;
+$section-padding: 3rem;
 
-// Font-sizes
-$h1-size: 3.8rem;
-$h2-size: 3.2rem;
-$h3-size: 2.4rem;
-$h4-size: 2.0rem;
-$h5-size: 1.8rem;
-$h6-size: 1.6rem;
+// Animations and effects
+$transition-speed: .1s;
+$transition-easing: ease-out;
+$border-radius: .5rem;
 
-$default-size: 1.2rem;
-
-$default-line-height: 1.8;
-$heading-line-height: 1.05;
-
+// Typography
+$default-font: Arial, sans-serif;
+$default-color: #333;
 $default-font-weight: normal;
-$heading-font-weight: lighter;
-
 $default-letter-spacing: 0;
-$heading-letter-spacing: -3px;
+$default-size: 1rem;
+$default-line-height: 1.6;
 
-// Text colors
-$default-color: #444;
-$heading-color: #555;
-$gray-color: #999;
+$heading-font: Arial, sans-serif;
+$heading-color: #111;
+$heading-font-weight: bold;
+$heading-line-height: 1.2;
+$heading-letter-spacing: -.15rem;
+
+$h1-size: 3rem;
+$h2-size: 2.4rem;
+$h3-size: 1.8rem;
+$h4-size: 1.6rem;
+$h5-size: 1.4rem;
+$h6-size: 1.2rem;
+
+// Colors
 $link-color: #06c;
 $link-color-hover: #06c;
 $link-color-visited: #609;
+
 $error-color: #c00;
-$border-color: #ccc;
+$white-color: #fff;
+$gray-color: #999;
 
-// Define white once in case we want to done it down everywhere later
-$white-color: #fefefe;
-$shadow-color: rgba(0, 0, 0, .4);
-
-// Background colors
-$default-bg: $white-color;
-$alt-bg: #f6f6f6;
+$default-bg: #fff;
+$alt-bg: #eaeaea;
 $inverted-bg: #111;
 
-// Button colors
-$button-color: #fc3;
-$button-secondary-color: #234;
-$button-disabled-color: #555;
-$button-fade: 0;
-$button-border: 0;
-$button-border-radius: 4px;
+$border-color: #ccc;
+$shadow-color: rgba(0, 0, 0, .4);
+
+// Buttons
+$button-color: #06c;
+$button-secondary-color: #123;
+$button-disabled-color: #999;
+$button-fade: 5%;
+$button-border: false;
+$button-border-radius: .5rem;
 $button-shadow: true;
-$button-padding-top: .8rem;
-$button-padding-side: 2.4rem;
+$button-padding-vertical: .4rem;
+$button-padding-horizontal: 1.6rem;
