@@ -19,5 +19,8 @@ App.modules.Header = {
 
 		// Smoothly scroll #in-page-links
 	//	SmoothScrolling.init(20); // 20 = offset from top
+
+		// Expands code blocks on hover
+	//	HoverCode.init();
 	}
 };
