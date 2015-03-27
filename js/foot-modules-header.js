@@ -21,6 +21,6 @@ App.modules.Header = {
 	//	SmoothScrolling.init(20); // 20 = offset from top
 
 		// Expands code blocks on hover
-	//	HoverCode.init();
+	//	HoverExpand.init();
 	}
 };
