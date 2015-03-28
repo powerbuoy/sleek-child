@@ -2,6 +2,14 @@
 #footer {
 	@include section($inverted-bg);
 	color: $white-color;
+
+	h1, 
+	h2, 
+	h1 a, 
+	h2 a, 
+	a {
+		color: $white-color;
+	}
 }
 
 main, 
