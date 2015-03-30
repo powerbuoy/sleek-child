@@ -62,43 +62,6 @@ function sleek_child_register_post_types () {
 	);
 }
 
-# You can use these if you want
-# Cleanup HEAD
-add_action('init', 'sleek_cleanup_head');
-
-# Allow Markdown in excerpts and advanced custom fields
-# add_action('init', 'sleek_more_markdown');
-
-# Set up for translation (put your mo/po-files in your-theme/lang/ and uncomment this)
-# add_action('after_setup_theme', 'sleek_child_setup_lang');
-
-function sleek_child_setup_lang () {
-	load_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
-}
-
-# Upgrade Browser warning for old versions of IE etc
-# add_action('wp_head', 'sleek_register_browser_update_js');
-
-# Show all post types when browsing author
-# add_filter('pre_get_posts', 'sleek_show_all_post_types_for_author');
-
-# Remove HOME from Yoast Breadcrumbs
-# add_filter('wpseo_breadcrumb_links', 'sleek_remove_home_from_breadcrumb');
-
-# Give pages excerpts
-# add_action('init', 'sleek_add_excerpts_to_pages');
-
-# Add some fields to users
-# add_filter('user_contactmethods', 'sleek_child_add_user_fields');
-
-function sleek_child_add_user_fields () {
-	$fields['googleplus'] = __('Google+', 'sleek');
-	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
-	$fields['github'] = __('GitHub', 'sleek');
-
-	return $fields;
-}
-
 # Short codes
 # add_action('init', 'sleek_child_register_shortcodes');
 
@@ -112,3 +75,39 @@ function sleek_child_register_shortcodes () {
 	# MarkdownFile
 	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
 }
+
+# Add some fields to users
+# add_filter('user_contactmethods', 'sleek_child_add_user_fields');
+
+function sleek_child_add_user_fields () {
+	$fields['googleplus'] = __('Google+', 'sleek');
+	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
+	$fields['github'] = __('GitHub', 'sleek');
+
+	return $fields;
+}
+
+# Set up for translation (put your mo/po-files in your-theme/lang/ and uncomment this)
+# add_action('after_setup_theme', 'sleek_child_setup_lang');
+
+function sleek_child_setup_lang () {
+	load_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+}
+
+# Cleanup HEAD
+add_action('init', 'sleek_cleanup_head');
+
+# Allow Markdown in excerpts and advanced custom fields
+# add_action('init', 'sleek_more_markdown');
+
+# Upgrade Browser warning for old versions of IE etc
+# add_action('wp_head', 'sleek_register_browser_update_js');
+
+# Show all post types when browsing author
+# add_filter('pre_get_posts', 'sleek_show_all_post_types_for_author');
+
+# Remove HOME from Yoast Breadcrumbs
+# add_filter('wpseo_breadcrumb_links', 'sleek_remove_home_from_breadcrumb');
+
+# Give pages excerpts
+# add_action('init', 'sleek_add_excerpts_to_pages');
