@@ -1,4 +1,10 @@
 <?php
+# Some config
+define('RECAPTCHA_SITE_KEY', false);
+define('RECAPTCHA_SECRET', false);
+define('DISQUS_SHORTNAME', false);
+define('GOOGLE_ANALYTICS', false);
+
 # Register our CSS and JS - parent Sleek doesn't register anything
 add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
 
