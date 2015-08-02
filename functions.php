@@ -117,3 +117,6 @@ add_action('init', 'sleek_cleanup_head');
 
 # Give pages excerpts
 # add_action('init', 'sleek_add_excerpts_to_pages');
+
+# Remo Emoji CSS/JS from head
+# add_action('init', 'sleek_remove_emoji_css_js');
