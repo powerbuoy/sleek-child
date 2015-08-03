@@ -55,7 +55,10 @@ function sleek_child_register_sidebars () {
 function sleek_child_register_post_types () {
 	sleek_register_post_types(
 		# Post types (slug => description)
-		array('movies' => 'My movie collection', 'directors' => 'My favorite directors.'), 
+		array(
+			'movies' => 'My movie collection', 
+			'directors' => 'My favorite directors.'
+		), 
 
 		# Taxonomies and which post types they belong to
 		array(
