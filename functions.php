@@ -123,3 +123,6 @@ add_action('init', 'sleek_cleanup_head');
 
 # Remo Emoji CSS/JS from head
 # add_action('init', 'sleek_remove_emoji_css_js');
+
+# Disable jQuery NoConflict
+# add_action('wp_head', 'sleek_disable_jquery_noconflict');

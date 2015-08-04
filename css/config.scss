@@ -38,6 +38,8 @@ $heading-color: #111;
 $heading-font-weight: bold;
 $heading-line-height: 1.2;
 $heading-letter-spacing: -.15rem;
+$heading-text-transform: none;
+$heading-margin: ($margin / 2);
 
 $h1-size: 3rem;
 $h2-size: 2.4rem;
@@ -46,12 +48,14 @@ $h4-size: 1.6rem;
 $h5-size: 1.4rem;
 $h6-size: 1.2rem;
 
-// Colors
+// Links
 $link-color: #06c;
 $link-color-hover: #06c;
 $link-color-visited: #609;
 $link-decoration: underline;
+$link-font-weight: inherit;
 
+// Colors
 $error-color: #c00;
 $success-color: #0c0;
 $white-color: #fff;
@@ -74,3 +78,4 @@ $button-border-radius: .5rem;
 $button-shadow: true;
 $button-padding-vertical: .4rem;
 $button-padding-horizontal: 1.6rem;
+$button-font-size: $body-font-size;
