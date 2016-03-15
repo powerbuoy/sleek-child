@@ -94,7 +94,7 @@ function sleek_child_add_user_fields () {
 # add_action('after_setup_theme', 'sleek_child_setup_lang');
 
 function sleek_child_setup_lang () {
-	load_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
 }
 
 # Cleanup HEAD
