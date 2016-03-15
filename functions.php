@@ -9,24 +9,18 @@ define('GOOGLE_ANALYTICS', false);
 add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
 
 function sleek_child_register_css_js () {
-	# No need for jQuery 2015 :D
+	# Included as an NPM module
 	wp_deregister_script('jquery');
 
 	# Theme Head/Foot JS
-	if (WP_DEBUG) {
-		wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/js/head.php', array(), null);
-		wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), null, true);
-	}
-	else {
-		wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/js/head.' . filemtime(get_stylesheet_directory() . '/js/head.js') . '.js', array(), null);
-		wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js', array(), null, true);
-	}
+	# wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/public/head.js?v=' . filemtime(get_stylesheet_directory() . '/public/head.js'), array(), null);
+	wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/public/foot.js?v=' . filemtime(get_stylesheet_directory() . '/public/foot.js'), array(), null, true);
 
 	wp_enqueue_script('sleek_head');
 	wp_enqueue_script('sleek_foot');
 
 	# Theme CSS
-	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
+	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/public/all.css?v=' . filemtime(get_stylesheet_directory() . '/public/all.css'), array(), null);
 	wp_enqueue_style('sleek_child');
 }
 
@@ -34,8 +28,8 @@ function sleek_child_register_css_js () {
 # add_action('init', 'sleek_child_post_thumbnails');
 
 function sleek_child_post_thumbnails () {
-	add_image_size('sleek-child-small', 120, 120, true);
-	add_image_size('sleek-child-hd', 1920, 1080, true);
+	add_image_size('sleek-small', 120, 120, true);
+	add_image_size('sleek-hd', 1920, 1080, true);
 }
 
 # Sidebars
@@ -43,8 +37,8 @@ add_action('init', 'sleek_child_register_sidebars');
 
 function sleek_child_register_sidebars () {
 	sleek_register_sidebars(array(
-		'aside'		=> 'Aside', 
-		'header'	=> 'Header', 
+		'aside'		=> 'Aside',
+		'header'	=> 'Header',
 		'footer'	=> 'Footer'
 	));
 }
@@ -56,15 +50,15 @@ function sleek_child_register_post_types () {
 	sleek_register_post_types(
 		# Post types (slug => description)
 		array(
-			'movies' => 'My movie collection', 
+			'movies' => 'My movie collection',
 			'directors' => 'My favorite directors.'
-		), 
+		),
 
 		# Taxonomies and which post types they belong to
 		array(
-			'genres' => array('movies'), 
+			'genres' => array('movies'),
 			'countries' => array('directors', 'movies')
-		), 
+		),
 
 		# Translation textdomain (for URLs)
 		'sleek_child'
@@ -122,7 +116,7 @@ add_action('init', 'sleek_cleanup_head');
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
 # Remo Emoji CSS/JS from head
-# add_action('init', 'sleek_remove_emoji_css_js');
+add_action('init', 'sleek_remove_emoji_css_js');
 
 # Disable jQuery NoConflict
 # add_action('wp_head', 'sleek_disable_jquery_noconflict');
