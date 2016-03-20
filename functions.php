@@ -5,25 +5,6 @@ define('RECAPTCHA_SECRET', false);
 define('DISQUS_SHORTNAME', false);
 define('GOOGLE_ANALYTICS', false);
 
-# Register our CSS and JS - parent Sleek doesn't register anything
-add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
-
-function sleek_child_register_css_js () {
-	# Included as an NPM module
-	wp_deregister_script('jquery');
-
-	# Theme Head/Foot JS
-	# wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/public/head.js?v=' . filemtime(get_stylesheet_directory() . '/public/head.js'), array(), null);
-	wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/public/foot.js?v=' . filemtime(get_stylesheet_directory() . '/public/foot.js'), array(), null, true);
-
-	wp_enqueue_script('sleek_head');
-	wp_enqueue_script('sleek_foot');
-
-	# Theme CSS
-	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/public/all.css?v=' . filemtime(get_stylesheet_directory() . '/public/all.css'), array(), null);
-	wp_enqueue_style('sleek_child');
-}
-
 # Thumbnails sizes
 # add_action('init', 'sleek_child_post_thumbnails');
 
@@ -65,6 +46,21 @@ function sleek_child_register_post_types () {
 	);
 }
 
+# Register our CSS and JS - parent Sleek doesn't register anything
+add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
+
+function sleek_child_register_css_js () {
+	wp_enqueue_script('jquery');
+
+	# Theme JS
+	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/public/app.js?v=' . filemtime(get_stylesheet_directory() . '/public/app.js'), array(), null, true);
+	wp_enqueue_script('sleek_child');
+
+	# Theme CSS
+	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/public/all.css?v=' . filemtime(get_stylesheet_directory() . '/public/all.css'), array(), null);
+	wp_enqueue_style('sleek_child');
+}
+
 # Short codes
 # add_action('init', 'sleek_child_register_shortcodes');
 
@@ -83,9 +79,9 @@ function sleek_child_register_shortcodes () {
 # add_filter('user_contactmethods', 'sleek_child_add_user_fields');
 
 function sleek_child_add_user_fields () {
-	$fields['googleplus'] = __('Google+', 'sleek');
-	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
-	$fields['github'] = __('GitHub', 'sleek');
+	$fields['googleplus'] = __('Google+', 'sleek_child');
+	$fields['stackoverflow'] = __('StackOverflow', 'sleek_child');
+	$fields['github'] = __('GitHub', 'sleek_child');
 
 	return $fields;
 }
