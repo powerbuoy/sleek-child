@@ -5,47 +5,22 @@ define('RECAPTCHA_SECRET', false);
 define('DISQUS_SHORTNAME', false);
 define('GOOGLE_ANALYTICS', false);
 
-# Register our CSS and JS - parent Sleek doesn't register anything
-add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
-
-function sleek_child_register_css_js () {
-	# No need for jQuery 2015 :D
-	wp_deregister_script('jquery');
-
-	# Theme Head/Foot JS
-	if (WP_DEBUG) {
-		wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/js/head.php', array(), null);
-		wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), null, true);
-	}
-	else {
-		wp_register_script('sleek_head', get_stylesheet_directory_uri() . '/js/head.' . filemtime(get_stylesheet_directory() . '/js/head.js') . '.js', array(), null);
-		wp_register_script('sleek_foot', get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js', array(), null, true);
-	}
-
-	wp_enqueue_script('sleek_head');
-	wp_enqueue_script('sleek_foot');
-
-	# Theme CSS
-	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
-	wp_enqueue_style('sleek_child');
-}
-
 # Thumbnails sizes
-# add_action('init', 'sleek_child_post_thumbnails');
+# add_action('after_setup_theme', 'sleek_child_post_thumbnails');
 
 function sleek_child_post_thumbnails () {
-	add_image_size('sleek-child-small', 120, 120, true);
-	add_image_size('sleek-child-hd', 1920, 1080, true);
+	add_image_size('sleek-small', 100, 100, true);
+	add_image_size('sleek-hd', 1920, 1080, true);
 }
 
 # Sidebars
-add_action('init', 'sleek_child_register_sidebars');
+# add_action('init', 'sleek_child_register_sidebars');
 
 function sleek_child_register_sidebars () {
 	sleek_register_sidebars(array(
-		'aside'		=> 'Aside', 
-		'header'	=> 'Header', 
-		'footer'	=> 'Footer'
+		'aside'			=> __('Aside', 'sleek_child'),
+		'header'		=> __('Header', 'sleek_child'),
+		'footer'		=> __('Footer', 'sleek_child')
 	));
 }
 
@@ -56,19 +31,32 @@ function sleek_child_register_post_types () {
 	sleek_register_post_types(
 		# Post types (slug => description)
 		array(
-			'movies' => 'My movie collection', 
-			'directors' => 'My favorite directors.'
-		), 
+			'movies' => __('My movie collection', 'sleek_child'),
+			'directors' => __('My favorite directors', 'sleek_child')
+		),
 
 		# Taxonomies and which post types they belong to
 		array(
-			'genres' => array('movies'), 
-			'countries' => array('directors', 'movies')
-		), 
+			'genres' => array('movies'),
+			'countries' => array('movies', 'directors')
+		),
 
 		# Translation textdomain (for URLs)
 		'sleek_child'
 	);
+}
+
+# Register our CSS and JS
+add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
+
+function sleek_child_register_css_js () {
+	# Theme JS
+	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/public/app.js?v=' . filemtime(get_stylesheet_directory() . '/public/app.js'), array('jquery'), null, true);
+	wp_enqueue_script('sleek_child');
+
+	# Theme CSS
+	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/public/all.css?v=' . filemtime(get_stylesheet_directory() . '/public/all.css'), array(), null);
+	wp_enqueue_style('sleek_child');
 }
 
 # Short codes
@@ -79,7 +67,7 @@ function sleek_child_register_shortcodes () {
 	add_shortcode('include', 'sleek_shortcode_include_module');
 
 	# Get Posts short code, see sleek/inc/get-posts.php for details
-	# add_shortcode('get-posts', 'sleek_shortcode_get_posts');
+	add_shortcode('get-posts', 'sleek_shortcode_get_posts');
 
 	# MarkdownFile
 	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
@@ -89,9 +77,9 @@ function sleek_child_register_shortcodes () {
 # add_filter('user_contactmethods', 'sleek_child_add_user_fields');
 
 function sleek_child_add_user_fields () {
-	$fields['googleplus'] = __('Google+', 'sleek');
-	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
-	$fields['github'] = __('GitHub', 'sleek');
+	$fields['googleplus'] = __('Google+', 'sleek_child');
+	$fields['stackoverflow'] = __('StackOverflow', 'sleek_child');
+	$fields['github'] = __('GitHub', 'sleek_child');
 
 	return $fields;
 }
@@ -100,8 +88,18 @@ function sleek_child_add_user_fields () {
 # add_action('after_setup_theme', 'sleek_child_setup_lang');
 
 function sleek_child_setup_lang () {
-	load_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
 }
+
+# Disable "single" pages for certain post types
+# add_action('template_redirect', 'sleek_child_disable_single_post_types');
+
+function sleek_child_disable_single_post_types () {
+	sleek_disable_single_post_types(array('slides', 'employees', 'knowledge_base', 'testimonials', 'offices'));
+}
+
+# Show all posts when browsing custom post types
+# add_filter('pre_get_posts', 'sleek_show_all_cpt_posts');
 
 # Cleanup HEAD
 add_action('init', 'sleek_cleanup_head');
@@ -126,3 +124,15 @@ add_action('init', 'sleek_cleanup_head');
 
 # Disable jQuery NoConflict
 # add_action('wp_head', 'sleek_disable_jquery_noconflict');
+
+# Move jQuery to bottom of page
+add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
+
+# Add OpenGraph
+# add_action('wp_head', 'sleek_open_graph_tags');
+
+# Add Favicon
+add_action('wp_head', 'sleek_add_favicon');
+
+# Add placeholders to comment form
+add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
