@@ -9,7 +9,11 @@ define('GOOGLE_ANALYTICS', false);
 # add_action('after_setup_theme', 'sleek_child_post_thumbnails');
 
 function sleek_child_post_thumbnails () {
+<<<<<<< HEAD
 	add_image_size('sleek-small', 100, 100, true);
+=======
+	add_image_size('sleek-small', 120, 120, true);
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 	add_image_size('sleek-hd', 1920, 1080, true);
 }
 
@@ -18,9 +22,15 @@ function sleek_child_post_thumbnails () {
 
 function sleek_child_register_sidebars () {
 	sleek_register_sidebars(array(
+<<<<<<< HEAD
 		'aside'			=> __('Aside', 'sleek_child'),
 		'header'		=> __('Header', 'sleek_child'),
 		'footer'		=> __('Footer', 'sleek_child')
+=======
+		'aside'		=> 'Aside',
+		'header'	=> 'Header',
+		'footer'	=> 'Footer'
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 	));
 }
 
@@ -31,14 +41,23 @@ function sleek_child_register_post_types () {
 	sleek_register_post_types(
 		# Post types (slug => description)
 		array(
+<<<<<<< HEAD
 			'movies' => __('My movie collection', 'sleek_child'),
 			'directors' => __('My favorite directors', 'sleek_child')
+=======
+			'movies' => 'My movie collection',
+			'directors' => 'My favorite directors.'
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 		),
 
 		# Taxonomies and which post types they belong to
 		array(
 			'genres' => array('movies'),
+<<<<<<< HEAD
 			'countries' => array('movies', 'directors')
+=======
+			'countries' => array('directors', 'movies')
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 		),
 
 		# Translation textdomain (for URLs)
@@ -46,12 +65,23 @@ function sleek_child_register_post_types () {
 	);
 }
 
+<<<<<<< HEAD
 # Register our CSS and JS
 add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
 
 function sleek_child_register_css_js () {
 	# Theme JS
 	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/public/app.js?v=' . filemtime(get_stylesheet_directory() . '/public/app.js'), array('jquery'), null, true);
+=======
+# Register our CSS and JS - parent Sleek doesn't register anything
+add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
+
+function sleek_child_register_css_js () {
+	wp_enqueue_script('jquery');
+
+	# Theme JS
+	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/public/app.js?v=' . filemtime(get_stylesheet_directory() . '/public/app.js'), array(), null, true);
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 	wp_enqueue_script('sleek_child');
 
 	# Theme CSS
@@ -89,6 +119,7 @@ function sleek_child_add_user_fields () {
 
 function sleek_child_setup_lang () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+<<<<<<< HEAD
 }
 
 # Disable "single" pages for certain post types
@@ -96,6 +127,8 @@ function sleek_child_setup_lang () {
 
 function sleek_child_disable_single_post_types () {
 	sleek_disable_single_post_types(array('slides', 'employees', 'knowledge_base', 'testimonials', 'offices'));
+=======
+>>>>>>> 38a103507eb57280b105e4d7f67f99aebdb1db20
 }
 
 # Show all posts when browsing custom post types
@@ -120,7 +153,7 @@ add_action('init', 'sleek_cleanup_head');
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
 # Remo Emoji CSS/JS from head
-# add_action('init', 'sleek_remove_emoji_css_js');
+add_action('init', 'sleek_remove_emoji_css_js');
 
 # Disable jQuery NoConflict
 # add_action('wp_head', 'sleek_disable_jquery_noconflict');
