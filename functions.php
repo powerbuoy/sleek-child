@@ -136,3 +136,6 @@ add_action('wp_head', 'sleek_add_favicon');
 
 # Add placeholders to comment form
 add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
+
+# Allow SVG Uploads
+# add_filter('upload_mimes', 'sleek_allow_svg_uploads');
