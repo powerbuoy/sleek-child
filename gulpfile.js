@@ -36,15 +36,6 @@ gulp.task('download-icons', function () {
 gulp.task('icons', ['rewrite-icon-css']);
 
 /**
- * Styleguide (commented because since we moved sass/ to src/sass/ the styleguide for some fucked up reason gets generated in the parent directory of sleek-child?!)
- */
-/* var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
-
-gulp.task('styleguide', function () {
-	sleekStyleguide(paths.sass + 'all.scss', paths.dest);
-}); */
-
-/**
  * JS
  */
 var sleekJS = require(__dirname + '/../sleek/gulp/js.js');
@@ -58,9 +49,20 @@ gulp.task('js-hint', function () {
 	sleekJSHint(paths.js);
 });
 
- /**
-  * Watch and default
-  */
+/**
+ * Styleguide
+ * (commented because since we moved sass/ to src/sass/ the styleguide for some
+ * fucked up reason gets generated in the parent directory of sleek-child?!)
+ */
+/* var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
+
+gulp.task('styleguide', function () {
+	sleekStyleguide(paths.sass + 'all.scss', paths.dest);
+}); */
+
+/**
+ * Watch and default
+ */
 gulp.task('default', ['sass', 'js'/*, 'styleguide'*/]);
 
 gulp.task('watch', function () {
