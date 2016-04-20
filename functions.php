@@ -51,11 +51,11 @@ add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
 
 function sleek_child_register_css_js () {
 	# Theme JS
-	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/public/all.js?v=' . filemtime(get_stylesheet_directory() . '/public/all.js'), array('jquery'), null, true);
+	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), array('jquery'), null, true);
 	wp_enqueue_script('sleek_child');
 
 	# Theme CSS
-	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/public/all.css?v=' . filemtime(get_stylesheet_directory() . '/public/all.css'), array(), null);
+	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);
 	wp_enqueue_style('sleek_child');
 }
 
