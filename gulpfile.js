@@ -1,10 +1,10 @@
 var gulp = require('gulp');
 
 var paths = {
-	sass: __dirname + '/src/sass/',
-	js: __dirname + '/src/js/',
-	dest: __dirname + '/dist/',
-	icons: __dirname + '/dist/icons/'
+	sass: 'src/sass/',
+	js: 'src/js/',
+	dest: 'dist/',
+	icons: 'dist/icons/'
 };
 
 /**
@@ -54,11 +54,11 @@ gulp.task('js-hint', function () {
  * (commented because since we moved sass/ to src/sass/ the styleguide for some
  * fucked up reason gets generated in the parent directory of sleek-child?!)
  */
-/* var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
+var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
 
 gulp.task('styleguide', function () {
 	sleekStyleguide(paths.sass + 'all.scss', paths.dest);
-}); */
+});
 
 /**
  * Watch and default
@@ -68,5 +68,5 @@ gulp.task('default', ['sass', 'js'/*, 'styleguide'*/]);
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
 	gulp.watch(paths.js + '**/*.js', ['js']);
-	gulp.watch(__dirname + '/icons.json', ['sass']);
+	gulp.watch('icons.json', ['sass']);
 });
