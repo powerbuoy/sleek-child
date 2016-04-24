@@ -85,7 +85,7 @@ function sleek_child_add_user_fields () {
 }
 
 # Set up for translation (put your mo/po-files in your-theme/lang/ and uncomment this)
-# add_action('after_setup_theme', 'sleek_child_setup_lang');
+add_action('after_setup_theme', 'sleek_child_setup_lang');
 
 function sleek_child_setup_lang () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
@@ -139,3 +139,6 @@ add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
 
 # Allow SVG Uploads
 # add_filter('upload_mimes', 'sleek_allow_svg_uploads');
+
+# Disable Ultimate Post Widget CSS
+# add_filter('upw_enqueue_styles', 'sleek_disable_upw_styles');
