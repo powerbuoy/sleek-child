@@ -71,6 +71,9 @@ function sleek_child_register_shortcodes () {
 
 	# MarkdownFile
 	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
+
+	# Hubspot form
+	# add_shortcode('hubspot_form', 'sleek_hubspot_form');
 }
 
 # Add some fields to users
