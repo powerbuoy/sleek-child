@@ -139,12 +139,16 @@ add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
 # Add open graph tags to posts
 # add_action('wp_head', 'sleek_open_graph_tags');
 
-# Remove Emoji CSS/JS from head added since WP 4.2.2 (TODO: Doesn't work??)
+# Remove Emoji CSS/JS from head added since WP 4.2.2
 add_action('init', 'sleek_remove_emoji_css_js');
 
 /**
  * These are optional filters to improve how WP normally does things
  */
+# Disable CF7 CSS
+# add_filter('wpcf7_load_js', '__return_false');
+# add_filter('wpcf7_load_css', '__return_false');
+
 # Add an "active-parent" class to archive pages when browsing their taxonomies
 add_filter('nav_menu_css_class', 'sleek_active_archive_link_on_taxonomies', 10, 2);
 
