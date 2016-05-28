@@ -121,6 +121,9 @@ function sleek_child_setup_lang () {
 # Add a favicon.ico if it exists in the theme directory
 add_action('wp_head', 'sleek_add_favicon');
 
+# Disable WP Embed
+add_action('wp_enqueue_scripts', 'sleek_disable_wp_embed');
+
 # Adds a Browser Update script for older browsers
 # add_action('wp_head', 'sleek_register_browser_update_js');
 
@@ -129,6 +132,9 @@ add_action('wp_head', 'sleek_add_favicon');
 
 # Cleanup HEAD
 add_action('init', 'sleek_cleanup_head');
+
+# Disable WP Embed
+add_action('init', 'sleek_disable_wp_embed', 999);
 
 # Move jQuery to bottom of page + include from CDN
 add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
