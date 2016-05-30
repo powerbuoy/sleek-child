@@ -13,8 +13,8 @@ define('GOOGLE_ANALYTICS', false);
 # add_action('after_setup_theme', 'sleek_child_post_thumbnails');
 
 function sleek_child_post_thumbnails () {
-	add_image_size('sleek-small', 120, 120, true);
-	add_image_size('sleek-hd', 1920, 1080, true);
+	add_image_size('sleek-small', 120, 120, array('center', 'top'));
+	add_image_size('sleek-hd', 1920, 1080, array('center', 'top'));
 }
 
 /**
