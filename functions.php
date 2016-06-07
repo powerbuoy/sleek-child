@@ -133,9 +133,6 @@ add_action('wp_enqueue_scripts', 'sleek_disable_wp_embed');
 # Cleanup HEAD
 add_action('init', 'sleek_cleanup_head');
 
-# Disable WP Embed
-add_action('init', 'sleek_disable_wp_embed', 999);
-
 # Move jQuery to bottom of page + include from CDN
 add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
 
@@ -183,4 +180,4 @@ add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
 # add_filter('pre_get_posts', 'sleek_show_all_post_types_for_authors');
 
 # Remove .current_page_parent from Blog-page when viewing another archive
-# add_filter('nav_menu_css_class', 'sleek_unset_active_blog_class', 10, 2);
+add_filter('nav_menu_css_class', 'sleek_unset_active_blog_class', 10, 2);
