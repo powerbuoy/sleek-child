@@ -104,12 +104,12 @@ function sleek_child_add_user_fields () {
 }
 
 /**
- * Set up for translation (put your mo/po-files in your-theme/lang/)
+ * Set up for translation (put your mo/po-files in your-theme/languages/)
  */
 add_action('after_setup_theme', 'sleek_child_setup_lang');
 
 function sleek_child_setup_lang () {
-	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/lang');
+	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/languages');
 }
 
 /**
