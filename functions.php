@@ -10,19 +10,15 @@ define('GOOGLE_ANALYTICS', false);
 /**
  * Register thumbnail sizes
  */
-# add_action('after_setup_theme', 'sleek_child_post_thumbnails');
-
-function sleek_child_post_thumbnails () {
+/* add_action('after_setup_theme', function () {
 	add_image_size('sleek-small', 120, 120, array('center', 'top'));
 	add_image_size('sleek-hd', 1920, 1080, array('center', 'top'));
-}
+}); */
 
 /**
  * Register sidebars
  */
-# add_action('init', 'sleek_child_register_sidebars');
-
-function sleek_child_register_sidebars () {
+/* add_action('init', function () {
 	sleek_register_sidebars(array(
 		'aside'		=> array(
 			'name' => __('Aside', 'sleek_child'),
@@ -32,54 +28,49 @@ function sleek_child_register_sidebars () {
 		'header'	=> __('Header', 'sleek_child'),
 		'footer'	=> __('Footer', 'sleek_child')
 	));
-}
+}); */
 
 /**
  * Register custom post types and taxonomies
  */
-# add_action('init', 'sleek_child_register_post_types_and_taxonomies');
+/* $postTypes = ['movies', 'directors'];
 
-function sleek_child_register_post_types_and_taxonomies () {
-	sleek_register_post_types(array(
-		'movies' => __('My movie collection', 'sleek_child'),
-		'directors' => __('My favorite directors', 'sleek_child')
-	), 'sleek_child');
+add_action('init', function () use ($postTypes) {
+	sleek_register_post_types($postTypes, 'sleek_child');
 
-	sleek_register_taxonomies(array(
-		'genres' => array('movies'),
-		'countries' => array('movies', 'directors')
-	), 'sleek_child');
-}
+	sleek_register_taxonomies([
+		'genres' => ['movies'],
+		'countries' => ['movies', 'directors']
+	], 'sleek_child');
+});
+
+add_action('admin_menu', function () use ($postTypes) {
+	sleek_register_post_type_meta_data($postTypes, 'nexus');
+}); */
 
 /**
  * Register CSS and JS
- *
- * TODO: Move to Sleek? (at least all.css/all.js?)
  */
-add_action('wp_enqueue_scripts', 'sleek_child_register_css_js');
-
-function sleek_child_register_css_js () {
+add_action('wp_enqueue_scripts', function () {
 	# Theme JS
 	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), array('jquery'), null, true);
 	wp_enqueue_script('sleek_child');
 
 	# Google Webfonts
-	# wp_register_style('sleek_child_font_lato', 'https://fonts.googleapis.com/css?family=Lato:300,900');
-	# wp_enqueue_style('sleek_child_font_lato');
+	# wp_register_style('sleek_child_font', 'https://fonts.googleapis.com/css?family=Lato:300,900');
+	# wp_enqueue_style('sleek_child_font');
 
 	# Theme CSS
 	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);
 	wp_enqueue_style('sleek_child');
-}
+});
 
 /**
  * Add optional shortcodes provided by SleekWP
  *
  * TODO: Move to individual plugins
  */
-# add_action('init', 'sleek_child_register_shortcodes');
-
-function sleek_child_register_shortcodes () {
+/* add_action('init', function () {
 	# Include - include any module through [include mod=random-testimonial] (TODO: Change to get_template_part (but still allow arguments?))
 	# add_shortcode('include', 'sleek_shortcode_include_module');
 
@@ -88,29 +79,25 @@ function sleek_child_register_shortcodes () {
 
 	# Hubspot form
 	# add_shortcode('hubspot-form', 'sleek_hubspot_form');
-}
+}); */
 
 /**
  * Add more fields to users
  */
-# add_filter('user_contactmethods', 'sleek_child_add_user_fields');
-
-function sleek_child_add_user_fields () {
+/* add_filter('user_contactmethods', function () {
 	$fields['googleplus'] = __('Google+', 'sleek_child');
 	$fields['stackoverflow'] = __('StackOverflow', 'sleek_child');
 	$fields['github'] = __('GitHub', 'sleek_child');
 
 	return $fields;
-}
+}); */
 
 /**
  * Set up for translation (put your mo/po-files in your-theme/languages/)
  */
-add_action('after_setup_theme', 'sleek_child_setup_lang');
-
-function sleek_child_setup_lang () {
+add_action('after_setup_theme', function () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/languages');
-}
+});
 
 /**
  * These are optional actions to improve how WP normally does things
