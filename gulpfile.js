@@ -5,7 +5,7 @@ var paths = {
 	js: 'src/js/',
 	dest: 'dist/',
 	icons: 'dist/icons/',
-	lang: 'lang/'
+	lang: 'languages/'
 };
 
 /**
@@ -52,8 +52,6 @@ gulp.task('js-hint', function () {
 
 /**
  * Styleguide
- * (commented because since we moved sass/ to src/sass/ the styleguide for some
- * fucked up reason gets generated in the parent directory of sleek-child?!)
  */
 var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
 
@@ -74,7 +72,7 @@ gulp.task('gettext', function () {
 /**
  * Watch and default
  */
-gulp.task('default', ['sass', 'js'/*, 'styleguide'*/]);
+gulp.task('default', ['sass', 'js', 'gettext', 'styleguide']);
 
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
