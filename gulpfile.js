@@ -4,7 +4,8 @@ var paths = {
 	sass: 'src/sass/',
 	js: 'src/js/',
 	dest: 'dist/',
-	icons: 'dist/icons/'
+	icons: 'dist/icons/',
+	lang: 'lang/'
 };
 
 /**
@@ -60,6 +61,16 @@ gulp.task('styleguide', function () {
 	return sleekStyleguide(paths.sass + 'all.scss', paths.dest);
 });
 
+
+/**
+ * GetText
+ */
+var sleekGetText = require(__dirname + '/../sleek/gulp/gettext.js');
+
+gulp.task('gettext', function () {
+	return sleekGetText(paths.lang);
+});
+
 /**
  * Watch and default
  */
@@ -69,4 +80,5 @@ gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
 	gulp.watch(paths.js + '**/*.js', ['js']);
 	gulp.watch('icons.json', ['sass']);
+	gulp.watch(paths.lang + '**/*.po', ['gettext']);
 });
