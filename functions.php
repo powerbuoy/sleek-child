@@ -42,10 +42,22 @@ add_action('init', function () use ($postTypes) {
 		'genres' => ['movies'],
 		'countries' => ['movies', 'directors']
 	], 'sleek_child');
-});
+}); */
 
-add_action('admin_menu', function () use ($postTypes) {
+# Add meta data (title, description, image) to CPTs
+/* add_action('admin_menu', function () use ($postTypes) {
 	sleek_register_post_type_meta_data($postTypes, 'nexus');
+}); */
+
+# All post types are by default included in search
+# so that custom taxonomy archives still work (WP Bug https://core.trac.wordpress.org/ticket/20234)
+# We need to adjust which should _actually_ show up ín search using pre_get_posts
+/* add_filter('pre_get_posts', function ($query) {
+	if ($query->is_search and !$query->is_admin) {
+		$query->set('post_type', ['post', 'page']); # Add the CPTs you want in search
+	}
+
+	return $query;
 }); */
 
 /**
