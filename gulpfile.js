@@ -5,7 +5,8 @@ var paths = {
 	js: 'src/js/',
 	dest: 'dist/',
 	icons: 'dist/icons/',
-	lang: 'languages/'
+	lang: 'languages/',
+	assets: 'src/assets/'
 };
 
 /**
@@ -71,6 +72,13 @@ var sleekGetText = require(__dirname + '/../sleek/gulp/gettext.js');
 
 gulp.task('gettext', function () {
 	return sleekGetText(paths.lang);
+});
+
+/**
+ * Copy Assets
+ */
+gulp.task('assets', function () {
+	return gulp.src(paths.assets + '**/*').pipe(gulp.dest(paths.dest + 'assets'));
 });
 
 /**

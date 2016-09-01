@@ -9,10 +9,5 @@
 
 </main>
 
-<aside id="aside">
-
-	<?php dynamic_sidebar('aside') ?>
-
-</aside>
-
+<?php get_sidebar() ?>
 <?php get_footer() ?>
