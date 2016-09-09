@@ -1,4 +1,8 @@
 <?php
+add_filter('acf/settings/show_admin', '__return_false');
+
+include get_stylesheet_directory() . '/acf.php';
+
 /**
  * Some config (TODO: Move to Theme Options)
  */
