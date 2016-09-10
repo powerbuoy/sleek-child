@@ -1,8 +1,4 @@
 <?php
-add_filter('acf/settings/show_admin', '__return_false');
-
-include get_stylesheet_directory() . '/acf.php';
-
 /**
  * Some config (TODO: Move to Theme Options)
  */
@@ -65,6 +61,12 @@ add_action('init', function () use ($postTypes) {
 }); */
 
 /**
+ * Register ACF
+ */
+# add_filter('acf/settings/show_admin', '__return_false');
+# include get_stylesheet_directory() . '/acf.php';
+
+/**
  * Register CSS and JS
  */
 add_action('wp_enqueue_scripts', function () {
@@ -118,6 +120,11 @@ add_action('after_setup_theme', function () {
 /**
  * These are optional actions to improve how WP normally does things
  */
+# Remove WPMU signup stylesheet
+/* add_action('get_header', function () {
+	remove_action('wp_head', 'wpmu_signup_stylesheet');
+}); */
+
 # Give pages excerpts
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
