@@ -84,11 +84,12 @@ gulp.task('assets', function () {
 /**
  * Watch and default
  */
-gulp.task('default', ['sass', 'js', 'gettext', 'styleguide']);
+gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
 
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
 	gulp.watch(paths.js + '**/*.js', ['js']);
 	gulp.watch('icons.json', ['sass']);
 	gulp.watch(paths.lang + '**/*.po', ['gettext']);
+	gulp.watch(paths.assets + '**/*', ['assets']);
 });
