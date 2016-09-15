@@ -1,9 +1,9 @@
-// Third party
-@import "../../node_modules/normalize-css/normalize";
-
 // Icons (generated)
 @import "icon-vars";
 @import "icons";
+
+// Third party (remove if you don't want)
+@import "../../node_modules/normalize-css/normalize";
 
 /***
     title: Body

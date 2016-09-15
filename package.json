@@ -5,10 +5,11 @@
   "main": "style.css",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",
-    "normalize-css": "^2.3.1"
+    "gulp": "^3.9.1",
+    "normalize-css": "^2.3.1",
+    "sleek-css": "github:powerbuoy/SleekCSS"
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
