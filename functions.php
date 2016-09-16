@@ -1,13 +1,5 @@
 <?php
 /**
- * Some config (TODO: Move to Theme Options)
- */
-define('RECAPTCHA_SITE_KEY', false);
-define('RECAPTCHA_SECRET', false);
-define('DISQUS_SHORTNAME', false);
-define('GOOGLE_ANALYTICS', false);
-
-/**
  * Register thumbnail sizes
  */
 /* add_action('after_setup_theme', function () {
@@ -36,28 +28,22 @@ define('GOOGLE_ANALYTICS', false);
 /* $postTypes = ['movies', 'directors'];
 
 add_action('init', function () use ($postTypes) {
+	# Post types
 	sleek_register_post_types($postTypes, 'sleek_child');
 
+	# Taxonomies
 	sleek_register_taxonomies([
 		'genres' => ['movies'],
 		'countries' => ['movies', 'directors']
 	], 'sleek_child');
+
+	# Show these CPTs in search (in addition to post/page)
+	# sleek_set_cpt_in_search(['movies', 'directors']);
 }); */
 
 # Add meta data (title, description, image) to CPTs
 /* add_action('admin_menu', function () use ($postTypes) {
 	sleek_register_post_type_meta_data($postTypes, 'nexus');
-}); */
-
-# All post types are by default included in search
-# so that custom taxonomy archives still work (WP Bug https://core.trac.wordpress.org/ticket/20234)
-# We need to adjust which should _actually_ show up ín search using pre_get_posts
-/* add_filter('pre_get_posts', function ($query) {
-	if ($query->is_search and !$query->is_admin) {
-		$query->set('post_type', ['post', 'page']); # Add the CPTs you want in search
-	}
-
-	return $query;
 }); */
 
 /**
@@ -69,18 +55,8 @@ add_action('init', function () use ($postTypes) {
 /**
  * Register CSS and JS
  */
-add_action('wp_enqueue_scripts', function () {
-	# Theme JS
-	wp_register_script('sleek_child', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), ['jquery'], null, true);
-	wp_enqueue_script('sleek_child');
-
-	# Google Webfonts
-	# wp_register_style('sleek_child_font', 'https://fonts.googleapis.com/css?family=Lato:300,900');
-	# wp_enqueue_style('sleek_child_font');
-
-	# Theme CSS
-	wp_register_style('sleek_child', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), [], null);
-	wp_enqueue_style('sleek_child');
+add_action('init', function () {
+	sleek_register_assets(); # ['https://fonts.googleapis.com/css?family=Lato:300,900']
 });
 
 /**
@@ -115,6 +91,9 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_action('after_setup_theme', function () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/languages');
+
+	# If you want to override parent theme translations, add them to languages/sleek/lang_Code.po
+	# load_theme_textdomain('sleek', get_stylesheet_directory() . '/languages/sleek');
 });
 
 /**
@@ -165,8 +144,8 @@ add_action('init', 'sleek_remove_emoji_css_js');
 # Add an "active-parent" class to archive pages when browsing their taxonomies
 add_filter('nav_menu_css_class', 'sleek_active_archive_link_on_taxonomies', 10, 2);
 
-# Allow SVG Uploads
-# add_filter('upload_mimes', 'sleek_allow_svg_uploads');
+# Allow a 'post_type' => [] argument in get_terms()
+add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
 
 # Add placeholders to comment form
 add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
