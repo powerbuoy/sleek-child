@@ -53,6 +53,15 @@ add_action('init', function () use ($postTypes) {
 # include get_stylesheet_directory() . '/acf.php';
 
 /**
+ * Give editors access to theme_options
+ */
+/* $editorRole = get_role('editor');
+
+if (!$editorRole->has_cap('edit_theme_options')) {
+	$editorRole->add_cap('edit_theme_options');
+} */
+
+/**
  * Register CSS and JS
  */
 add_action('init', function () {
