@@ -37,8 +37,9 @@ add_action('init', function () use ($postTypes) {
 		'countries' => ['movies', 'directors']
 	], 'sleek_child');
 
-	# Show these CPTs in search (in addition to post/page)
-	# sleek_set_cpt_in_search(['movies', 'directors']);
+	# Array of CPTs that should appear in search (on top of post/page)
+	# (run this function unless you want all your CPTs to appear)
+	sleek_set_cpt_in_search([]);
 }); */
 
 # Add meta data (title, description, image) to CPTs
@@ -146,8 +147,8 @@ add_action('init', 'sleek_remove_emoji_css_js');
 /**
  * These are optional filters to improve how WP normally does things
  */
-# Disable CF7 CSS
-add_filter('wpcf7_load_js', '__return_false');
+# Disable CF7 CSS and/or JS
+# add_filter('wpcf7_load_js', '__return_false');
 add_filter('wpcf7_load_css', '__return_false');
 
 # Add an "active-parent" class to archive pages when browsing their taxonomies
