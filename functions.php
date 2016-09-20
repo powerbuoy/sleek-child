@@ -64,12 +64,16 @@ add_action('init', function () use ($postTypes) {
 # include get_stylesheet_directory() . '/acf.php';
 
 /**
- * Give editors access to theme_options
+ * Give editors access to theme options
  */
 /* $editorRole = get_role('editor');
 
 if (!$editorRole->has_cap('edit_theme_options')) {
 	$editorRole->add_cap('edit_theme_options');
+}
+
+if (!$editorRole->has_cap('manage_options')) {
+	$editorRole->add_cap('manage_options');
 } */
 
 /**
