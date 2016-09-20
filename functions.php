@@ -8,6 +8,16 @@
 }); */
 
 /**
+ * Allow svg etc uploads
+ */
+/* add_filter('upload_mimes', function ($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	$mimes['eps'] = 'application/postscript';
+
+	return $mimes;
+}); */
+
+/**
  * Register sidebars
  */
 /* add_action('init', function () {
