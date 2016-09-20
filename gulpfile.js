@@ -14,7 +14,7 @@ var paths = {
  */
 var sleekSASS = require(__dirname + '/../sleek/gulp/sass.js');
 
-gulp.task('sass', ['icons'], function () {
+gulp.task('sass', ['icons', 'svg'], function () {
 	return sleekSASS(paths.sass + 'all.scss', paths.dest);
 });
 
@@ -90,14 +90,18 @@ gulp.task('svgmin', function () {
 	return sleekSvg.min(paths.assets + '**/*.svg', paths.dest + 'assets');
 });
 
-gulp.task('svg', ['svgmin'], function () {
+gulp.task('svgstore', ['svgmin'], function () {
 	return sleekSvg.store(paths.assets + '**/*.svg', paths.dest + 'assets');
+});
+
+gulp.task('svg', ['svgstore'], function () {
+	return sleekSvg.css(paths.dest + '**/*.svg', paths.sass + 'svg.scss');
 });
 
 /**
  * Watch and default
  */
-gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'svg', 'styleguide']);
+gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
 
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
@@ -105,5 +109,5 @@ gulp.task('watch', function () {
 	gulp.watch('icons.json', ['sass']);
 	gulp.watch(paths.lang + '**/*.po', ['gettext']);
 	gulp.watch(paths.assets + '**/*', ['assets']);
-	gulp.watch(paths.assets + '**/*.svg', ['svg']);
+	gulp.watch(paths.assets + '**/*.svg', ['sass']);
 });
