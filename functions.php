@@ -131,9 +131,6 @@ add_action('after_setup_theme', function () {
 # Give pages excerpts
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
-# Add a favicon.ico if it exists in the theme directory
-add_action('wp_head', 'sleek_add_favicon');
-
 # Disable WP Embed
 add_action('wp_enqueue_scripts', 'sleek_disable_wp_embed');
 
