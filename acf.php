@@ -5,7 +5,7 @@
 	# Address
 	acf_add_local_field_group([
 		'key' => 'my_group',
-		'title' => 'My Group',
+		'title' => __('My Group', 'sleek_child'),
 		'position' => 'side',
 
 		# Location
@@ -24,8 +24,8 @@
 			# Page Subtitle
 			[
 				'key' => 'subtitle',
-				'label' => 'Subtitle',
 				'name' => 'subtitle',
+				'label' => __('Subtitle', 'sleek_child'),
 				'type' => 'text'
 			]
 		]
