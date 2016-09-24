@@ -8,16 +8,6 @@
 }); */
 
 /**
- * Allow svg etc uploads
- */
-/* add_filter('upload_mimes', function ($mimes) {
-	$mimes['svg'] = 'image/svg+xml';
-	$mimes['eps'] = 'application/postscript';
-
-	return $mimes;
-}); */
-
-/**
  * Register sidebars
  */
 /* add_action('init', function () {
@@ -57,11 +47,26 @@ add_action('init', function () use ($postTypes) {
 	sleek_register_post_type_meta_data($postTypes, 'nexus');
 }); */
 
+# Give attachments an archive and make attachment taxonomy archives work
+add_action('init', function () {
+	sleek_attachment_archives('url_media', 'lifecycle', []); # Pass in any potential attachment taxonomies as the last array
+});
+
 /**
  * Register ACF
  */
 # add_filter('acf/settings/show_admin', '__return_false');
-# include get_stylesheet_directory() . '/acf.php';
+# require_once get_stylesheet_directory() . '/acf.php';
+
+/**
+ * Allow svg etc uploads
+ */
+/* add_filter('upload_mimes', function ($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	$mimes['eps'] = 'application/postscript';
+
+	return $mimes;
+}); */
 
 /**
  * Give editors access to theme options
@@ -121,7 +126,7 @@ add_action('after_setup_theme', function () {
 });
 
 /**
- * These are optional actions to improve how WP normally does things
+ * These are optional hacks to improve how WP normally does things
  */
 # Remove WPMU signup stylesheet
 /* add_action('get_header', function () {
@@ -155,9 +160,6 @@ add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
 # Remove Emoji CSS/JS from head added since WP 4.2.2
 add_action('init', 'sleek_remove_emoji_css_js');
 
-/**
- * These are optional filters to improve how WP normally does things
- */
 # Disable CF7 CSS and/or JS
 # add_filter('wpcf7_load_js', '__return_false');
 add_filter('wpcf7_load_css', '__return_false');
