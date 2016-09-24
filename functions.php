@@ -39,7 +39,7 @@ add_action('init', function () use ($postTypes) {
 
 	# Array of CPTs that should appear in search (on top of post/page)
 	# (run this function unless you want all your CPTs to appear)
-	sleek_set_cpt_in_search([]);
+	sleek_set_cpt_in_search(['movies']);
 }); */
 
 # Add meta data (title, description, image) to CPTs
@@ -49,14 +49,21 @@ add_action('init', function () use ($postTypes) {
 
 # Give attachments an archive and make attachment taxonomy archives work
 add_action('init', function () {
-	sleek_attachment_archives('url_media', 'lifecycle', []); # Pass in any potential attachment taxonomies as the last array
+	sleek_attachment_archives(__('url_attachments', 'sleek_child'), []); # Pass in any potential attachment taxonomies as the last array to enable taxonomy archives
 });
 
 /**
  * Register ACF
  */
+# Hide ACF from admin altogether
 # add_filter('acf/settings/show_admin', '__return_false');
-# require_once get_stylesheet_directory() . '/acf.php';
+
+# Use these fields (add your fields to acf/my-group.definition.php)
+/* add_action('acf/init', function () {
+	sleek_register_acf([
+		'my_group' => ['movies'] # Second argument can be array of post types or normal ACF location definition
+	]);
+}); */
 
 /**
  * Allow svg etc uploads
@@ -85,7 +92,7 @@ if (!$editorRole->has_cap('manage_options')) {
  * Register CSS and JS
  */
 add_action('init', function () {
-	sleek_register_assets(); # ['https://fonts.googleapis.com/css?family=Lato:300,900']
+	sleek_register_assets(); # Pass in more as only argument; ['https://fonts.googleapis.com/css?family=Lato:300,900']
 });
 
 /**
