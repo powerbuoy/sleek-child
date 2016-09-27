@@ -101,14 +101,8 @@ add_action('init', function () {
  * TODO: Move to individual plugins
  */
 /* add_action('init', function () {
-	# Include - include any module through [include mod=random-testimonial] (TODO: Change to get_template_part (but still allow arguments?))
-	# add_shortcode('include', 'sleek_shortcode_include_module');
-
 	# MarkdownFile
 	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
-
-	# Hubspot form
-	# add_shortcode('hubspot-form', 'sleek_hubspot_form');
 }); */
 
 /**
