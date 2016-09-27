@@ -141,19 +141,17 @@ add_action('after_setup_theme', function () {
 }); */
 
 # Give pages excerpts
-# add_action('init', 'sleek_add_excerpts_to_pages');
+/* add_action('init', function () {
+	add_post_type_support('page', 'excerpt');
+}); */
 
 # Disable WP Embed
 add_action('wp_enqueue_scripts', 'sleek_disable_wp_embed');
 
-# Adds a Browser Update script for older browsers
-# add_action('wp_head', 'sleek_register_browser_update_js');
-
 # Allow shortcodes in Widgets
-# add_action('init', 'sleek_allow_shortcodes_in_widgets');
-
-# Cleanup HEAD
-add_action('init', 'sleek_cleanup_head');
+/* add_action('init', function () {
+	add_filter('widget_text', 'do_shortcode');
+}); */
 
 # Move jQuery to bottom of page + include from CDN
 add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
@@ -181,7 +179,7 @@ add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
 add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
 
 # Disable Ultimate Post Widget CSS
-add_filter('upw_enqueue_styles', '__return_false');
+# add_filter('upw_enqueue_styles', '__return_false');
 
 # Excludes the currently viewed post in UPW
 # add_filter('upw_wp_query_args', 'sleek_exclude_current_post_in_upw');
@@ -191,12 +189,6 @@ add_filter('upw_enqueue_styles', '__return_false');
 
 # Remove HOME from Yoast Breadcrumbs
 # add_filter('wpseo_breadcrumb_links', 'sleek_remove_home_from_breadcrumb');
-
-# Show all posts (ignore posts_per_page setting) when browsing custom post types
-# add_filter('pre_get_posts', 'sleek_show_all_cpt_posts');
-
-# Show all post types when browsing author
-# add_filter('pre_get_posts', 'sleek_show_all_post_types_for_authors');
 
 # Remove .current_page_parent from Blog-page when viewing another archive
 add_filter('nav_menu_css_class', 'sleek_unset_active_blog_class', 10, 2);

@@ -2,7 +2,9 @@
 
 <main>
 
-	<h1>I'm a child of SleekWP :)</h1>
+	<pre>
+		<?php include get_template_directory() . '/README.md' ?>
+	</pre>
 
 	<?php get_template_part('modules/my-module') ?>
 	<?php get_template_part('modules/post-content') ?>

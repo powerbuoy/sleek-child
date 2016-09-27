@@ -3,5 +3,6 @@
 
 	var $ = require('jquery');
 
-	$('body').css('background', 'green');
+	console.log('jQuery is now available in $:');
+	console.dir($);
 })();
