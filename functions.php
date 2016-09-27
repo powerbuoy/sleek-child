@@ -81,12 +81,6 @@ if (!$editorRole->has_cap('manage_options')) {
 	$editorRole->add_cap('manage_options');
 } */
 
-# Add optional shortcodes provided by SleekWP
-/* add_action('init', function () {
-	# MarkdownFile
-	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
-}); */
-
 # Add more fields to users
 /* add_filter('user_contactmethods', function () {
 	$fields['googleplus'] = __('Google+', 'sleek_child');
