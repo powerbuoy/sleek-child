@@ -1,13 +1,47 @@
 <?php
-# Register CSS and JS
-add_action('init', function () {
-	sleek_register_assets(); # Pass in more as only argument; ['https://fonts.googleapis.com/css?family=Lato:300,900']
-});
-
 # Register thumbnail sizes
 add_action('after_setup_theme', function () {
 	add_image_size('sleek-small', 120, 120, ['center', 'top']);
 	add_image_size('sleek-hd', 1920, 1080, ['center', 'top']);
+});
+
+# Register custom post types and taxonomies
+/* $postTypes = ['movie', 'director'];
+
+add_action('init', function () use ($postTypes) {
+	# Post types
+	sleek_register_post_types($postTypes, 'sleek_child');
+
+	# Taxonomies
+	sleek_register_taxonomies([
+		'genre' => ['movie'],
+		'country' => ['movie', 'director']
+	], 'sleek_child');
+
+	# Array of CPTs that should appear in search (on top of post/page)
+	# (run this function unless you want all your CPTs to appear)
+	sleek_set_cpt_in_search(['movie']);
+}); */
+
+# Add meta data (title, description, image) to CPTs
+/* add_action('admin_menu', function () use ($postTypes) {
+	sleek_register_post_type_meta_data($postTypes, 'sleek_child', ['subtitle' => 'text']); // Pass in more fields as last argument
+}); */
+
+# Register ACF
+# Hide ACF from admin altogether (to prevent people from adding ACF)
+# add_filter('acf/settings/show_admin', '__return_false');
+
+# Use these fields (add your fields to acf/my-group.definition.php)
+/* add_action('acf/init', function () {
+	sleek_register_acf([
+		'my_group' => ['movie'] # Second argument can be array of post types or normal ACF location definition
+	]);
+}); */
+
+# Register CSS and JS
+add_action('init', function () {
+	sleek_register_assets(); # Pass in more as only argument; ['https://fonts.googleapis.com/css?family=Lato:300,900']
 });
 
 # Register sidebars
@@ -23,43 +57,17 @@ add_action('after_setup_theme', function () {
 	]);
 }); */
 
-# Register custom post types and taxonomies
-/* $postTypes = ['movies', 'directors'];
-
-add_action('init', function () use ($postTypes) {
-	# Post types
-	sleek_register_post_types($postTypes, 'sleek_child');
-
-	# Taxonomies
-	sleek_register_taxonomies([
-		'genres' => ['movies'],
-		'countries' => ['movies', 'directors']
+# Add more options to Appearance -> Customize -> Theme Options
+/* add_action('customize_register', function ($wpCustomize) {
+	sleek_register_theme_options($wpCustomize, [
+		'hubspot_portal_id' => 'text',
+		'hubspot_vacancies_form_id' => 'text'
 	], 'sleek_child');
-
-	# Array of CPTs that should appear in search (on top of post/page)
-	# (run this function unless you want all your CPTs to appear)
-	sleek_set_cpt_in_search(['movies']);
-}); */
-
-# Add meta data (title, description, image) to CPTs
-/* add_action('admin_menu', function () use ($postTypes) {
-	sleek_register_post_type_meta_data($postTypes, 'nexus');
 }); */
 
 # Give attachments an archive and make attachment taxonomy archives work
-add_action('init', function () {
-	sleek_attachment_archives(__('url_attachments', 'sleek_child'), []); # Pass in any potential attachment taxonomies as the last array to enable taxonomy archives
-});
-
-# Register ACF
-# Hide ACF from admin altogether (to prevent people from adding ACF)
-# add_filter('acf/settings/show_admin', '__return_false');
-
-# Use these fields (add your fields to acf/my-group.definition.php)
-/* add_action('acf/init', function () {
-	sleek_register_acf([
-		'my_group' => ['movies'] # Second argument can be array of post types or normal ACF location definition
-	]);
+/* add_action('init', function () {
+	sleek_attachment_archives(__('url_attachment', 'sleek_child'), []); # Pass in any potential attachment taxonomies (image_category for example) as the last array to enable taxonomy archives
 }); */
 
 # Allow svg etc uploads
