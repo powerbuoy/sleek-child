@@ -58,16 +58,12 @@ add_action('init', function () {
 }); */
 
 # Add more options to Appearance -> Customize -> Theme Options
+# (then use your options with get_theme_mod('option_name') any way you like)
 /* add_action('customize_register', function ($wpCustomize) {
 	sleek_register_theme_options($wpCustomize, [
 		'hubspot_portal_id' => 'text',
 		'hubspot_vacancies_form_id' => 'text'
 	], 'sleek_child');
-}); */
-
-# Give attachments an archive and make attachment taxonomy archives work
-/* add_action('init', function () {
-	sleek_attachment_archives(__('url_attachment', 'sleek_child'), []); # Pass in any potential attachment taxonomies (image_category for example) as the last array to enable taxonomy archives
 }); */
 
 # Allow svg etc uploads
@@ -77,17 +73,6 @@ add_action('init', function () {
 
 	return $mimes;
 }); */
-
-# Give editors access to theme options
-/* $editorRole = get_role('editor');
-
-if (!$editorRole->has_cap('edit_theme_options')) {
-	$editorRole->add_cap('edit_theme_options');
-}
-
-if (!$editorRole->has_cap('manage_options')) {
-	$editorRole->add_cap('manage_options');
-} */
 
 # Add more fields to users
 /* add_filter('user_contactmethods', function () {
@@ -103,11 +88,6 @@ if (!$editorRole->has_cap('manage_options')) {
 	add_post_type_support('page', 'excerpt');
 }); */
 
-# Allow shortcodes in Widgets
-/* add_action('init', function () {
-	add_filter('widget_text', 'do_shortcode');
-}); */
-
 # Set up for translation (put your mo/po-files in your-theme/languages/)
 add_action('after_setup_theme', function () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/languages');
@@ -115,29 +95,3 @@ add_action('after_setup_theme', function () {
 	# If you want to override parent theme translations, add them to languages/sleek/lang_Code.po
 	# load_theme_textdomain('sleek', get_stylesheet_directory() . '/languages/sleek');
 });
-
-# Remove a bunch of unwanted CSS/JS added by WP and plug-ins
-add_action('init', function () {
-	sleek_reduce_requests();
-});
-
-# Move jQuery to bottom of page + include from CDN
-add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
-
-# Add an "active-parent" class to archive pages when browsing their taxonomies
-add_filter('nav_menu_css_class', 'sleek_active_archive_link_on_taxonomies', 10, 2);
-
-# Allow a 'post_type' => [] argument in get_terms()
-add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
-
-# Add placeholders to comment form
-add_filter('comment_form_defaults', 'sleek_comment_form_placeholders');
-
-# Remove .current_page_parent from Blog-page when viewing another archive
-add_filter('nav_menu_css_class', 'sleek_unset_active_blog_class', 10, 2);
-
-# Allow HTML in Widget Titles (with [tags])
-# add_filter('widget_title', 'sleek_html_in_widget_titles');
-
-# Allow Markdown in excerpts and ACF
-# add_action('init', 'sleek_more_markdown');
