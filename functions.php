@@ -20,7 +20,7 @@ add_action('init', function () use ($postTypes) {
 
 	# Array of CPTs that should appear in search (on top of post/page)
 	# (run this function unless you want all your CPTs to appear)
-	sleek_set_cpt_in_search(['movie']);
+	# sleek_set_cpt_in_search(['movie']);
 }); */
 
 # Add meta data (title, description, image) to CPTs
@@ -32,12 +32,26 @@ add_action('init', function () use ($postTypes) {
 # Hide ACF from admin altogether (to prevent people from adding ACF)
 # add_filter('acf/settings/show_admin', '__return_false');
 
-# Use these fields (add your fields to acf/my-group.definition.php)
-/* add_action('acf/init', function () {
-	sleek_register_acf([
-		'my_group' => ['movie'] # Second argument can be array of post types or normal ACF location definition
-	]);
-}); */
+# Use these fields (add your fields to acf/my-group.php)
+add_action('acf/init', function () {
+	# ACF in post types
+/*	sleek_register_acf([
+		'page' => ['page-meta', 'redirect-url']
+	]); */
+
+	# ACF in options pages
+/*	sleek_register_acf_options([
+		'theme-settings' => ['page-meta', 'redirect-url']
+	]); */
+
+	# ACF in module containers
+/*	sleek_register_acf_modules([
+		'page' => [
+			'below-content' => ['video'],
+			'above-content' => ['video']
+		]
+	]); */
+});
 
 # Register CSS and JS
 add_action('init', function () {
