@@ -25,7 +25,7 @@ add_action('init', function () use ($postTypes) {
 
 # Add meta data (title, description, image) to CPTs
 /* add_action('admin_menu', function () use ($postTypes) {
-	sleek_register_post_type_meta_data($postTypes, 'sleek_child', ['subtitle' => 'text']); // Pass in more fields as last argument
+	sleek_register_post_type_meta_data($postTypes, ['subtitle' => 'text']); // Pass in more fields as last argument
 }); */
 
 # Register ACF

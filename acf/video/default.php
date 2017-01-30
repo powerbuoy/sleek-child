@@ -1,6 +1,6 @@
 <section class="section">
 
-	<h1><?php echo $data['video-title'] ?></h1>
+	<h2><?php echo $data['video-title'] ?></h2>
 
 	<?php echo $data['video-code'] ?>
 

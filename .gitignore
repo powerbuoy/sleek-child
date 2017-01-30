@@ -3,3 +3,4 @@ node_modules/
 src/sass/icons.scss
 src/sass/icon-vars.scss
 src/sass/svg.scss
+.DS_Store
