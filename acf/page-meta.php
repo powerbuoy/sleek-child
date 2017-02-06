@@ -1,12 +1,14 @@
 <?php
 return [
 	[
-		'name' => 'subtitle',
+		'name' => 'page-meta-subtitle',
+		'key' => 'page-meta-subtitle',
 		'label' => __('Subtitle', 'sleek_child'),
 		'type' => 'text'
 	],
 	[
-		'name' => 'featured',
+		'name' => 'page-meta-featured',
+		'key' => 'page-meta-featured',
 		'label' => __('Make this page featured', 'sleek_child'),
 		'message' => __('Make this page featured', 'sleek_child'),
 		'type' => 'true_false'
