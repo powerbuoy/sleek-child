@@ -75,7 +75,7 @@ gulp.task('gettext', function () {
 });
 
 /**
- * Copy Assets
+ * Copy Assets (TODO: Should delete first!)
  */
 gulp.task('assets', function () {
 	return gulp.src([paths.assets + '**/*', '!' + paths.assets + '**/*.svg']).pipe(gulp.dest(paths.dest + 'assets'));
