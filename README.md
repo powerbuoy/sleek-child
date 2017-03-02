@@ -1,2 +1,2 @@
-# SleekChild
-An example of a SleekWP child theme
+# Sleek Child
+A starting point for building your own SleekWP based theme Edit

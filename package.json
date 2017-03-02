@@ -9,7 +9,7 @@
     "browserify-shim": "^3.8.12",
     "gulp": "^3.9.1",
     "normalize-css": "^2.3.1",
-    "sleek-css": "github:powerbuoy/SleekCSS"
+    "sleek-css": "github:powerbuoy/sleek-css"
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/powerbuoy/SleekChild.git"
+    "url": "git+https://github.com/powerbuoy/sleek-child.git"
   },
   "author": "Andreas Lagerkvist",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/powerbuoy/SleekChild/issues"
+    "url": "https://github.com/powerbuoy/sleek-child/issues"
   },
-  "homepage": "https://github.com/powerbuoy/SleekChild#readme"
+  "homepage": "https://github.com/powerbuoy/sleek-child#readme"
 }

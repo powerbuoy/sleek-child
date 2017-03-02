@@ -8,11 +8,11 @@
 				$target = strpos($url, 'http') === 0 ? 'target="_blank"' : '';
 				$color = $button['button-color'];
 				$ghost = $button['button-ghost'] ? 'button--ghost' : '';
-				$icon = 'right';
+				$icon = 'right'; # TODO: $button-icon
 			?>
 			<a href="<?php echo $url ?>"
 				<?php echo $target ?>
-				class="button button--<?php echo $color ?> <?php echo $ghost ?> icon-<?php echo $icon ?> icon--after">
+				class="button button--<?php echo $color ?> <?php echo $ghost ?> <?php if ($icon) : ?>icon-<?php echo $icon ?> icon--after<?php endif ?>">
 				<?php echo $title ?>
 			</a>
 		<?php endforeach ?>

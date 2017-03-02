@@ -1,6 +1,8 @@
 <section class="section">
 
-	<h2><?php echo $data['text-content-title'] ?></h2>
+	<?php if ($data['text-content-title']) : ?>
+		<h2><?php echo $data['text-content-title'] ?></h2>
+	<?php endif ?>
 
 	<?php if ($data['text-content-image']) : ?>
 		<img src="<?php echo $data['text-content-image']['url'] ?>">

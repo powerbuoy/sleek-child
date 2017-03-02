@@ -1,5 +1,5 @@
 <?php
-# TODO: Add Button Icon (and grab icons from icons.json if it exists)
+# TODO: Add Button Icon-dropdown (and grab icons from icons.json if it exists)
 # TODO: Parse config.scss (if it exists) for $button-colors and dynamically populate the button-color select
 
 return [
