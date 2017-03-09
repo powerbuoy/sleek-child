@@ -101,7 +101,7 @@ gulp.task('svg', ['svgstore'], function () {
 /**
  * Watch and default
  */
-gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
+gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide', 'watch']);
 
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
