@@ -103,7 +103,7 @@ gulp.task('svg', ['svgstore'], function () {
  */
 gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
 
-gulp.task('watch', function () {
+gulp.task('watch', ['default'], function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
 	gulp.watch(paths.js + '**/*.js', ['js']);
 	gulp.watch('icons.json', ['sass']);
