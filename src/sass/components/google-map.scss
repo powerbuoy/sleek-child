@@ -1,0 +1,14 @@
+/***
+    title: Google Map
+    section: Widgets
+    description: Use to render a Google Map.
+    example:
+        <p>No example provided</p>
+***/
+.google-map {
+	height: 20rem;
+
+	@media #{$bp-medium} {
+		height: 30rem;
+	}
+}

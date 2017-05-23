@@ -1,0 +1,24 @@
+/***
+    title: Tabs
+    section: Widgets
+    description: Use to create tabbed content.
+    example:
+        <p>No example provided</p>
+***/
+[data-tabs] {
+
+}
+
+[data-tab-content] {
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	position: relative;
+
+	> * {
+		flex: 0 0 100%;
+		width: 100%;
+	}
+}

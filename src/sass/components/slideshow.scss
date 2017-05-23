@@ -1,0 +1,74 @@
+/***
+    title: Slideshow
+    section: Widgets
+    description: Styling for the Slick Carousel jQuery Plugin.
+    example:
+        <p>No example provided</p>
+***/
+[data-slideshow] {
+	&.slick-slider {
+		position: static; // It gets relative from slick.scss but we need it to be static so we can position the arrows relative to the slideshow's parent
+	}
+
+	.slick-slide {
+		outline: 0;
+	}
+
+	.slick-dots {
+		margin: $margin-large 0 0;
+		list-style: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin: 0 ($margin-small / 2);
+			vertical-align: middle;
+
+			button {
+				background: rgba($color-overlay, .4);
+
+				padding: 0;
+				min-height: 0;
+				width: .75rem;
+				height: .75rem;
+
+				font-size: 0;
+				line-height: 0;
+				text-indent: -10000px;
+				border: 0;
+				border-radius: 50%;
+				box-shadow: none;
+			}
+
+			&.slick-active {
+				button {
+					background: rgba($color-overlay, .8);
+				}
+			}
+		}
+	}
+
+	a.slick-prev,
+	a.slick-next {
+		position: absolute;
+		top: 50%;
+		z-index: 97;
+		transform: translateY(-50%);
+
+		color: $color-text;
+		font-size: 2rem;
+		line-height: 1;
+
+		@media #{$bp-medium-max} {
+			display: none !important;
+		}
+	}
+
+	.slick-prev {
+		left: $section-padding-horizontal;
+	}
+
+	.slick-next {
+		right: $section-padding-horizontal;
+	}
+}

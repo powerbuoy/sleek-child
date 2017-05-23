@@ -8,8 +8,12 @@
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",
     "gulp": "^3.9.1",
+    "jump.js": "^1.0.2",
     "normalize-css": "^2.3.1",
-    "sleek-css": "github:powerbuoy/sleek-css"
+    "sleek-css": "github:powerbuoy/sleek-css",
+    "slick-carousel": "^1.6.0",
+    "toggle-hash": "github:powerbuoy/toggle-hash",
+    "velocity-animate": "^1.5.0"
   },
   "browserify-shim": {
     "jquery": "global:jQuery"

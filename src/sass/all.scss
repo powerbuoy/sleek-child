@@ -1,41 +1,22 @@
+// Our config
+@import "config";
+
 // Icons (generated)
 @import "icon-vars";
 @import "icons";
 @import "svg";
 
-// Third party (remove if you don't want)
+// Third party
 @import "../../node_modules/normalize-css/normalize";
 @import "../../node_modules/sleek-css/sleek-css.scss";
 
-/***
-    title: Body
-    section: Layout
-    description: If you write comments like these they will show up in your styleguide (dist/styleguide.html)
-    example:
-        <p>No example provided</p>
-***/
-body {
+// Our components
+@import "components/*";
 
-}
+// Our modules
+@import "modules/*";
 
-// This is just an example, you'll probably wanna remove it
-#header,
-main,
-#footer {
+// This is just to make the installation look a little nicer, you'll probably wanna remove this
+main {
 	@include section;
-}
-
-#header,
-#footer {
-	background: $color-link;
-	color: $color-white;
-
-	h1,
-	a {
-		color: $color-white;
-	}
-
-	p {
-		margin: 0;
-	}
 }
