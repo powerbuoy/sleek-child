@@ -138,3 +138,17 @@ add_action('after_setup_theme', function () {
 	# If you want to override parent theme translations, add them to languages/sleek/lang_Code.po and uncomment this:
 	# load_theme_textdomain('sleek', get_stylesheet_directory() . '/languages/sleek');
 });
+
+# Allow shortcodes in Text Widgets
+/* add_action('init', function () {
+	add_filter('widget_text', 'do_shortcode');
+}); */
+
+# Allow HTML in Widget Titles (with [tags])
+# add_filter('widget_title', 'sleek_html_in_widget_titles');
+
+# Allow Markdown in excerpts and ACF
+# add_action('init', 'sleek_more_markdown');
+
+# Add a 'post_type' argument to get_terms()
+# add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
