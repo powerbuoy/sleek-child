@@ -15,7 +15,7 @@
 	}
 
 	.slick-dots {
-		margin: $margin-large 0 0;
+		margin: $margin-default 0 0;
 		list-style: none;
 		text-align: center;
 
@@ -65,10 +65,10 @@
 	}
 
 	.slick-prev {
-		left: $section-padding-horizontal;
+		left: 0;
 	}
 
 	.slick-next {
-		right: $section-padding-horizontal;
+		right: 0;
 	}
 }
