@@ -26,6 +26,13 @@ add_action('after_setup_theme', function () {
 #	add_image_size('sleek-hd', 1920, 1080, ['center', 'top']);
 });
 
+# Also add them to the sizes dropdown in the admin
+/* add_filter('image_size_names_choose', function ($sizes) {
+	return array_merge($sizes, [
+		'sleek-small' => __('Small', 'sleek-child')
+	]);
+}); */
+
 # Register custom post types and taxonomies
 $postTypes = ['movie', 'director'];
 
