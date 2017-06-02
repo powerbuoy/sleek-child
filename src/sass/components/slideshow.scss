@@ -3,7 +3,14 @@
     section: Widgets
     description: Styling for the Slick Carousel jQuery Plugin.
     example:
-        <p>No example provided</p>
+        <div data-slideshow="3">
+            <div>Slide 1</div>
+            <div>Slide 2</div>
+            <div>Slide 3</div>
+            <div>Slide 4</div>
+            <div>Slide 5</div>
+            <div>Slide 6</div>
+        </div>
 ***/
 [data-slideshow] {
 	&.slick-slider {

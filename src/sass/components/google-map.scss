@@ -3,7 +3,9 @@
     section: Widgets
     description: Use to render a Google Map.
     example:
-        <p>No example provided</p>
+        <div class="google-map" data-lat="40.7058253" data-lng="-74.1180864">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&amp;center=40.7058253,-74.1180864&amp;markers=40.7058253,-74.1180864&amp;zoom=14&amp;size=600x400&amp;key=GOOGLE_MAPS_API_KEY">
+        </div>
 ***/
 .google-map {
 	height: 20rem;
