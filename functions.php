@@ -29,7 +29,7 @@ add_action('after_setup_theme', function () {
 # Also add them to the sizes dropdown in the admin
 /* add_filter('image_size_names_choose', function ($sizes) {
 	return array_merge($sizes, [
-		'sleek-small' => __('Small', 'sleek-child')
+		'sleek-small' => __('Small', 'sleek_child')
 	]);
 }); */
 
