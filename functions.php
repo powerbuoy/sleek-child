@@ -11,11 +11,11 @@ add_action('after_setup_theme', function () {
 	update_option('medium_size_w', 1280);
 	update_option('medium_size_h', 960);
 	update_option('medium_crop', 1);
-
-	// This is only used internally by WP and isn't available to users, so don't use it
-	// update_option('medium_large_size_w', 1600);
-	// update_option('medium_large_size_h', 1200);
-	// update_option('medium_large_crop', 1);
+	
+	# This is only used internally by WP and isn't available to users, so don't use it
+#	update_option('medium_large_size_w', 1600);
+#	update_option('medium_large_size_h', 1200);
+#	update_option('medium_large_crop', 1);
 
 	update_option('large_size_w', 1920);
 	update_option('large_size_h', 1080);

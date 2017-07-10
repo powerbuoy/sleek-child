@@ -17,7 +17,7 @@
 
 		if (target) {
 			trigger.click(function (e) {
-
+				e.stopPropagation();
 				e.preventDefault();
 
 				var st = $(document).scrollTop();
@@ -27,6 +27,14 @@
 				$(document).scrollTop(st);
 
 				jump(target, jumpConf);
+			});
+		}
+		else if (targetId == 'top') {
+			trigger.click(function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+
+				jump(document.body, jumpConf);
 			});
 		}
 	});
@@ -42,7 +50,7 @@
 
 	// If on home page, make logo scroll to top
 	if ($('html.home').length) {
-		$('.site-logo a').click(function (e) {
+		$('.site-logo').click(function (e) {
 			e.preventDefault();
 
 			jump(document.body, jumpConf);
