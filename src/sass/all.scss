@@ -16,8 +16,3 @@
 
 // Our modules
 @import "modules/*";
-
-// This is just to make the installation look a little nicer, you'll wanna remove this
-main {
-	@include section;
-}

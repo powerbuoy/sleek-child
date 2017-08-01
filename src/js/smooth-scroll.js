@@ -2,14 +2,13 @@
 	'use strict';
 
 	var $ = require('jquery');
-	var jump = require('jump.js');
+	var jump = require('jump.js'); // TODO: Replace with $.animate(document.body.scrollTop) (OR at least switch to velocity already used by tabs!!)
 	var jumpConf = {
 		duration: 1200,
 		offset: 0
 	};
 
 	$('[data-smooth-scroll]').each(function () {
-		// TODO: Add support for links that point to different pages#hash
 		var trigger = $(this);
 		var href = trigger.attr('href');
 		var targetId = href.substr(href.indexOf('#')).substr(1);

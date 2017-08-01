@@ -2,7 +2,7 @@
 	'use strict';
 
 	var $ = require('jquery');
-	var velocity = require('velocity-animate');
+	var velocity = require('velocity-animate'); // TODO: Use $.animate scrollLeft instead??
 
 	// TODO: Update hash on tab change + set active tab on page load and hash change
 	$('[data-tabs]').each(function () {
@@ -10,10 +10,7 @@
 		var tabContent = false;
 
 		// Find the tab content container by looking at the first tab target
-		var firstTabTarget = tabs.find('a[href^="#"]').eq(0);
-
-		firstTabTarget = firstTabTarget.attr('href');
-		firstTabTarget = $(firstTabTarget);
+		var firstTabTarget = $(tabs.find('a[href^="#"]').eq(0).attr('href'));
 
 		if (firstTabTarget.length) {
 			tabContent = firstTabTarget.parents('[data-tab-content]').eq(0);
