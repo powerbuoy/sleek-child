@@ -23,7 +23,6 @@
 	// Find every [data-slideshow]
 	$('[data-slideshow]').each(function () {
 		var wrap = $(this);
-		var id = wrap.attr('id');
 		var slides = wrap.find('> *');
 		var numSlides = wrap.attr('data-slideshow');
 			numSlides = numSlides ? parseInt(numSlides) : 1;
