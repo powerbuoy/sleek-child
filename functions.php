@@ -61,7 +61,7 @@ add_action('init', function () use ($postTypes) {
 ##############
 # Register ACF
 # Hide ACF from admin altogether (to prevent users from adding ACF from there)
-# add_filter('acf/settings/show_admin', '__return_false');
+add_filter('acf/settings/show_admin', '__return_false');
 
 # Register fields
 add_action('acf/init', function () {
