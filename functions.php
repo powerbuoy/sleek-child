@@ -14,7 +14,7 @@ add_action('after_setup_theme', function () {
 	update_option('medium_crop', 1);
 
 	update_option('large_size_w', 1920);
-	update_option('large_size_h', 700);
+	update_option('large_size_h', 800);
 	update_option('large_crop', 1);
 
 	# Now set the sizes again so we can specify our own crop
