@@ -66,7 +66,7 @@
 		font-size: 2rem;
 		line-height: 1;
 
-		@media #{$bp-medium-max} {
+		@media #{$bp-tablet-max} {
 			display: none !important;
 		}
 	}

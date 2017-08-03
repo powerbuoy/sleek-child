@@ -120,7 +120,7 @@ add_action('customize_register', function ($wpCustomize) {
 
 add_action('wp_head', function () {
 	# HubSpot tracking code
-	if ($hsId = get_theme_mod('hubspot_portal_id', 'option')) {
+	if ($hsId = get_theme_mod('hubspot_portal_id')) {
 		echo '<!-- Start of Async HubSpot Analytics Code -->
 			<script type="text/javascript">
 				(function(d,s,i,r) {

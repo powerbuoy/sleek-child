@@ -10,7 +10,7 @@
 .google-map {
 	height: 20rem;
 
-	@media #{$bp-medium} {
+	@media #{$bp-tablet} {
 		height: 30rem;
 	}
 }

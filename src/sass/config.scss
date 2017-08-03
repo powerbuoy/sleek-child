@@ -1,1 +1,229 @@
-// Override sleekcss config in here
+// Breakpoints
+$bp-tablet: '(min-width: 600px)';
+$bp-tablet-max: '(max-width: 599px)';
+
+$bp-laptop: '(min-width: 1000px)';
+$bp-laptop-max: '(max-width: 999px)';
+
+$bp-desktop: '(min-width: 1200px)';
+$bp-desktop-max: '(max-width: 1199px)';
+
+// Buttons
+// Button size
+$button-padding-horizontal: 2.6rem;
+$button-padding-vertical: 1rem;
+$button-empty-padding-horizontal: $button-padding-vertical;
+$button-small-percentage: .75;
+$button-large-percentage: 1.25;
+
+$button-transition: true;
+
+// Button border
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: false; // false makes non ghost buttons have 0 border, true makes it 10% darker than bg
+$button-border-radius: 2rem;
+
+// Button background
+$button-color: #1FBB82;
+$button-ghost-opacity: .1; // Opacity of a ghost buttons bg on hover
+$button-gradient: false; // false = no gradient, % = darken BG this much %
+$button-shadow: false; // shadow declaration or true for a default shadow
+
+// Button text
+$button-font-family: false; // false = default font, !false = any font-family
+$button-text-shadow: false; // false = no shadow, true = default shadow or use a text-shadow declaration
+$button-text-color: #fff;
+$button-line-height: 1.2;
+$button-font-size: 1rem;
+$button-font-weight: bold;
+$button-font-style: normal;
+$button-text-transform: none;
+$button-letter-spacing: false;
+
+// Colors
+$color-body-bg: #fff;
+
+$color-border: #bbb;
+$color-shadow: rgba(0, 0, 0, .2);
+$color-overlay: rgba(0, 0, 0, .4);
+
+$color-lightgray: #eaeaea;
+$color-gray: #aaa;
+$color-darkgray: #666;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-facebook: #3b5998;
+$color-twitter: #4099FF;
+$color-linkedin: #0077b5;
+
+// Add more colors as needed...
+// $color-red: #600 etc...
+
+// Define more to use bg--black etc
+$bg-colors: (
+	"white": $color-white,
+	"lightgray": $color-lightgray
+);
+
+// Add more to use .color--red etc
+$text-colors: (
+	"white": $color-white,
+	"gray": $color-gray
+);
+
+// Add more to use .icon--red etc
+$icon-colors: (
+	"lightgray": $color-lightgray
+);
+
+// Add more to use .button--green etc
+$button-colors: (
+	"white": $color-white,
+	"disabled": $color-gray
+);
+
+//Cols
+// Add more here to use cols--4, cols--5 etc
+$col-nums: (
+	"2": 2,
+	"3": 3
+);
+
+// Add more here to use cols--3--bp-desktop etc
+$col-breakpoints: (
+	"bp-tablet": $bp-tablet,
+	"bp-laptop": $bp-laptop
+);
+
+// Form
+// Background and text colors
+$color-form-field-bg: #fff;
+$color-form-success: #060;
+$color-form-error: #900;
+$color-form-placeholder: #bbb;
+$color-form-text: #333;
+
+// Padding
+$form-padding-horizontal: $button-padding-vertical;
+$form-padding-vertical: $button-padding-vertical;
+
+// Border
+$form-border: true;
+$form-border-radius: .2rem;
+
+// Select elements
+$form-select-arrow: "assets/svg/select-arrow.svg"; // Set to false to have unstyled select elements
+$form-select-arrow-size: .5rem;
+
+// Range inputs
+$form-range-color-lower: #bbb;
+$form-range-color-upper: #ddd;
+$form-range-height: .25rem;
+$form-range-border: false;
+$form-range-border-radius: .25rem;
+
+$form-range-thumb-bg: #1FBB82;
+$form-range-thumb-radius: 1rem;
+$form-range-thumb-border: false;
+$form-range-thumb-border-radius: 50%;
+$form-range-thumb-shadow: true;
+
+// Icons
+$icon-margin: .4em;
+$icon-round-color: #369;
+$icon-large-size: 2em;
+$icon-round-size: 2.2em;
+
+// Layout
+// Site widths
+$site-width: 960px; // Max width
+$site-width-min: 85%; // Width before reaching max
+
+// Margins (margins beneath elements)
+$margin-small: .5rem;
+$margin-default: 1rem;
+$margin-large: 2rem;
+$margin-x-large: 4rem;
+
+// Paddings (inner padding of boxes)
+$padding-small: .5rem;
+$padding-default: 1rem;
+$padding-large: 2rem;
+$padding-x-large: 4rem;
+
+// Gutters (margin between columns)
+$gutter-default: 1.5rem;
+$gutter-large: 3rem;
+
+// .primary-content's width
+$primary-content-width: 70%;
+
+// Section paddings
+$section-padding: 3rem;
+$section-slant: 3rem;
+
+// Transition speeds
+$transition-easing: ease-out;
+$transition-fast: .1s;
+$transition-default: .2s;
+$transition-slow: .4s;
+
+// Popup
+$popup-padding: $padding-large;
+$popup-border-radius: 0;
+$popup-width: 45rem;
+
+// Shadows
+// https://codepen.io/sdthornton/pen/wBZdXq
+$shadow-1: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+$shadow-2: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+$shadow-3: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+$shadow-4: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
+$shadow-5: 0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 0, .25);
+
+// Typography
+// Font family
+$font-family-default: Helvetica, sans-serif;
+$font-family-heading: $font-family-default;
+
+// Weigth
+$font-weight-default: normal;
+$font-weight-heading: bold;
+
+// Size
+$font-size-default: 1rem;
+$font-size-small: .8rem;
+$font-size-large: 1.2rem;
+$font-size-x-large: 1.8rem;
+
+$font-size-h1: 2.4rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.6rem;
+$font-size-h4: 1.4rem;
+$font-size-h5: 1.2rem;
+$font-size-h6: 1.1rem;
+
+// Height and spacing
+$line-height-default: 1.6;
+$line-height-heading: 1.2;
+
+$letter-spacing-default: 0;
+$letter-spacing-heading: 0;
+
+// Color
+$color-text: #333;
+$color-heading: #444;
+
+// Links
+$color-link: #06f;
+$color-link-hover: #09f;
+$color-link-visited: #609;
+
+$text-decoration-link: none;
+$text-decoration-link-hover: none;
+
+// Linebreak/hyphen words by default?
+$word-wrap-break-word: false;
