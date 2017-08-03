@@ -1,6 +1,6 @@
 <?php global $post ?>
 
-<section id="posts">
+<section id="post-list">
 
 	<?php if ($data['post-list-title'] or $data['post-list-description']) : ?>
 		<header>
