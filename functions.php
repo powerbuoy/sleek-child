@@ -84,10 +84,7 @@ add_action('acf/init', function () {
 	# ACF in options pages
 /*	sleek_register_acf_options([
 		# Option page called "Theme settings"
-		'theme-settings' => [
-			'page-meta',
-			'redirect-url'
-		]
+		'theme-settings' => ['page-meta', 'redirect-url']
 	], 'sleek_child'); */
 });
 
