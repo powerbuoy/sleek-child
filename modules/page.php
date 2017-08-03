@@ -18,7 +18,7 @@
 		<?php get_template_part('modules/breadcrumbs') ?>
 
 		<?php if (get_field('modules-next-to-content') and !post_password_required()) : ?>
-			<div class="primary-secondary">
+			<div>
 
 				<article>
 

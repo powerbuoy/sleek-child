@@ -1,0 +1,15 @@
+#archive-taxonomies {
+	@include section;
+
+	padding-bottom: 0; // Because #posts always follows this
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 0 $margin-default 0 0;
+		}
+	}
+}

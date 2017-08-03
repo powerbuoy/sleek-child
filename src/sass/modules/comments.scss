@@ -1,0 +1,8 @@
+#comments,
+#post-comment {
+	@include section;
+}
+
+#comments {
+	background: $color-lightgray;
+}

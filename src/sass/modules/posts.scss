@@ -1,0 +1,30 @@
+#posts {
+	@include section;
+
+	article {
+		@include card;
+
+		margin-bottom: $gutter-default;
+
+		figure {
+			margin: -$padding-default;
+			margin-bottom: $padding-default;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	@media #{$bp-tablet} {
+		@include flex-grid(2, $gutter-default);
+
+		// NOTE: We need these important rules here because of the generic section styling in all.scss - remove this when you remove that!
+		display: flex;
+
+		&:after {
+			display: none;
+		}
+	}
+}

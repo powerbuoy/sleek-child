@@ -1,4 +1,284 @@
-// Example header styling
+// Please note that this is just an example header, you probably want
+// to start from scratch here or at least delete most of it
+// LOL!
+@keyframes spin-and-zoom {
+	0% {
+		transform: rotate(0) scale(1);
+		color: inherit;
+	}
+	50% {
+		transform: rotate(180deg) scale(3);
+		color: $color-link;
+	}
+	100% {
+		transform: rotate(360deg) scale(1);
+		color: inherit;
+	}
+}
+
+// Prevent scroll when menu is open
+html.hash-active.hash-active-header {
+	overflow: hidden;
+}
+
 #header {
-	
+	@include section;
+
+	background: #222;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding-top: $padding-default;
+	padding-bottom: $padding-default;
+
+	color: #fff;
+
+	&::after {
+		display: none;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	// Logo
+	.site-logo {
+		display: block;
+		position: relative;
+		z-index: 100;
+
+		font-size: 2rem;
+		line-height: 1;
+
+		&:before {
+			@include icon($icon-book);
+
+			margin: 0;
+			transition: transform $transition-easing $transition-default;
+		}
+
+		&:hover:before {
+			animation: spin-and-zoom 1s infinite linear;
+		}
+	}
+
+	// Nav
+	nav {
+		div > ul {
+			margin: 0;
+			list-style: none;
+
+			> li {
+				position: relative;
+
+				> a {
+					display: inline-block;
+					position: relative;
+
+					&:after {
+						background: $color-link;
+
+						display: block;
+						content: "";
+
+						width: 0%;
+						height: .25rem;
+
+						position: absolute;
+						left: 50%;
+						bottom: -.25rem;
+
+						transform: translateX(-50%);
+						transition: width $transition-default $transition-easing;
+					}
+				}
+
+				&.menu-moduler > a:after {
+					display: none;
+				}
+
+				&.active > a,
+				&.active-ancestor > a,
+				&.active-parent > a,
+				& > a:hover {
+					&:after {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.widget_search {
+			display: none;
+		}
+	}
+
+	// In low res
+	@media #{$bp-laptop-max} {
+		nav {
+			background: #222;
+
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			height: 100%;
+			z-index: 99;
+
+			padding: 6rem $site-padding $padding-large;
+			overflow: auto;
+
+			transform: translateX(100%);
+			transition: transform $transition-default $transition-easing;
+
+			div > ul {
+				> li {
+					display: block;
+					margin: 0 0 $margin-default;
+				}
+			}
+		}
+	}
+
+	// In high res
+	@media #{$bp-laptop} {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		nav {
+			div > ul {
+				> li {
+					display: inline-block;
+					margin: 0 0 0 $margin-default;
+
+					> a {
+						padding-top: 1.5rem;
+						padding-bottom: 1.5rem;
+
+						&:after {
+							bottom: 0;
+						}
+					}
+
+					// Sub menu
+					> ul {
+						@include arrow(top, 8px, $color-white, 0, $color-white, 50%);
+
+						background: $color-white;
+
+						margin: 0;
+						list-style: none;
+
+						position: absolute;
+						left: 50%;
+						top: calc(100% + 16px);
+						z-index: 99;
+
+						transform: translateX(-50%) scaleY(0);
+						transform-origin: 50% top;
+						transition: transform $transition-default $transition-default $transition-easing;
+
+						font-size: $font-size-small;
+
+						border-radius: .25rem;
+						box-shadow: 0 0.25rem 1.25rem $color-shadow;
+
+						> li {
+							display: block;
+							position: relative;
+
+							&:not(:last-child) {
+								border-bottom: 1px solid $color-border;
+							}
+
+							> a {
+								display: block;
+								padding: $padding-small;
+								white-space: nowrap;
+								color: $color-text;
+
+								&:hover {
+									color: $color-link;
+								}
+							}
+
+							// Sub-sub menu
+							> ul {
+								@include arrow(left, 8px, $color-white, 0, $color-white, 24px);
+
+								background: $color-white;
+
+								margin: 0;
+								list-style: none;
+
+								position: absolute;
+								left: calc(100% + 16px);
+								top: 0;
+
+								transform: scaleX(0);
+								transform-origin: left top;
+								transition: transform $transition-default $transition-default $transition-easing;
+
+								font-size: $font-size-small;
+
+								border-radius: .25rem;
+								box-shadow: 0 0.25rem 1.25rem $color-shadow;
+
+								> li {
+									display: block;
+
+									&:not(:last-child) {
+										border-bottom: 1px solid $color-border;
+									}
+
+									> a {
+										display: block;
+										padding: $padding-small;
+										white-space: nowrap;
+										color: $color-text;
+
+										&:hover {
+											color: $color-link;
+										}
+									}
+								}
+							}
+
+							&:hover > ul {
+								transform: scaleX(1);
+							}
+						}
+					}
+
+					&:hover > ul {
+						transform: translateX(-50%) scaleY(1);
+					}
+				}
+			}
+		}
+	}
+
+	// Menu toggle
+	.menu-toggle {
+		@include burger-menu-icon($color-white);
+
+		z-index: 100;
+
+		@media #{$bp-laptop} {
+			display: none;
+		}
+	}
+
+	// When menu is open
+	&:target {
+		nav {
+			transform: translateX(0);
+		}
+
+		.menu-toggle {
+			@include burger-menu-icon-open($color-white);
+		}
+	}
 }

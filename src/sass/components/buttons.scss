@@ -1,0 +1,12 @@
+nav.buttons {
+	a {
+		margin: 0 $margin-default $margin-default 0;
+	}
+
+	&.text--center,
+	.text--center & {
+		a {
+			margin: 0 $margin-small $margin-default;
+		}
+	}
+}

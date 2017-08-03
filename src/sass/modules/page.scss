@@ -1,0 +1,53 @@
+#page {
+	header {
+		@include hero;
+	}
+
+	// Page without right col
+	> article {
+		@include section($site-width); // * .75
+	}
+
+	// If the page has modules to the right, a div wraps the article and aside
+	> div {
+		@include section;
+
+		&:after {
+			display: none;
+		}
+
+		// Display them in columns in high res
+		@media #{$bp-tablet} {
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+
+			article {
+				flex: 0 0 #{$primary-content-width} - #{$gutter-large / 2};
+				width: calc(#{$primary-content-width} - #{$gutter-large / 2});
+			}
+
+			aside {
+				$aside-width: 100% - $primary-content-width;
+
+				flex: 0 0 #{$aside-width} - #{$gutter-large / 2};
+				width: calc(#{$aside-width} - #{$gutter-large / 2});
+			}
+		}
+	}
+
+	// Page content
+	article {
+		// Give headings a lot of margin top here so that it's clear which paragraph it belongs to
+		#{$headings} {
+			&:not(:first-child) {
+				margin-top: $margin-large;
+			}
+		}
+
+		// Make the first paragraph stick out
+		p:first-of-type {
+			font-weight: bold;
+		}
+	}
+}

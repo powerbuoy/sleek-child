@@ -1,0 +1,21 @@
+#footer {
+	@include section;
+
+	background: #222;
+	text-align: center;
+	color: $color-white;
+
+	a {
+		color: $color-white;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 0 $margin-default;
+		}
+	}
+}
