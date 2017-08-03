@@ -174,3 +174,15 @@ add_filter('excerpt_length', function () {
 add_filter('excerpt_more', function () {
 	return ' /../';
 });
+
+############################
+# Disable certain post types
+add_filter('template_redirect', function () {
+	global $wp_query;
+
+	# Attachments (NOTE: Add custom post types here as needed (is_singular('office') etc...))
+	if (is_attachment()) {
+		status_header(404);
+		$wp_query->set_404();
+	}
+});
