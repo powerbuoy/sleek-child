@@ -85,6 +85,7 @@ add_action('acf/init', function () {
 
 	# ACF in options pages
 /*	sleek_register_acf_options([
+		# Option page called "Theme settings"
 		'theme-settings' => ['page-meta', 'redirect-url']
 	], 'sleek_child'); */
 });
@@ -122,6 +123,7 @@ add_action('init', function () {
 ##########################
 # Add more fields to users
 /* add_filter('user_contactmethods', function () {
+	$fields['title'] = __('Job title', 'sleek_child');
 	$fields['tel'] = __('Telephone', 'sleek_child');
 	$fields['facebook'] = __('Facebook', 'sleek_child');
 	$fields['twitter'] = __('Twitter', 'sleek_child');
