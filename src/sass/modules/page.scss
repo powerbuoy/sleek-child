@@ -1,6 +1,6 @@
 #page {
 	header {
-		@include hero;
+		@include hero();
 	}
 
 	// Page without right col

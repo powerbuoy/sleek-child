@@ -1,12 +1,12 @@
 nav.buttons {
 	a {
-		margin: 0 $margin-default $margin-default 0;
+		margin: 0 $margin-small $margin-default 0;
 	}
 
 	&.text--center,
 	.text--center & {
 		a {
-			margin: 0 $margin-small $margin-default;
+			margin: 0 ($margin-small / 2) $margin-default;
 		}
 	}
 }

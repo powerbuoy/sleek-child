@@ -1,0 +1,10 @@
+#text-block {
+	@include section;
+	@include figure-background;
+
+	color: $color-white;
+
+	h2 {
+		color: $color-white;
+	}
+}
