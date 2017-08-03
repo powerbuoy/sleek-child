@@ -2,7 +2,7 @@
 	'use strict';
 
 	var $ = require('jquery');
-	var jump = require('jump.js'); // TODO: Replace with $.animate(document.body.scrollTop) (OR at least switch to velocity already used by tabs!!)
+	var jump = require('jump.js'); // TODO: Replace with $.animate(document.body.scrollTop)
 	var jumpConf = {
 		duration: 1200,
 		offset: 0
