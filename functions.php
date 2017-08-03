@@ -6,11 +6,11 @@ add_action('after_setup_theme', function () {
 	# (this prevents user's from overriding them inside the
 	# admin - remove if you _want_ users to override your sizes)
 	update_option('thumbnail_size_w', 600);
-	update_option('thumbnail_size_h', 300);
+	update_option('thumbnail_size_h', 400);
 	update_option('thumbnail_crop', 1);
 
 	update_option('medium_size_w', 1200);
-	update_option('medium_size_h', 600);
+	update_option('medium_size_h', 800);
 	update_option('medium_crop', 1);
 
 	update_option('large_size_w', 1920);
@@ -20,17 +20,19 @@ add_action('after_setup_theme', function () {
 	# Now set the sizes again so we can specify our own crop
 	# (remove this too if you want users to set their own sizes)
 	add_image_size('thumbnail', 600, 400, ['center', 'top']);
-	add_image_size('medium', 1200, 600, ['center', 'top']);
+	add_image_size('medium', 1200, 800, ['center', 'top']);
 	add_image_size('large', 1920, 800, ['center', 'top']);
 
 	# Add our own sizes if needed
 #	add_image_size('thumbnail_portrait', 400, 600, ['center', 'top']);
+#	add_image_size('thumbnail_square', 600, 600, ['center', 'top']);
 });
 
 # Also add our own sizes to the image-size dropdown in the admin
 /* add_filter('image_size_names_choose', function ($sizes) {
 	return array_merge($sizes, [
-		'thumbnail_portrait' => __('Thumbnail (portrait)', 'sleek_child')
+		'thumbnail_portrait' => __('Thumbnail (portrait)', 'sleek_child'),
+		'thumbnail_square' => __('Thumbnail (square)', 'sleek_child')
 	]);
 }); */
 
