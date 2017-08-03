@@ -97,17 +97,12 @@ add_action('init', function () {
 
 ###################
 # Register sidebars
-/* add_action('init', function () {
+add_action('init', function () {
 	sleek_register_sidebars([
-		'aside' => [
-			'name' => __('Aside', 'sleek_child'),
-			'before_title' => '<h3>',
-			'after_title' => '</h3>'
-		],
 		'header' => __('Header', 'sleek_child'),
 		'footer' => __('Footer', 'sleek_child')
 	]);
-}); */
+});
 
 ##############################################################
 # Add more options to Appearance -> Customize -> Theme Options
