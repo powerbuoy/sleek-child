@@ -7,11 +7,11 @@
 
 	// Wrap WP galleries in [data-slideshow] (TODO: Should be optional!)
 	$('div.gallery').each(function () {
+		var numCols = 1;
 		var gallery = $(this).addClass('is-slideshow');
 		var colClass = gallery.attr('class').split(' ').filter(function (val) {
 			return val.indexOf('gallery-columns-') != -1;
 		});
-		var numCols = 1;
 
 		if (colClass && colClass.length) {
 			numCols = colClass[0].replace('gallery-columns-', '');
@@ -35,8 +35,8 @@
 			speed: 400,
 			autoplay: false,
 		//	adaptiveHeight: true,
-			prevArrow: '<a role="button" class="slick-prev icon-left"></a>',
-			nextArrow: '<a role="button" class="slick-next icon-right"></a>'
+			prevArrow: '<a role="button" class="slick-prev"></a>',
+			nextArrow: '<a role="button" class="slick-next"></a>'
 		};
 
 		// Init slideshow
