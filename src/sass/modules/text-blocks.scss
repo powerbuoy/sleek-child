@@ -1,22 +1,3 @@
 #text-blocks {
-	@include section;
-
-	display: flex;
-	align-items: stretch;
-	justify-content: space-between;
-	flex-wrap: wrap;
-
-	> header {
-		@include flex-width(100%);
-	}
-
-	article {
-		@include flex-width(50%, $gutter-default);
-		@include card;
-
-		figure {
-			margin: -$padding-default;
-			margin-bottom: $padding-default;
-		}
-	}
+	@include header-and-cards;
 }
