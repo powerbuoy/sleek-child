@@ -17,7 +17,7 @@
 			<li>
 				<figure>
 					<a href="<?php echo $image['url'] ?>">
-						<?php echo wp_get_attachment_image($image['id'], 'large') ?>
+						<?php echo wp_get_attachment_image($image['id'], 'medium') ?>
 					</a>
 
 					<figcaption>
