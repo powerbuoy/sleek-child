@@ -14,7 +14,7 @@
 ?>
 
 <?php if ($rows) : ?>
-	<section id="sibling-pages">
+	<section id="child-pages">
 
 		<?php if ($data['sibling-pages-title'] or $data['sibling-pages-description']) : ?>
 			<header>
@@ -52,4 +52,6 @@
 		<?php endforeach; wp_reset_postdata() ?>
 
 	</section>
+<?php else : ?>
+	<p class="error">[ERROR: <?php _e('This page does not have any siblings. You can remove this module until you add some.', 'sleek_child') ?>]</p>
 <?php endif ?>

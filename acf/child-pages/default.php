@@ -47,4 +47,6 @@
 		<?php endforeach; wp_reset_postdata() ?>
 
 	</section>
+<?php else : ?>
+	<p class="error">[ERROR: <?php _e('This page does not have any child pages. You can remove this module until you add some.', 'sleek_child') ?>]</p>
 <?php endif ?>

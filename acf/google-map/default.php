@@ -18,4 +18,6 @@
 		</div>
 
 	</section>
+<?php else : ?>
+	<p class="error">[ERROR: <?php _e('Please make sure to enter a valid Google Maps API Key inside Appearance -> Customize -> Theme settings', 'sleek_child') ?>]</p>
 <?php endif ?>

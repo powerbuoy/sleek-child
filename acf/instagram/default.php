@@ -1,17 +1,21 @@
-<section id="instagram">
+<?php if (is_active_widget('null_instagram_widget')) : ?>
+	<section id="instagram">
 
-	<?php if ($data['instagram-title'] or $data['instagram-description']) : ?>
-		<header>
+		<?php if ($data['instagram-title'] or $data['instagram-description']) : ?>
+			<header>
 
-			<?php if ($data['instagram-title']) : ?>
-				<h2><?php echo $data['instagram-title'] ?></h2>
-			<?php endif ?>
+				<?php if ($data['instagram-title']) : ?>
+					<h2><?php echo $data['instagram-title'] ?></h2>
+				<?php endif ?>
 
-			<?php echo $data['instagram-description'] ?>
+				<?php echo $data['instagram-description'] ?>
 
-		</header>
-	<?php endif ?>
+			</header>
+		<?php endif ?>
 
-	<?php the_widget('null_instagram_widget', 'username=' . $data['instagram-username'] . '&number=' . $data['instagram-limit'] . '&target=_blank') ?>
+		<?php the_widget('null_instagram_widget', 'username=' . $data['instagram-username'] . '&number=' . $data['instagram-limit'] . '&target=_blank') ?>
 
-</section>
+	</section>
+<?php else : ?>
+	<p>[ERROR: <?php printf(__('Please make sure to activate the WP Instagram Widget to enable this module: %s', 'sleek_child'), '<a href="https://wordpress.org/plugins/wp-instagram-widget/">wordpress.org/plugins/wp-instagram-widget/</a>') ?>]</p>
+<?php endif ?>

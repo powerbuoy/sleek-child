@@ -26,4 +26,6 @@
 		</script>
 
 	</section>
+<?php else : ?>
+	<p class="error">[ERROR: <?php _e('Please make sure to enter a valid Hubspot Portal ID inside Appearance -> Customize -> Theme settings', 'sleek_child') ?>]</p>
 <?php endif ?>

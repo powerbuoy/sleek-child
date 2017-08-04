@@ -9,8 +9,14 @@
 ***/
 .google-map {
 	height: 20rem;
+	overflow: hidden;
 
 	@media #{$bp-tablet} {
 		height: 30rem;
+	}
+
+	> img {
+		display: block;
+		width: 100%;
 	}
 }
