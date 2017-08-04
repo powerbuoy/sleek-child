@@ -17,7 +17,7 @@
 
 			<?php if ($block['text-block-image']) : ?>
 				<figure>
-					<?php echo wp_get_attachment_image($block['text-block-image'], 'large') ?>
+					<?php echo wp_get_attachment_image($block['text-block-image'], 'medium') ?>
 				</figure>
 			<?php endif ?>
 
