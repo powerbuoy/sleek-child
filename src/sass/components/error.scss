@@ -1,0 +1,8 @@
+p.error {
+	@include section;
+
+	background: $color-lightgray;
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+}
