@@ -1,6 +1,5 @@
 node_modules/
 .DS_Store
-dist/
 src/sass/icons.scss
 src/sass/icon-vars.scss
 src/sass/svg.scss
