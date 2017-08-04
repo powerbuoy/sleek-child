@@ -39,6 +39,8 @@
 			nextArrow: '<a role="button" class="slick-next"></a>'
 		};
 
+		// TODO: Add responsive setting
+
 		// Init slideshow
 		if (slides.length > numSlides) {
 			wrap.slick(config);
