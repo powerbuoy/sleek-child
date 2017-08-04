@@ -116,11 +116,27 @@ add_action('init', function () {
 ##############################################################
 # Add more options to Appearance -> Customize -> Theme Options
 # (then use your options with get_theme_mod('option_name') any way you like)
-/* add_action('customize_register', function ($wpCustomize) {
+add_action('customize_register', function ($wpCustomize) {
 	sleek_register_theme_options($wpCustomize, [
-		'option_name' => 'text'
+		'hubspot_portal_id' => 'text'
 	], 'sleek_child');
-}); */
+});
+
+add_action('wp_head', function () {
+	# HubSpot tracking code
+	if ($hsId = get_theme_mod('hubspot_portal_id')) {
+		echo '<!-- Start of Async HubSpot Analytics Code -->
+			<script type="text/javascript">
+				(function(d,s,i,r) {
+				if (d.getElementById(i)){return;}
+				var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+				n.id=i;n.src=\'//js.hs-analytics.net/analytics/\'+(Math.ceil(new Date()/r)*r)+\'/' . $hsId . '.js\';
+				e.parentNode.insertBefore(n, e);
+				})(document,"script","hs-analytics",300000);
+			</script>
+			<!-- End of Async HubSpot Analytics Code -->';
+	}
+});
 
 ##########################
 # Add more fields to users
