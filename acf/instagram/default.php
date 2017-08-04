@@ -1,4 +1,4 @@
-<?php if (is_active_widget('null_instagram_widget')) : ?>
+<?php if (class_exists('null_instagram_widget')) : ?>
 	<section id="instagram">
 
 		<?php if ($data['instagram-title'] or $data['instagram-description']) : ?>
