@@ -1,4 +1,10 @@
 #instagram {
+	> header {
+		@include section;
+
+		padding-bottom: 0;
+	}
+
 	ul {
 		margin: 0;
 		list-style: none;
