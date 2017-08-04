@@ -1,0 +1,32 @@
+#instagram {
+	ul {
+		margin: 0;
+		list-style: none;
+
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		> * {
+			overflow: hidden;
+			flex: 0 0 50%;
+			width: 50%;
+
+			@media #{$bp-tablet} {
+				flex: 0 0 25%;
+				width: 25%;
+			}
+		}
+
+		img {
+			display: block;
+			transform: scale(1);
+			transition: transform $transition-default $transition-easing;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+}

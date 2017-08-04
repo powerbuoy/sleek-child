@@ -1,0 +1,71 @@
+#gallery {
+	> header {
+		@include section;
+
+		padding-bottom: 0;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		> * {
+			overflow: hidden;
+			flex: 0 0 50%;
+			width: 50%;
+		}
+
+		figure {
+			display: block;
+			margin: 0;
+			position: relative;
+			overflow: hidden;
+
+			img {
+				display: block;
+				transform: scale(1);
+				transition: transform $transition-default $transition-easing;
+			}
+
+			figcaption {
+				background: $color-overlay;
+
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: $padding-default;
+
+				font-size: $font-size-small;
+				color: $color-white;
+
+				transform: translateY(100%);
+				transition: transform $transition-default $transition-easing;
+
+				h3 {
+					color: $color-white;
+				}
+
+				h3,
+				p {
+					margin: 0;
+				}
+			}
+
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+
+				figcaption {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}
