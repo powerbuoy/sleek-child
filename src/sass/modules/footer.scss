@@ -10,12 +10,18 @@
 	}
 
 	ul {
-		margin: 0;
+		@include icon-link($font-size-x-large);
+
+		margin-left: 0;
 		list-style: none;
 
 		li {
 			display: inline-block;
-			margin: 0 $margin-default;
+			margin: 0 $margin-small;
 		}
+	}
+
+	p {
+		margin: 0;
 	}
 }

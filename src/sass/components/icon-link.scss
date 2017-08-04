@@ -1,0 +1,28 @@
+@mixin icon-link ($size: $font-size-default) {
+	a {
+		font-size: 0;
+
+		&:before {
+			@include icon($icon-facebook);
+
+			margin: 0;
+			font-size: $size;
+		}
+
+		&[href*="facebook.com"]:before {
+			content: $icon-facebook;
+		}
+
+		&[href*="twitter.com"]:before {
+			content: $icon-twitter;
+		}
+
+		&[href*="linkedin.com"]:before {
+			content: $icon-linkedin;
+		}
+
+		&[href*="instagram.com"]:before {
+			content: $icon-instagram;
+		}
+	}
+}
