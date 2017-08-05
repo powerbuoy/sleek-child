@@ -1,21 +1,5 @@
 // Please note that this is just an example header, you probably want
 // to start from scratch here or at least delete most of it
-// LOL!
-@keyframes spin-and-zoom {
-	0% {
-		transform: rotate(0) scale(1);
-		color: inherit;
-	}
-	50% {
-		transform: rotate(180deg) scale(3);
-		color: $color-link;
-	}
-	100% {
-		transform: rotate(360deg) scale(1);
-		color: inherit;
-	}
-}
-
 // Prevent scroll when menu is open
 html.hash-active.hash-active-header {
 	overflow: hidden;
@@ -30,7 +14,8 @@ html.hash-active.hash-active-header {
 	align-items: center;
 	justify-content: space-between;
 
-	position: relative; // sticky
+	position: sticky; // relative
+	top: 0;
 	z-index: 99;
 
 	padding-top: $padding-default;
@@ -55,15 +40,28 @@ html.hash-active.hash-active-header {
 		font-size: 2rem;
 		line-height: 1;
 
+		// Make room for icon in low res
+		@media #{$bp-laptop-max} {
+			margin-left: 2.5rem;
+		}
+
+		// Icon
 		&:before {
 			@include icon($icon-book);
 
+			color: $color-link;
+			position: absolute;
+			left: -2.5rem;
+			top: 50%;
+			transform: translate(0, -50%);
 			margin: 0;
-			transition: transform $transition-easing $transition-default;
+			transition: all $transition-default $transition-easing;
 		}
 
-		&:hover:before {
-			animation: spin-and-zoom 1s infinite linear;
+		&:hover {
+			&:before {
+				transform: translate(0, -50%) rotate(-10deg) scale(1.4);
+			}
 		}
 	}
 
@@ -121,7 +119,7 @@ html.hash-active.hash-active-header {
 	// In low res
 	@media #{$bp-laptop-max} {
 		nav {
-			background: #222;
+			background: $color-white;
 
 			position: fixed;
 			left: 0;
@@ -265,7 +263,7 @@ html.hash-active.hash-active-header {
 
 	// Menu toggle
 	.menu-toggle {
-		@include burger-menu-icon($color-white);
+		@include burger-menu-icon($color-text);
 
 		z-index: 100;
 
@@ -281,7 +279,7 @@ html.hash-active.hash-active-header {
 		}
 
 		.menu-toggle {
-			@include burger-menu-icon-open($color-white);
+			@include burger-menu-icon-open($color-text);
 		}
 	}
 }

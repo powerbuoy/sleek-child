@@ -16,3 +16,10 @@
 
 // Our modules
 @import "modules/*";
+
+// Shrink everything slightly in low res
+html {
+	@media #{$bp-tablet-max} {
+		font-size: 80%;
+	}
+}
