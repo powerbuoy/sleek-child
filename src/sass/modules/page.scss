@@ -1,11 +1,11 @@
 #page {
 	header {
-		@include hero();
+		@include hero;
 	}
 
 	// Page without right col
 	> article {
-		@include section($site-width); // * .75
+		@include section;
 	}
 
 	// If the page has modules to the right, a div wraps the article and aside
@@ -36,18 +36,8 @@
 		}
 	}
 
-	// Page content
+	// Page content (regardless if two cols)
 	article {
-		// Give headings a lot of margin top here so that it's clear which paragraph it belongs to
-		#{$headings} {
-			&:not(:first-child) {
-				margin-top: $margin-large;
-			}
-		}
-
-		// Make the first paragraph stick out
-		p:first-of-type {
-			font-weight: bold;
-		}
+		@include post-content;
 	}
 }

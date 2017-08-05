@@ -4,18 +4,7 @@
 	}
 
 	article {
-		@include section($site-width); // * .75
-
-		// Give headings a lot of margin top here so that it's clear which paragraph it belongs to
-		#{$headings} {
-			&:not(:first-child) {
-				margin-top: $margin-large;
-			}
-		}
-
-		// Make the first paragraph stick out
-		p:first-of-type {
-			font-weight: bold;
-		}
+		@include section;
+		@include post-content;
 	}
 }

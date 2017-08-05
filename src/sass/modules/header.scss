@@ -24,23 +24,22 @@ html.hash-active.hash-active-header {
 #header {
 	@include section;
 
-	background: #222;
+	background: $color-white;
 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
+	position: relative; // sticky
+	z-index: 99;
+
 	padding-top: $padding-default;
 	padding-bottom: $padding-default;
 
-	color: #fff;
+	box-shadow: $shadow-1;
 
 	&::after {
 		display: none;
-	}
-
-	a {
-		color: #fff;
 	}
 
 	// Logo
