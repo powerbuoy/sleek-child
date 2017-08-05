@@ -10,7 +10,7 @@ $bp-desktop-max: '(max-width: 1199px)';
 
 // Buttons
 // Button size
-$button-padding-horizontal: 2.6rem;
+$button-padding-horizontal: 3.2rem;
 $button-padding-vertical: 1rem;
 $button-empty-padding-horizontal: $button-padding-vertical;
 $button-small-percentage: .75;
@@ -22,10 +22,10 @@ $button-transition: true;
 $button-border-width: 1px;
 $button-border-style: solid;
 $button-border-color: false; // false makes non ghost buttons have 0 border, true makes it 10% darker than bg
-$button-border-radius: 2rem;
+$button-border-radius: 0;
 
 // Button background
-$button-color: #1FBB82;
+$button-color: #f7c01c; // #ffcc34;
 $button-ghost-opacity: .1; // Opacity of a ghost buttons bg on hover
 $button-gradient: false; // false = no gradient, % = darken BG this much %
 $button-shadow: false; // shadow declaration or true for a default shadow
@@ -214,12 +214,12 @@ $letter-spacing-default: 0;
 $letter-spacing-heading: 0;
 
 // Color
-$color-text: #333;
-$color-heading: #444;
+$color-text: #000;
+$color-heading: #111;
 
 // Links
-$color-link: #06f;
-$color-link-hover: #09f;
+$color-link: $button-color;
+$color-link-hover: darken($color-link, 10%);
 $color-link-visited: #609;
 
 $text-decoration-link: none;
