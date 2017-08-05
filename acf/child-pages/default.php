@@ -48,5 +48,5 @@
 
 	</section>
 <?php else : ?>
-	<p class="error">[ERROR: <?php _e('This page does not have any child pages. You can remove this module until you add some.', 'sleek_child') ?>]</p>
+	<p class="error"><?php _e('This page does not have any child pages. You can remove this module until you add some.', 'sleek_child') ?></p>
 <?php endif ?>
