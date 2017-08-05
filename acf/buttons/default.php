@@ -3,9 +3,10 @@
 
 		<?php foreach ($data['buttons'] as $button) : ?>
 			<?php
+			var_dump($button['button-link']);
 				$url = $button['button-link']['url'];
 				$title = $button['button-link']['title'];
-				$target = strpos($url, 'http') === 0 ? 'target="_blank"' : ''; # TODO: Use button-link.target
+				$target = $button['button-link']['target'] ? 'target="' . $button['button-link']['target'] . '"' : '';
 				$color = $button['button-color'];
 				$ghost = $button['button-ghost'] ? 'button--ghost' : '';
 				$icon = $button['button-icon'];
