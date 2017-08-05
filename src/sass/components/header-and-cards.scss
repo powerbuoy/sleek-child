@@ -7,6 +7,16 @@
 		figure {
 			margin: -$padding-default;
 			margin-bottom: $padding-default;
+			overflow: hidden;
+
+			img {
+				transform: scale(1);
+				transition: transform $transition-default $transition-easing;
+
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
 		}
 	}
 
