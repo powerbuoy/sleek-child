@@ -1,0 +1,15 @@
+#share-post {
+	@include section;
+
+	ul {
+		@include icon-link($font-size-large);
+
+		margin-left: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 0 $margin-small;
+		}
+	}
+}
