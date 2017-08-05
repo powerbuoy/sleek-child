@@ -1,0 +1,11 @@
+@mixin blog-post {
+	header {
+		p {
+			@include separated-list;
+		}
+	}
+
+	> a:last-child {
+		@include button;
+	}
+}

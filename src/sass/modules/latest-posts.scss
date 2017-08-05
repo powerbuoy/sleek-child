@@ -1,3 +1,7 @@
 #latest-posts {
 	@include header-and-cards;
+
+	article {
+		@include blog-post;
+	}
 }

@@ -1,3 +1,7 @@
 #post-list {
 	@include header-and-cards;
+
+	article {
+		@include blog-post;
+	}
 }
