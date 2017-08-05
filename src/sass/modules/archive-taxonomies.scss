@@ -1,8 +1,6 @@
 #archive-taxonomies {
 	@include section;
 
-	padding-bottom: 0; // Because #posts always follows this
-
 	ul {
 		margin: 0;
 		list-style: none;
