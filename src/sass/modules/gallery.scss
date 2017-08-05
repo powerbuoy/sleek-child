@@ -39,17 +39,22 @@
 				bottom: 0;
 				padding: $padding-default;
 
-				font-size: $font-size-small;
 				color: $color-white;
+				font-style: normal;
+				text-align: left;
 
 				transform: translateY(100%);
 				transition: transform $transition-default $transition-easing;
 
 				h3 {
+					margin: 0 0 $margin-small;
 					color: $color-white;
+
+					&:last-child {
+						margin: 0;
+					}
 				}
 
-				h3,
 				p {
 					margin: 0;
 				}

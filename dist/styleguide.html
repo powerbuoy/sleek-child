@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?66399924");
-  src: url("icons/font/fontello.eot?66399924#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?66399924") format("woff2"), url("icons/font/fontello.woff?66399924") format("woff"), url("icons/font/fontello.ttf?66399924") format("truetype"), url("icons/font/fontello.svg?66399924#fontello") format("svg");
+  src: url("icons/font/fontello.eot?79765610");
+  src: url("icons/font/fontello.eot?79765610#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?79765610") format("woff2"), url("icons/font/fontello.woff?79765610") format("woff"), url("icons/font/fontello.ttf?79765610") format("truetype"), url("icons/font/fontello.svg?79765610#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?66399924#fontello') format('svg');
+    src: url('icons/font/fontello.svg?79765610#fontello') format('svg');
   }
 }
 */
@@ -1585,7 +1585,7 @@ h1, h2, h3, h4, h5, h6, .heading--1, .heading--2, .heading--3, .heading--4, .hea
   margin: 0 0 1.5rem;
   font-weight: normal;
   font-size: 3.6rem;
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   color: #111;
   line-height: 1.2;
   letter-spacing: 0; }
@@ -4165,6 +4165,51 @@ html.hash-active.hash-active-header {
     #post-list article > a:last-child:hover {
       color: #fff;
       text-decoration: none; }
+
+#post header p {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
+  #post header p > * {
+    display: inline-block; }
+    #post header p > *:not(:last-child):after {
+      content: " | ";
+      margin: 0 0; }
+
+#post > a:last-child {
+  background-color: #f7c01c;
+  border: 1px solid transparent;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 1rem 3.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.2;
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-shadow: none;
+  box-shadow: none; }
+  #post > a:last-child:hover {
+    background-color: #d8a408; }
+  #post > a:last-child:active {
+    background-color: #c09107; }
+  #post > a:last-child[class*="icon-"]:empty:not([value]) {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  #post > a:last-child a,
+  #post > a:last-child a:hover {
+    color: #fff;
+    text-decoration: none; }
+  #post > a:last-child:hover {
+    color: #fff;
+    text-decoration: none; }
 
 #post header {
   padding-left: 7.5%;
@@ -4655,8 +4700,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?66399924");
-  src: url("icons/font/fontello.eot?66399924#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?66399924") format("woff2"), url("icons/font/fontello.woff?66399924") format("woff"), url("icons/font/fontello.ttf?66399924") format("truetype"), url("icons/font/fontello.svg?66399924#fontello") format("svg");
+  src: url("icons/font/fontello.eot?79765610");
+  src: url("icons/font/fontello.eot?79765610#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?79765610") format("woff2"), url("icons/font/fontello.woff?79765610") format("woff"), url("icons/font/fontello.ttf?79765610") format("truetype"), url("icons/font/fontello.svg?79765610#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4666,7 +4711,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?66399924#fontello') format('svg');
+    src: url('icons/font/fontello.svg?79765610#fontello') format('svg');
   }
 }
 */
@@ -6239,7 +6284,7 @@ h1, h2, h3, h4, h5, h6, .heading--1, .heading--2, .heading--3, .heading--4, .hea
   margin: 0 0 1.5rem;
   font-weight: normal;
   font-size: 3.6rem;
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   color: #111;
   line-height: 1.2;
   letter-spacing: 0; }
@@ -8819,6 +8864,51 @@ html.hash-active.hash-active-header {
     #post-list article > a:last-child:hover {
       color: #fff;
       text-decoration: none; }
+
+#post header p {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
+  #post header p > * {
+    display: inline-block; }
+    #post header p > *:not(:last-child):after {
+      content: " | ";
+      margin: 0 0; }
+
+#post > a:last-child {
+  background-color: #f7c01c;
+  border: 1px solid transparent;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 1rem 3.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.2;
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-shadow: none;
+  box-shadow: none; }
+  #post > a:last-child:hover {
+    background-color: #d8a408; }
+  #post > a:last-child:active {
+    background-color: #c09107; }
+  #post > a:last-child[class*="icon-"]:empty:not([value]) {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  #post > a:last-child a,
+  #post > a:last-child a:hover {
+    color: #fff;
+    text-decoration: none; }
+  #post > a:last-child:hover {
+    color: #fff;
+    text-decoration: none; }
 
 #post header {
   padding-left: 7.5%;
