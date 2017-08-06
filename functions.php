@@ -1,4 +1,6 @@
 <?php
+require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
+
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
@@ -73,6 +75,9 @@ add_filter('acf/settings/show_admin', '__return_false');
 add_action('acf/init', function () {
 	# ACF in post types
 	sleek_register_acf([
+		# Fields avaiable for pages
+		'page' => ['video-hero'],
+
 		# Fields available for guides
 		'guide' => ['redirect-url']
 	], 'sleek_child');
