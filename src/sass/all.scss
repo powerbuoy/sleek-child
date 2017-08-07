@@ -1,10 +1,10 @@
-// Our config
-@import "config";
-
 // Icons (generated)
 @import "icon-vars";
 @import "icons";
 @import "svg";
+
+// Our SleekCSS config
+@import "config";
 
 // Third party
 @import "../../node_modules/normalize-css/normalize";
