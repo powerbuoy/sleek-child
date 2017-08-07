@@ -9,7 +9,7 @@
 		return;
 	}
 
-	var createMap = function (mapEl, lat, lng) {
+	var createMap = function (mapEl, lat, lng, infoWinContent) {
 		lat = parseFloat(lat);
 		lng = parseFloat(lng);
 
@@ -33,9 +33,22 @@
 				map: map
 			});
 
+			var infoWin = false;
+
+			if (infoWinContent) {
+				infoWin = new google.maps.InfoWindow({
+					content: '<div class="google-map-info-window">' + infoWinContent + '</div>'
+				});
+
+				marker.addListener('click', function () {
+					infoWin.open(map, marker);
+				});
+			}
+
 			return {
 				map: map,
-				marker: marker
+				marker: marker,
+				infoWin: infoWin
 			};
 		}
 
@@ -48,6 +61,8 @@
 			var lat = mapEl.attr('data-lat');
 			var lng = mapEl.attr('data-lng');
 			var address = mapEl.attr('data-google-map');
+			var infoWin = mapEl.find('.google-map-info-window');
+				infoWin = infoWin.length ? infoWin.html() : false;
 
 			if (address) {
 				address = JSON.parse(address);
@@ -60,7 +75,7 @@
 			if (address) {
 				$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key' + config.GOOGLE_MAPS_API_KEY, function (data) {
 					if (data && data.results && data.results.length && data.results[0].geometry && data.results[0].geometry.location) {
-						createMap(mapEl[0], data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
+						createMap(mapEl[0], data.results[0].geometry.location.lat, data.results[0].geometry.location.lng, infoWin);
 					}
 					else {
 					//	console.dir(data);
@@ -68,7 +83,7 @@
 				});
 			}
 			else {
-				createMap(mapEl[0], lat, lng);
+				createMap(mapEl[0], lat, lng, infoWin);
 			}
 		});
 	});
