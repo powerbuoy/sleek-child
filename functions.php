@@ -1,5 +1,6 @@
 <?php
 require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
+require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 
 ######################################
 # Modify WP's built in thumbnail sizes
