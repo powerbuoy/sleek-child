@@ -2,7 +2,7 @@
 	@include section;
 
 	ul {
-		@include icon-link($font-size-large);
+		@include auto-icons;
 
 		margin-left: 0;
 		list-style: none;
@@ -10,6 +10,15 @@
 		li {
 			display: inline-block;
 			margin: 0 $margin-small;
+		}
+
+		a {
+			font-size: 0;
+
+			&:before {
+				font-size: $font-size-x-large;
+				margin: 0;
+			}
 		}
 	}
 }

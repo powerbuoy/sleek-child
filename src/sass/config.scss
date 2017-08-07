@@ -138,6 +138,23 @@ $icon-round-color: #369;
 $icon-large-size: 2em;
 $icon-round-size: 2.2em;
 
+$auto-icons: (
+	'href*="facebook.com"': $icon-facebook,
+	'href*="twitter.com"': $icon-twitter,
+	'href*="linkedin.com"': $icon-linkedin,
+	'href*="instagram.com"': $icon-instagram,
+
+/*	'href$=".pdf"': $icon-pdf,
+	'href$=".doc"': $icon-document,
+
+	'href$=".jpg"': $icon-image,
+	'href$=".jpeg"': $icon-image,
+	'href$=".png"': $icon-image,
+	'href$=".gif"': $icon-image,
+	'href$=".bmp"': $icon-image,
+	'href$=".svg"': $icon-image */
+);
+
 // Layout
 // Site widths
 $site-width: 960px; // Max width

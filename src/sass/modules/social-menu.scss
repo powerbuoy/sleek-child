@@ -1,3 +1,10 @@
 #menu-social-menu {
-	@include icon-link($font-size-x-large);
+	@include auto-icons;
+
+	font-size: 0;
+
+	a:before {
+		font-size: $font-size-x-large;
+		margin: 0;
+	}
 }
