@@ -15,8 +15,24 @@
 		height: 30rem;
 	}
 
+	// Static map
 	> img {
 		display: block;
 		width: 100%;
+	}
+
+	// Info window (once JS maps have loaded (hence the div))
+	div .google-map-info-window {
+		@include text;
+
+		padding: $padding-default;
+
+		h2 {
+			font-size: $font-size-h3;
+		}
+
+		> :last-child {
+			margin-bottom: 0;
+		}
 	}
 }
