@@ -10,6 +10,8 @@
 			overflow: hidden;
 
 			img {
+				display: block;
+				width: 100%;
 				transform: scale(1);
 				transition: transform $transition-default $transition-easing;
 
@@ -36,6 +38,16 @@
 
 		article {
 			@include flex-width(50%, $gutter-default);
+
+			// NOTE: This is to bottom align any potential buttons
+		/*	display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-direction: column;
+
+			> a:last-child {
+				margin-top: auto;
+			} */
 		}
 	}
 }
