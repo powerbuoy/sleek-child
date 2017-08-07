@@ -1,0 +1,7 @@
+.button {
+	display: inline-block;
+	background: #369;
+	padding: 1rem 5rem;
+	color: #fff;
+	text-decoration: none;
+}
