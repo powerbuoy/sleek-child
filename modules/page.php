@@ -5,10 +5,6 @@
 
 			<h1><?php the_title() ?></h1>
 
-			<figure>
-				<?php the_post_thumbnail('large') ?>
-			</figure>
-
 			<?php if ($video = get_field('video-hero-code')) : ?>
 				<div class="video-hero">
 					<div class="video-hero__video">
@@ -23,6 +19,12 @@
 						]) ?>
 					</div>
 				</div>
+			<?php endif ?>
+
+			<?php if (has_post_thumbnail()) : ?>
+				<figure>
+					<?php the_post_thumbnail('large') ?>
+				</figure>
 			<?php endif ?>
 
 			<?php the_excerpt() ?>
