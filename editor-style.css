@@ -1,7 +1,9 @@
 .button {
-	display: inline-block;
-	background: #369;
-	padding: 1rem 5rem;
-	color: #fff;
-	text-decoration: none;
+	display: inline-block !important;
+	background: #06f !important;
+	margin: 0 !important;
+	padding: 1rem 5rem !important;
+	color: #fff !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
 }
