@@ -107,6 +107,24 @@
       "css": "instagram",
       "code": 62253,
       "src": "entypo"
+    },
+    {
+      "uid": "9daa1fdf0838118518a7e22715e83abc",
+      "css": "pdf",
+      "code": 61889,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "3c961c1a8d874815856fc6637dc5a13c",
+      "css": "image",
+      "code": 61893,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "5408be43f7c42bccee419c6be53fdef5",
+      "css": "document",
+      "code": 61686,
+      "src": "fontawesome"
     }
   ]
 }

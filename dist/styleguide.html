@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?29723558");
-  src: url("icons/font/fontello.eot?29723558#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?29723558") format("woff2"), url("icons/font/fontello.woff?29723558") format("woff"), url("icons/font/fontello.ttf?29723558") format("truetype"), url("icons/font/fontello.svg?29723558#fontello") format("svg");
+  src: url("icons/font/fontello.eot?50527432");
+  src: url("icons/font/fontello.eot?50527432#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?50527432") format("woff2"), url("icons/font/fontello.woff?50527432") format("woff"), url("icons/font/fontello.ttf?50527432") format("truetype"), url("icons/font/fontello.svg?50527432#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?29723558#fontello') format('svg');
+    src: url('icons/font/fontello.svg?50527432#fontello') format('svg');
   }
 }
 */
@@ -4055,7 +4055,7 @@ html.hash-active.hash-active-header {
       color: #fff;
       text-decoration: none; }
 
-#page header {
+#page > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -4073,15 +4073,15 @@ html.hash-active.hash-active-header {
   color: #fff;
   background: #000;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
-  #page header:after {
+  #page > header:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #page header {
+    #page > header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #page header figure, #page header:before {
+  #page > header figure, #page > header:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -4090,12 +4090,12 @@ html.hash-active.hash-active-header {
     z-index: -1;
     pointer-events: none;
     overflow: hidden; }
-  #page header:before {
+  #page > header:before {
     background: rgba(0, 0, 0, 0.1);
     display: none;
     content: "";
     display: block; }
-  #page header figure {
+  #page > header figure {
     margin: 0;
     z-index: -2;
     -webkit-transform: scale(1);
@@ -4105,48 +4105,48 @@ html.hash-active.hash-active-header {
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
-    #page header figure a {
+    #page > header figure a {
       display: block;
       height: 100%; }
-    #page header figure img {
+    #page > header figure img {
       width: 100%;
       height: auto; }
       @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        #page header figure img {
+        #page > header figure img {
           -o-object-fit: cover;
              object-fit: cover;
           -o-object-position: center center;
              object-position: center center;
           height: 100%; } }
-  #page header[style]:before {
+  #page > header[style]:before {
     z-index: 0; }
-  #page header[style] > * {
+  #page > header[style] > * {
     position: relative; }
-  #page header a:not(.button) {
+  #page > header a:not(.button) {
     color: #fff; }
   @media (min-width: 600px) {
-    #page header {
+    #page > header {
       padding-top: 8rem;
       padding-bottom: 8rem; } }
   @media (min-width: 1080px) {
-    #page header {
+    #page > header {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
-  #page header h1,
-  #page header h2 {
+  #page > header h1,
+  #page > header h2 {
     margin: 0;
     color: #fff; }
-  #page header p {
+  #page > header p {
     margin: 1.5rem 0 0;
     font-size: 1.2rem; }
-  #page header nav {
+  #page > header nav {
     margin-top: 3rem; }
-  #page header h1,
-  #page header h2,
-  #page header p {
+  #page > header h1,
+  #page > header h2,
+  #page > header p {
     max-width: 42rem; }
   @media (min-width: 1080px) {
-    #page header div.video-hero + figure {
+    #page > header div.video-hero + figure {
       display: none; } }
 
 #page > article {
@@ -4192,19 +4192,32 @@ html.hash-active.hash-active-header {
               align-items: stretch;
       -webkit-box-pack: justify;
               justify-content: space-between; }
-      #page > div article {
+      #page > div > article {
         -webkit-box-flex: 0;
                 flex: 0 0 70% - 1.5rem;
         width: calc(70% - 1.5rem); }
-      #page > div aside {
+      #page > div > aside {
         -webkit-box-flex: 0;
                 flex: 0 0 30% - 1.5rem;
         width: calc(30% - 1.5rem); } }
 
-#page article h1:not(:first-child), #page article h2:not(:first-child), #page article h3:not(:first-child), #page article h4:not(:first-child), #page article h5:not(:first-child), #page article h6:not(:first-child), #page article .heading--1:not(:first-child), #page article .heading--2:not(:first-child), #page article .heading--3:not(:first-child), #page article .heading--4:not(:first-child), #page article .heading--5:not(:first-child), #page article .heading--6:not(:first-child) {
+#page > article h1:not(:first-child), #page > article h2:not(:first-child), #page > article h3:not(:first-child), #page > article h4:not(:first-child), #page > article h5:not(:first-child), #page > article h6:not(:first-child), #page > article .heading--1:not(:first-child), #page > article .heading--2:not(:first-child), #page > article .heading--3:not(:first-child), #page > article .heading--4:not(:first-child), #page > article .heading--5:not(:first-child), #page > article .heading--6:not(:first-child),
+#page > div > article h1:not(:first-child),
+#page > div > article h2:not(:first-child),
+#page > div > article h3:not(:first-child),
+#page > div > article h4:not(:first-child),
+#page > div > article h5:not(:first-child),
+#page > div > article h6:not(:first-child),
+#page > div > article .heading--1:not(:first-child),
+#page > div > article .heading--2:not(:first-child),
+#page > div > article .heading--3:not(:first-child),
+#page > div > article .heading--4:not(:first-child),
+#page > div > article .heading--5:not(:first-child),
+#page > div > article .heading--6:not(:first-child) {
   margin-top: 3rem; }
 
-#page article p:first-of-type {
+#page > article p:first-of-type,
+#page > div > article p:first-of-type {
   font-weight: bold; }
 
 #post-list {
@@ -4368,7 +4381,7 @@ html.hash-active.hash-active-header {
     color: #fff;
     text-decoration: none; }
 
-#post header {
+#post > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -4385,15 +4398,15 @@ html.hash-active.hash-active-header {
   background-repeat: no-repeat;
   color: #fff;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
-  #post header:after {
+  #post > header:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #post header {
+    #post > header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #post header figure, #post header:before {
+  #post > header figure, #post > header:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -4402,12 +4415,12 @@ html.hash-active.hash-active-header {
     z-index: -1;
     pointer-events: none;
     overflow: hidden; }
-  #post header:before {
+  #post > header:before {
     background: rgba(0, 0, 0, 0.1);
     display: none;
     content: "";
     display: block; }
-  #post header figure {
+  #post > header figure {
     margin: 0;
     z-index: -2;
     -webkit-transform: scale(1);
@@ -4417,48 +4430,48 @@ html.hash-active.hash-active-header {
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
-    #post header figure a {
+    #post > header figure a {
       display: block;
       height: 100%; }
-    #post header figure img {
+    #post > header figure img {
       width: 100%;
       height: auto; }
       @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        #post header figure img {
+        #post > header figure img {
           -o-object-fit: cover;
              object-fit: cover;
           -o-object-position: center center;
              object-position: center center;
           height: 100%; } }
-  #post header[style]:before {
+  #post > header[style]:before {
     z-index: 0; }
-  #post header[style] > * {
+  #post > header[style] > * {
     position: relative; }
-  #post header a:not(.button) {
+  #post > header a:not(.button) {
     color: #fff; }
   @media (min-width: 600px) {
-    #post header {
+    #post > header {
       padding-top: 8rem;
       padding-bottom: 8rem; } }
   @media (min-width: 1080px) {
-    #post header {
+    #post > header {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
-  #post header h1,
-  #post header h2 {
+  #post > header h1,
+  #post > header h2 {
     margin: 0;
     color: #fff; }
-  #post header p {
+  #post > header p {
     margin: 1.5rem 0 0;
     font-size: 1.2rem; }
-  #post header nav {
+  #post > header nav {
     margin-top: 3rem; }
-  #post header h1,
-  #post header h2,
-  #post header p {
+  #post > header h1,
+  #post > header h2,
+  #post > header p {
     max-width: 42rem; }
 
-#post article {
+#post > article {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -4466,17 +4479,17 @@ html.hash-active.hash-active-header {
   margin: 0;
   padding-top: 4rem;
   padding-bottom: 4rem; }
-  #post article:after {
+  #post > article:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #post article {
+    #post > article {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #post article h1:not(:first-child), #post article h2:not(:first-child), #post article h3:not(:first-child), #post article h4:not(:first-child), #post article h5:not(:first-child), #post article h6:not(:first-child), #post article .heading--1:not(:first-child), #post article .heading--2:not(:first-child), #post article .heading--3:not(:first-child), #post article .heading--4:not(:first-child), #post article .heading--5:not(:first-child), #post article .heading--6:not(:first-child) {
+  #post > article h1:not(:first-child), #post > article h2:not(:first-child), #post > article h3:not(:first-child), #post > article h4:not(:first-child), #post > article h5:not(:first-child), #post > article h6:not(:first-child), #post > article .heading--1:not(:first-child), #post > article .heading--2:not(:first-child), #post > article .heading--3:not(:first-child), #post > article .heading--4:not(:first-child), #post > article .heading--5:not(:first-child), #post > article .heading--6:not(:first-child) {
     margin-top: 3rem; }
-  #post article p:first-of-type {
+  #post > article p:first-of-type {
     font-weight: bold; }
 
 #posts {
@@ -4928,8 +4941,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?29723558");
-  src: url("icons/font/fontello.eot?29723558#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?29723558") format("woff2"), url("icons/font/fontello.woff?29723558") format("woff"), url("icons/font/fontello.ttf?29723558") format("truetype"), url("icons/font/fontello.svg?29723558#fontello") format("svg");
+  src: url("icons/font/fontello.eot?50527432");
+  src: url("icons/font/fontello.eot?50527432#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?50527432") format("woff2"), url("icons/font/fontello.woff?50527432") format("woff"), url("icons/font/fontello.ttf?50527432") format("truetype"), url("icons/font/fontello.svg?50527432#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4939,7 +4952,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?29723558#fontello') format('svg');
+    src: url('icons/font/fontello.svg?50527432#fontello') format('svg');
   }
 }
 */
@@ -8982,7 +8995,7 @@ html.hash-active.hash-active-header {
       color: #fff;
       text-decoration: none; }
 
-#page header {
+#page > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -9000,15 +9013,15 @@ html.hash-active.hash-active-header {
   color: #fff;
   background: #000;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
-  #page header:after {
+  #page > header:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #page header {
+    #page > header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #page header figure, #page header:before {
+  #page > header figure, #page > header:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -9017,12 +9030,12 @@ html.hash-active.hash-active-header {
     z-index: -1;
     pointer-events: none;
     overflow: hidden; }
-  #page header:before {
+  #page > header:before {
     background: rgba(0, 0, 0, 0.1);
     display: none;
     content: "";
     display: block; }
-  #page header figure {
+  #page > header figure {
     margin: 0;
     z-index: -2;
     -webkit-transform: scale(1);
@@ -9032,48 +9045,48 @@ html.hash-active.hash-active-header {
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
-    #page header figure a {
+    #page > header figure a {
       display: block;
       height: 100%; }
-    #page header figure img {
+    #page > header figure img {
       width: 100%;
       height: auto; }
       @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        #page header figure img {
+        #page > header figure img {
           -o-object-fit: cover;
              object-fit: cover;
           -o-object-position: center center;
              object-position: center center;
           height: 100%; } }
-  #page header[style]:before {
+  #page > header[style]:before {
     z-index: 0; }
-  #page header[style] > * {
+  #page > header[style] > * {
     position: relative; }
-  #page header a:not(.button) {
+  #page > header a:not(.button) {
     color: #fff; }
   @media (min-width: 600px) {
-    #page header {
+    #page > header {
       padding-top: 8rem;
       padding-bottom: 8rem; } }
   @media (min-width: 1080px) {
-    #page header {
+    #page > header {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
-  #page header h1,
-  #page header h2 {
+  #page > header h1,
+  #page > header h2 {
     margin: 0;
     color: #fff; }
-  #page header p {
+  #page > header p {
     margin: 1.5rem 0 0;
     font-size: 1.2rem; }
-  #page header nav {
+  #page > header nav {
     margin-top: 3rem; }
-  #page header h1,
-  #page header h2,
-  #page header p {
+  #page > header h1,
+  #page > header h2,
+  #page > header p {
     max-width: 42rem; }
   @media (min-width: 1080px) {
-    #page header div.video-hero + figure {
+    #page > header div.video-hero + figure {
       display: none; } }
 
 #page > article {
@@ -9119,19 +9132,32 @@ html.hash-active.hash-active-header {
               align-items: stretch;
       -webkit-box-pack: justify;
               justify-content: space-between; }
-      #page > div article {
+      #page > div > article {
         -webkit-box-flex: 0;
                 flex: 0 0 70% - 1.5rem;
         width: calc(70% - 1.5rem); }
-      #page > div aside {
+      #page > div > aside {
         -webkit-box-flex: 0;
                 flex: 0 0 30% - 1.5rem;
         width: calc(30% - 1.5rem); } }
 
-#page article h1:not(:first-child), #page article h2:not(:first-child), #page article h3:not(:first-child), #page article h4:not(:first-child), #page article h5:not(:first-child), #page article h6:not(:first-child), #page article .heading--1:not(:first-child), #page article .heading--2:not(:first-child), #page article .heading--3:not(:first-child), #page article .heading--4:not(:first-child), #page article .heading--5:not(:first-child), #page article .heading--6:not(:first-child) {
+#page > article h1:not(:first-child), #page > article h2:not(:first-child), #page > article h3:not(:first-child), #page > article h4:not(:first-child), #page > article h5:not(:first-child), #page > article h6:not(:first-child), #page > article .heading--1:not(:first-child), #page > article .heading--2:not(:first-child), #page > article .heading--3:not(:first-child), #page > article .heading--4:not(:first-child), #page > article .heading--5:not(:first-child), #page > article .heading--6:not(:first-child),
+#page > div > article h1:not(:first-child),
+#page > div > article h2:not(:first-child),
+#page > div > article h3:not(:first-child),
+#page > div > article h4:not(:first-child),
+#page > div > article h5:not(:first-child),
+#page > div > article h6:not(:first-child),
+#page > div > article .heading--1:not(:first-child),
+#page > div > article .heading--2:not(:first-child),
+#page > div > article .heading--3:not(:first-child),
+#page > div > article .heading--4:not(:first-child),
+#page > div > article .heading--5:not(:first-child),
+#page > div > article .heading--6:not(:first-child) {
   margin-top: 3rem; }
 
-#page article p:first-of-type {
+#page > article p:first-of-type,
+#page > div > article p:first-of-type {
   font-weight: bold; }
 
 #post-list {
@@ -9295,7 +9321,7 @@ html.hash-active.hash-active-header {
     color: #fff;
     text-decoration: none; }
 
-#post header {
+#post > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -9312,15 +9338,15 @@ html.hash-active.hash-active-header {
   background-repeat: no-repeat;
   color: #fff;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
-  #post header:after {
+  #post > header:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #post header {
+    #post > header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #post header figure, #post header:before {
+  #post > header figure, #post > header:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -9329,12 +9355,12 @@ html.hash-active.hash-active-header {
     z-index: -1;
     pointer-events: none;
     overflow: hidden; }
-  #post header:before {
+  #post > header:before {
     background: rgba(0, 0, 0, 0.1);
     display: none;
     content: "";
     display: block; }
-  #post header figure {
+  #post > header figure {
     margin: 0;
     z-index: -2;
     -webkit-transform: scale(1);
@@ -9344,48 +9370,48 @@ html.hash-active.hash-active-header {
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
-    #post header figure a {
+    #post > header figure a {
       display: block;
       height: 100%; }
-    #post header figure img {
+    #post > header figure img {
       width: 100%;
       height: auto; }
       @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        #post header figure img {
+        #post > header figure img {
           -o-object-fit: cover;
              object-fit: cover;
           -o-object-position: center center;
              object-position: center center;
           height: 100%; } }
-  #post header[style]:before {
+  #post > header[style]:before {
     z-index: 0; }
-  #post header[style] > * {
+  #post > header[style] > * {
     position: relative; }
-  #post header a:not(.button) {
+  #post > header a:not(.button) {
     color: #fff; }
   @media (min-width: 600px) {
-    #post header {
+    #post > header {
       padding-top: 8rem;
       padding-bottom: 8rem; } }
   @media (min-width: 1080px) {
-    #post header {
+    #post > header {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
-  #post header h1,
-  #post header h2 {
+  #post > header h1,
+  #post > header h2 {
     margin: 0;
     color: #fff; }
-  #post header p {
+  #post > header p {
     margin: 1.5rem 0 0;
     font-size: 1.2rem; }
-  #post header nav {
+  #post > header nav {
     margin-top: 3rem; }
-  #post header h1,
-  #post header h2,
-  #post header p {
+  #post > header h1,
+  #post > header h2,
+  #post > header p {
     max-width: 42rem; }
 
-#post article {
+#post > article {
   padding-left: 7.5%;
   padding-right: 7.5%;
   display: block;
@@ -9393,17 +9419,17 @@ html.hash-active.hash-active-header {
   margin: 0;
   padding-top: 4rem;
   padding-bottom: 4rem; }
-  #post article:after {
+  #post > article:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1129px) {
-    #post article {
+    #post > article {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  #post article h1:not(:first-child), #post article h2:not(:first-child), #post article h3:not(:first-child), #post article h4:not(:first-child), #post article h5:not(:first-child), #post article h6:not(:first-child), #post article .heading--1:not(:first-child), #post article .heading--2:not(:first-child), #post article .heading--3:not(:first-child), #post article .heading--4:not(:first-child), #post article .heading--5:not(:first-child), #post article .heading--6:not(:first-child) {
+  #post > article h1:not(:first-child), #post > article h2:not(:first-child), #post > article h3:not(:first-child), #post > article h4:not(:first-child), #post > article h5:not(:first-child), #post > article h6:not(:first-child), #post > article .heading--1:not(:first-child), #post > article .heading--2:not(:first-child), #post > article .heading--3:not(:first-child), #post > article .heading--4:not(:first-child), #post > article .heading--5:not(:first-child), #post > article .heading--6:not(:first-child) {
     margin-top: 3rem; }
-  #post article p:first-of-type {
+  #post > article p:first-of-type {
     font-weight: bold; }
 
 #posts {

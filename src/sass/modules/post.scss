@@ -1,13 +1,13 @@
 #post {
 	@include blog-post;
 
-	header {
+	> header {
 		@include hero;
 
 		text-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .2);
 	}
 
-	article {
+	> article {
 		@include section;
 		@include post-content;
 	}

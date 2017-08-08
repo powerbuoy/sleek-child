@@ -1,5 +1,5 @@
 #page {
-	header {
+	> header {
 		@include hero;
 
 		background: $color-black;
@@ -18,6 +18,30 @@
 		@include section;
 	}
 
+	// Right col
+	> div > aside {
+		> * {
+			margin-bottom: $margin-large;
+		}
+
+		h2 {
+			font-size: $font-size-h4;
+		}
+
+		ul {
+			margin: 0;
+			list-style: none;
+
+			li {
+				margin-bottom: $margin-small;
+			}
+
+			ul {
+				margin: $margin-small 0 0 $margin-small;
+			}
+		}
+	}
+
 	// If the page has modules to the right, a div wraps the article and aside
 	> div {
 		@include section;
@@ -32,12 +56,12 @@
 			align-items: stretch;
 			justify-content: space-between;
 
-			article {
+			> article {
 				flex: 0 0 #{$primary-content-width} - #{$gutter-large / 2};
 				width: calc(#{$primary-content-width} - #{$gutter-large / 2});
 			}
 
-			aside {
+			> aside {
 				$aside-width: 100% - $primary-content-width;
 
 				flex: 0 0 #{$aside-width} - #{$gutter-large / 2};
@@ -47,7 +71,8 @@
 	}
 
 	// Page content (regardless if two cols)
-	article {
+	> article,
+	> div > article {
 		@include post-content;
 	}
 }

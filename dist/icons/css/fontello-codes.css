@@ -14,5 +14,8 @@
 .icon-lock:before { content: '\e80d'; } /* '' */
 .icon-lock-open:before { content: '\e80e'; } /* '' */
 .icon-mail:before { content: '\f0e0'; } /* '' */
+.icon-document:before { content: '\f0f6'; } /* '' */
+.icon-pdf:before { content: '\f1c1'; } /* '' */
+.icon-image:before { content: '\f1c5'; } /* '' */
 .icon-googleplus:before { content: '\f30f'; } /* '' */
 .icon-instagram:before { content: '\f32d'; } /* '' */
