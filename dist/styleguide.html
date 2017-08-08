@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?50527432");
-  src: url("icons/font/fontello.eot?50527432#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?50527432") format("woff2"), url("icons/font/fontello.woff?50527432") format("woff"), url("icons/font/fontello.ttf?50527432") format("truetype"), url("icons/font/fontello.svg?50527432#fontello") format("svg");
+  src: url("icons/font/fontello.eot?31063016");
+  src: url("icons/font/fontello.eot?31063016#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?31063016") format("woff2"), url("icons/font/fontello.woff?31063016") format("woff"), url("icons/font/fontello.ttf?31063016") format("truetype"), url("icons/font/fontello.svg?31063016#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?50527432#fontello') format('svg');
+    src: url('icons/font/fontello.svg?31063016#fontello') format('svg');
   }
 }
 */
@@ -194,6 +194,36 @@
   content: '\f0e0'; }
 
 /* '' */
+.icon-document:before {
+  content: '\f0f6'; }
+
+.icon-document.icon--after:before {
+  content: normal; }
+
+.icon-document.icon--after:after {
+  content: '\f0f6'; }
+
+/* '' */
+.icon-pdf:before {
+  content: '\f1c1'; }
+
+.icon-pdf.icon--after:before {
+  content: normal; }
+
+.icon-pdf.icon--after:after {
+  content: '\f1c1'; }
+
+/* '' */
+.icon-image:before {
+  content: '\f1c5'; }
+
+.icon-image.icon--after:before {
+  content: normal; }
+
+.icon-image.icon--after:after {
+  content: '\f1c5'; }
+
+/* '' */
 .icon-googleplus:before {
   content: '\f30f'; }
 
@@ -3231,6 +3261,71 @@ p.error {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
 
+#attachments a:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  content: "[NO-ICON]";
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  margin: 0 0.4em 0 0; }
+
+#attachments a[href*="facebook.com"]:before {
+  content: ""; }
+
+#attachments a[href*="twitter.com"]:before {
+  content: ""; }
+
+#attachments a[href*="linkedin.com"]:before {
+  content: ""; }
+
+#attachments a[href*="instagram.com"]:before {
+  content: ""; }
+
+#attachments a[href$=".pdf"]:before {
+  content: ""; }
+
+#attachments a[href$=".doc"]:before {
+  content: ""; }
+
+#attachments a[href$=".jpg"]:before {
+  content: ""; }
+
+#attachments a[href$=".jpeg"]:before {
+  content: ""; }
+
+#attachments a[href$=".png"]:before {
+  content: ""; }
+
+#attachments a[href$=".gif"]:before {
+  content: ""; }
+
+#attachments a[href$=".bmp"]:before {
+  content: ""; }
+
+#attachments a[href$=".svg"]:before {
+  content: ""; }
+
 #breadcrumbs {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -4166,6 +4261,20 @@ html.hash-active.hash-active-header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
 
+#page > div > aside > * {
+  margin-bottom: 3rem; }
+
+#page > div > aside h2 {
+  font-size: 1.6rem; }
+
+#page > div > aside ul {
+  margin: 0;
+  list-style: none; }
+  #page > div > aside ul li {
+    margin-bottom: 0.75rem; }
+  #page > div > aside ul ul {
+    margin: 0.75rem 0 0 0.75rem; }
+
 #page > div {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -4653,7 +4762,8 @@ html.hash-active.hash-active-header {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       /* Uncomment for 3D effect */
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+      margin: 0 0.4em 0 0; }
     #share-post ul a[href*="facebook.com"]:before {
       content: ""; }
     #share-post ul a[href*="twitter.com"]:before {
@@ -4662,6 +4772,22 @@ html.hash-active.hash-active-header {
       content: ""; }
     #share-post ul a[href*="instagram.com"]:before {
       content: ""; }
+    #share-post ul a[href$=".pdf"]:before {
+      content: ""; }
+    #share-post ul a[href$=".doc"]:before {
+      content: ""; }
+    #share-post ul a[href$=".jpg"]:before {
+      content: ""; }
+    #share-post ul a[href$=".jpeg"]:before {
+      content: ""; }
+    #share-post ul a[href$=".png"]:before {
+      content: ""; }
+    #share-post ul a[href$=".gif"]:before {
+      content: ""; }
+    #share-post ul a[href$=".bmp"]:before {
+      content: ""; }
+    #share-post ul a[href$=".svg"]:before {
+      content: ""; }
     #share-post ul li {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
@@ -4699,7 +4825,8 @@ html.hash-active.hash-active-header {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    margin: 0 0.4em 0 0; }
   #menu-social-menu a[href*="facebook.com"]:before {
     content: ""; }
   #menu-social-menu a[href*="twitter.com"]:before {
@@ -4708,6 +4835,22 @@ html.hash-active.hash-active-header {
     content: ""; }
   #menu-social-menu a[href*="instagram.com"]:before {
     content: ""; }
+  #menu-social-menu a[href$=".pdf"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".doc"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".jpg"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".jpeg"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".png"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".gif"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".bmp"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".svg"]:before {
+    content: ""; }
   #menu-social-menu a:before {
     font-size: 1.8rem;
     margin: 0; }
@@ -4941,8 +5084,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?50527432");
-  src: url("icons/font/fontello.eot?50527432#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?50527432") format("woff2"), url("icons/font/fontello.woff?50527432") format("woff"), url("icons/font/fontello.ttf?50527432") format("truetype"), url("icons/font/fontello.svg?50527432#fontello") format("svg");
+  src: url("icons/font/fontello.eot?31063016");
+  src: url("icons/font/fontello.eot?31063016#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?31063016") format("woff2"), url("icons/font/fontello.woff?31063016") format("woff"), url("icons/font/fontello.ttf?31063016") format("truetype"), url("icons/font/fontello.svg?31063016#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4952,7 +5095,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?50527432#fontello') format('svg');
+    src: url('icons/font/fontello.svg?31063016#fontello') format('svg');
   }
 }
 */
@@ -5134,6 +5277,36 @@ html.hash-active.hash-active-header {
   content: '\f0e0'; }
 
 /* '' */
+.icon-document:before {
+  content: '\f0f6'; }
+
+.icon-document.icon--after:before {
+  content: normal; }
+
+.icon-document.icon--after:after {
+  content: '\f0f6'; }
+
+/* '' */
+.icon-pdf:before {
+  content: '\f1c1'; }
+
+.icon-pdf.icon--after:before {
+  content: normal; }
+
+.icon-pdf.icon--after:after {
+  content: '\f1c1'; }
+
+/* '' */
+.icon-image:before {
+  content: '\f1c5'; }
+
+.icon-image.icon--after:before {
+  content: normal; }
+
+.icon-image.icon--after:after {
+  content: '\f1c5'; }
+
+/* '' */
 .icon-googleplus:before {
   content: '\f30f'; }
 
@@ -8171,6 +8344,71 @@ p.error {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
 
+#attachments a:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  content: "[NO-ICON]";
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  margin: 0 0.4em 0 0; }
+
+#attachments a[href*="facebook.com"]:before {
+  content: ""; }
+
+#attachments a[href*="twitter.com"]:before {
+  content: ""; }
+
+#attachments a[href*="linkedin.com"]:before {
+  content: ""; }
+
+#attachments a[href*="instagram.com"]:before {
+  content: ""; }
+
+#attachments a[href$=".pdf"]:before {
+  content: ""; }
+
+#attachments a[href$=".doc"]:before {
+  content: ""; }
+
+#attachments a[href$=".jpg"]:before {
+  content: ""; }
+
+#attachments a[href$=".jpeg"]:before {
+  content: ""; }
+
+#attachments a[href$=".png"]:before {
+  content: ""; }
+
+#attachments a[href$=".gif"]:before {
+  content: ""; }
+
+#attachments a[href$=".bmp"]:before {
+  content: ""; }
+
+#attachments a[href$=".svg"]:before {
+  content: ""; }
+
 #breadcrumbs {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -9106,6 +9344,20 @@ html.hash-active.hash-active-header {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
 
+#page > div > aside > * {
+  margin-bottom: 3rem; }
+
+#page > div > aside h2 {
+  font-size: 1.6rem; }
+
+#page > div > aside ul {
+  margin: 0;
+  list-style: none; }
+  #page > div > aside ul li {
+    margin-bottom: 0.75rem; }
+  #page > div > aside ul ul {
+    margin: 0.75rem 0 0 0.75rem; }
+
 #page > div {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -9593,7 +9845,8 @@ html.hash-active.hash-active-header {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       /* Uncomment for 3D effect */
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+      margin: 0 0.4em 0 0; }
     #share-post ul a[href*="facebook.com"]:before {
       content: ""; }
     #share-post ul a[href*="twitter.com"]:before {
@@ -9602,6 +9855,22 @@ html.hash-active.hash-active-header {
       content: ""; }
     #share-post ul a[href*="instagram.com"]:before {
       content: ""; }
+    #share-post ul a[href$=".pdf"]:before {
+      content: ""; }
+    #share-post ul a[href$=".doc"]:before {
+      content: ""; }
+    #share-post ul a[href$=".jpg"]:before {
+      content: ""; }
+    #share-post ul a[href$=".jpeg"]:before {
+      content: ""; }
+    #share-post ul a[href$=".png"]:before {
+      content: ""; }
+    #share-post ul a[href$=".gif"]:before {
+      content: ""; }
+    #share-post ul a[href$=".bmp"]:before {
+      content: ""; }
+    #share-post ul a[href$=".svg"]:before {
+      content: ""; }
     #share-post ul li {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
@@ -9639,7 +9908,8 @@ html.hash-active.hash-active-header {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    margin: 0 0.4em 0 0; }
   #menu-social-menu a[href*="facebook.com"]:before {
     content: ""; }
   #menu-social-menu a[href*="twitter.com"]:before {
@@ -9648,6 +9918,22 @@ html.hash-active.hash-active-header {
     content: ""; }
   #menu-social-menu a[href*="instagram.com"]:before {
     content: ""; }
+  #menu-social-menu a[href$=".pdf"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".doc"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".jpg"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".jpeg"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".png"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".gif"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".bmp"]:before {
+    content: ""; }
+  #menu-social-menu a[href$=".svg"]:before {
+    content: ""; }
   #menu-social-menu a:before {
     font-size: 1.8rem;
     margin: 0; }
