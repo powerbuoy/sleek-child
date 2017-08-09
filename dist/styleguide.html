@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?27953693");
-  src: url("icons/font/fontello.eot?27953693#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?27953693") format("woff2"), url("icons/font/fontello.woff?27953693") format("woff"), url("icons/font/fontello.ttf?27953693") format("truetype"), url("icons/font/fontello.svg?27953693#fontello") format("svg");
+  src: url("icons/font/fontello.eot?63217131");
+  src: url("icons/font/fontello.eot?63217131#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?63217131") format("woff2"), url("icons/font/fontello.woff?63217131") format("woff"), url("icons/font/fontello.ttf?63217131") format("truetype"), url("icons/font/fontello.svg?63217131#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?27953693#fontello') format('svg');
+    src: url('icons/font/fontello.svg?63217131#fontello') format('svg');
   }
 }
 */
@@ -3349,7 +3349,7 @@ p.error {
           transition: width 0.2s ease-out; }
         #archive-taxonomies ul > li > a:hover:after, #archive-taxonomies ul > li > a.active:after {
           width: 100%; }
-      #archive-taxonomies ul > li.active > a:after, #archive-taxonomies ul > li.active-ancestor > a:after, #archive-taxonomies ul > li.active-parent > a:after {
+      #archive-taxonomies ul > li.active > a:after, #archive-taxonomies ul > li.active-ancestor > a:after, #archive-taxonomies ul > li.active-parent > a:after, #archive-taxonomies ul > li:hover > a:after {
         width: 100%; }
     #archive-taxonomies ul li {
       margin-right: 1.5rem; }
@@ -3787,7 +3787,7 @@ html.hash-active.hash-active-header {
           transition: width 0.2s ease-out; }
         #header nav div > ul > li > a:hover:after, #header nav div > ul > li > a.active:after {
           width: 100%; }
-      #header nav div > ul > li.active > a:after, #header nav div > ul > li.active-ancestor > a:after, #header nav div > ul > li.active-parent > a:after {
+      #header nav div > ul > li.active > a:after, #header nav div > ul > li.active-ancestor > a:after, #header nav div > ul > li.active-parent > a:after, #header nav div > ul > li:hover > a:after {
         width: 100%; }
   #header nav .widget_search {
     display: none; }
@@ -3817,6 +3817,7 @@ html.hash-active.hash-active-header {
       padding-top: 0;
       padding-bottom: 0; }
       #header nav div > ul > li {
+        position: relative;
         display: inline-block;
         margin: 0 0 0 1.5rem; }
         #header nav div > ul > li > a {
@@ -4966,14 +4967,6 @@ html.hash-active.hash-active-header {
     color: #fff; }
   #text-block a:not(.button) {
     color: #fff; }
-  #text-block .auto-icons a {
-    display: block;
-    margin: 0 0 1.5rem;
-    text-align: center; }
-    #text-block .auto-icons a:before {
-      display: block;
-      margin: 0 auto 0.75rem;
-      font-size: 1.8rem; }
 
 #text-blocks {
   padding-left: 7.5%;
@@ -5128,8 +5121,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?27953693");
-  src: url("icons/font/fontello.eot?27953693#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?27953693") format("woff2"), url("icons/font/fontello.woff?27953693") format("woff"), url("icons/font/fontello.ttf?27953693") format("truetype"), url("icons/font/fontello.svg?27953693#fontello") format("svg");
+  src: url("icons/font/fontello.eot?63217131");
+  src: url("icons/font/fontello.eot?63217131#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?63217131") format("woff2"), url("icons/font/fontello.woff?63217131") format("woff"), url("icons/font/fontello.ttf?63217131") format("truetype"), url("icons/font/fontello.svg?63217131#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5139,7 +5132,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?27953693#fontello') format('svg');
+    src: url('icons/font/fontello.svg?63217131#fontello') format('svg');
   }
 }
 */
@@ -8476,7 +8469,7 @@ p.error {
           transition: width 0.2s ease-out; }
         #archive-taxonomies ul > li > a:hover:after, #archive-taxonomies ul > li > a.active:after {
           width: 100%; }
-      #archive-taxonomies ul > li.active > a:after, #archive-taxonomies ul > li.active-ancestor > a:after, #archive-taxonomies ul > li.active-parent > a:after {
+      #archive-taxonomies ul > li.active > a:after, #archive-taxonomies ul > li.active-ancestor > a:after, #archive-taxonomies ul > li.active-parent > a:after, #archive-taxonomies ul > li:hover > a:after {
         width: 100%; }
     #archive-taxonomies ul li {
       margin-right: 1.5rem; }
@@ -8914,7 +8907,7 @@ html.hash-active.hash-active-header {
           transition: width 0.2s ease-out; }
         #header nav div > ul > li > a:hover:after, #header nav div > ul > li > a.active:after {
           width: 100%; }
-      #header nav div > ul > li.active > a:after, #header nav div > ul > li.active-ancestor > a:after, #header nav div > ul > li.active-parent > a:after {
+      #header nav div > ul > li.active > a:after, #header nav div > ul > li.active-ancestor > a:after, #header nav div > ul > li.active-parent > a:after, #header nav div > ul > li:hover > a:after {
         width: 100%; }
   #header nav .widget_search {
     display: none; }
@@ -8944,6 +8937,7 @@ html.hash-active.hash-active-header {
       padding-top: 0;
       padding-bottom: 0; }
       #header nav div > ul > li {
+        position: relative;
         display: inline-block;
         margin: 0 0 0 1.5rem; }
         #header nav div > ul > li > a {
@@ -10093,14 +10087,6 @@ html.hash-active.hash-active-header {
     color: #fff; }
   #text-block a:not(.button) {
     color: #fff; }
-  #text-block .auto-icons a {
-    display: block;
-    margin: 0 0 1.5rem;
-    text-align: center; }
-    #text-block .auto-icons a:before {
-      display: block;
-      margin: 0 auto 0.75rem;
-      font-size: 1.8rem; }
 
 #text-blocks {
   padding-left: 7.5%;

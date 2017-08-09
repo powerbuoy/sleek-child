@@ -46,7 +46,8 @@
 
 		&.active,
 		&.active-ancestor,
-		&.active-parent {
+		&.active-parent,
+		&:hover {
 			> a {
 				@include animated-underline-active;
 			}
