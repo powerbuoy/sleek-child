@@ -27,14 +27,12 @@
 			margin-right: $margin-default;
 
 			a {
-				font-size: $font-size-small;
 				text-transform: uppercase;
 				color: $color-darkgray;
 			}
 
 			&.active > a {
 				color: $color-link;
-				font-weight: bold;
 			}
 		}
 	}
