@@ -1,7 +1,19 @@
 @mixin blog-post {
 	header {
+		h2 {
+			margin-bottom: $margin-small;
+		}
+
 		p {
-			@include separated-list;
+			@include separated-list(' | ', $margin-small / 2);
+
+			font-size: $font-size-small;
+			text-transform: uppercase;
+			color: $color-gray;
+
+			> *:after {
+				color: $color-border;
+			}
 		}
 	}
 

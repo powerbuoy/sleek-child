@@ -28,13 +28,13 @@
 
 			a {
 				font-size: $font-size-small;
-				font-weight: bold;
 				text-transform: uppercase;
-				color: $color-gray;
+				color: $color-darkgray;
 			}
 
 			&.active > a {
 				color: $color-link;
+				font-weight: bold;
 			}
 		}
 	}
