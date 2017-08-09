@@ -1,0 +1,55 @@
+@mixin animated-underline ($color: $color-link) {
+	position: relative;
+
+	&:after {
+		background: $color;
+
+		display: block;
+		content: "";
+
+		width: 0%;
+		height: .25rem;
+
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+
+		transform: translateX(-50%);
+		transition: width $transition-default $transition-easing;
+	}
+
+	&:hover,
+	&.active {
+		@include animated-underline-active;
+	}
+}
+
+@mixin animated-underline-active {
+	&:after {
+		width: 100%;
+	}
+}
+
+@mixin animated-underline-menu ($color: $color-link) {
+	margin: 0;
+	list-style: none;
+
+	> li {
+		display: inline-block;
+
+		> a {
+			@include animated-underline($color);
+
+			display: inline-block;
+			padding: $padding-small 0;
+		}
+
+		&.active,
+		&.active-ancestor,
+		&.active-parent {
+			> a {
+				@include animated-underline-active;
+			}
+		}
+	}
+}

@@ -46,10 +46,6 @@
 	> div {
 		@include section;
 
-		&:after {
-			display: none;
-		}
-
 		// Display them in columns in high res
 		@media #{$bp-tablet} {
 			display: flex;

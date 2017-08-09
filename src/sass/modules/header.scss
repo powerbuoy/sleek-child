@@ -1,5 +1,3 @@
-// Please note that this is just an example header, you probably want
-// to start from scratch here or at least delete most of it
 // Prevent scroll when menu is open
 html.hash-active.hash-active-header {
 	overflow: hidden;
@@ -14,7 +12,7 @@ html.hash-active.hash-active-header {
 	align-items: center;
 	justify-content: space-between;
 
-	position: sticky; // relative
+	position: sticky;
 	top: 0;
 	z-index: 99;
 
@@ -23,94 +21,22 @@ html.hash-active.hash-active-header {
 
 	box-shadow: $shadow-1;
 
-	&::after {
-		display: none;
-	}
-
 	a {
 		color: inherit;
 	}
 
 	// Logo
 	.site-logo {
-		display: block;
-		position: relative;
-		z-index: 100;
-
-		font-size: 2rem;
-		line-height: 1;
-
-		// Make room for icon in low res
-		@media #{$bp-laptop-max} {
-			margin-left: 2.5rem;
-		}
-
-		// Icon
-		&:before {
-			@include icon($icon-book);
-
-			color: $color-link;
-			position: absolute;
-			left: -2.5rem;
-			top: 50%;
-			transform: translate(0, -50%);
-			margin: 0;
-			transition: all $transition-default $transition-easing;
-		}
-
-		&:hover {
-			&:before {
-				transform: translate(0, -50%) rotate(-10deg) scale(1.4);
-			}
-		}
+		// See site-logo.scss
 	}
 
 	// Nav
 	nav {
 		div > ul {
-			margin: 0;
-			list-style: none;
-
-			> li {
-				position: relative;
-
-				> a {
-					display: inline-block;
-					position: relative;
-
-					&:after {
-						background: $color-link;
-
-						display: block;
-						content: "";
-
-						width: 0%;
-						height: .25rem;
-
-						position: absolute;
-						left: 50%;
-						bottom: -.25rem;
-
-						transform: translateX(-50%);
-						transition: width $transition-default $transition-easing;
-					}
-				}
-
-				&.menu-moduler > a:after {
-					display: none;
-				}
-
-				&.active > a,
-				&.active-ancestor > a,
-				&.active-parent > a,
-				& > a:hover {
-					&:after {
-						width: 100%;
-					}
-				}
-			}
+			@include animated-underline-menu;
 		}
 
+		// TODO: Search
 		.widget_search {
 			display: none;
 		}
@@ -155,12 +81,7 @@ html.hash-active.hash-active-header {
 					margin: 0 0 0 $margin-default;
 
 					> a {
-						padding-top: 1.5rem;
-						padding-bottom: 1.5rem;
-
-						&:after {
-							bottom: 0;
-						}
+						padding: $padding-default 0;
 					}
 
 					// Sub menu

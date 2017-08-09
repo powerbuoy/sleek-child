@@ -1,0 +1,35 @@
+// Logo
+.site-logo {
+	display: block;
+	position: relative;
+	z-index: 100;
+
+	font-size: $site-logo-size;
+	line-height: 1;
+
+	// Make room for icon in low res
+	@media #{$bp-laptop-max} {
+		margin-left: 2.5rem;
+	}
+
+	// Icon
+	&:before {
+		@include icon($icon-book);
+
+		margin: 0;
+		color: $color-link;
+
+		position: absolute;
+		left: -2.5rem;
+		top: 50%;
+		transform: translate(0, -50%);
+
+		transition: all $transition-default $transition-easing;
+	}
+
+	&:hover {
+		&:before {
+			transform: translate(0, -50%) rotate(-10deg) scale(1.4); // :P
+		}
+	}
+}

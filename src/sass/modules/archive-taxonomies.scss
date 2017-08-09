@@ -1,13 +1,41 @@
 #archive-taxonomies {
 	@include section;
 
+	background: $color-white;
+
+	padding-top: 0;
+	padding-bottom: 0;
+
+	position: sticky;
+	top: $header-height;
+	z-index: 99;
+
+	@media #{$bp-tablet} {
+		top: $header-height-tablet;
+	}
+
+	box-shadow: $shadow-1;
+
+	h2 {
+		@include a11y-hide;
+	}
+
 	ul {
-		margin: 0;
-		list-style: none;
+		@include animated-underline-menu;
 
 		li {
-			display: inline-block;
-			margin: 0 $margin-default 0 0;
+			margin-right: $margin-default;
+
+			a {
+				font-size: $font-size-small;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: $color-gray;
+			}
+
+			&.active > a {
+				color: $color-link;
+			}
 		}
 	}
 }
