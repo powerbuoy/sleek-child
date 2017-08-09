@@ -7,4 +7,22 @@
 	h2 {
 		color: $color-white;
 	}
+
+	a:not(.button) {
+		color: $color-white;
+	}
+
+	.auto-icons {
+		a {
+			display: block;
+			margin: 0 0 $margin-default;
+			text-align: center;
+
+			&:before {
+				display: block;
+				margin: 0 auto $margin-small;
+				font-size: $font-size-x-large;
+			}
+		}
+	}
 }

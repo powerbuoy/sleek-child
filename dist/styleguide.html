@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?63751144");
-  src: url("icons/font/fontello.eot?63751144#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?63751144") format("woff2"), url("icons/font/fontello.woff?63751144") format("woff"), url("icons/font/fontello.ttf?63751144") format("truetype"), url("icons/font/fontello.svg?63751144#fontello") format("svg");
+  src: url("icons/font/fontello.eot?27953693");
+  src: url("icons/font/fontello.eot?27953693#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?27953693") format("woff2"), url("icons/font/fontello.woff?27953693") format("woff"), url("icons/font/fontello.ttf?27953693") format("truetype"), url("icons/font/fontello.svg?27953693#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?63751144#fontello') format('svg');
+    src: url('icons/font/fontello.svg?27953693#fontello') format('svg');
   }
 }
 */
@@ -604,7 +604,11 @@ table {
 	'href$=".png"': $icon-image,
 	'href$=".gif"': $icon-image,
 	'href$=".bmp"': $icon-image,
-	'href$=".svg"': $icon-image
+	'href$=".svg"': $icon-image,
+
+	'href^="mailto:"': $icon-mail,
+	'href^="tel:"': $icon-phone,
+	'href*="/maps"': $icon-globe
 ) !default; */
 /**
  * @arrow
@@ -3346,6 +3350,15 @@ p.error {
 #attachments a[href$=".svg"]:before {
   content: ""; }
 
+#attachments a[href^="mailto:"]:before {
+  content: ""; }
+
+#attachments a[href^="tel:"]:before {
+  content: ""; }
+
+#attachments a[href*="/maps"]:before {
+  content: ""; }
+
 #breadcrumbs {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -4692,6 +4705,12 @@ html.hash-active.hash-active-header {
       content: ""; }
     #share-post ul a[href$=".svg"]:before {
       content: ""; }
+    #share-post ul a[href^="mailto:"]:before {
+      content: ""; }
+    #share-post ul a[href^="tel:"]:before {
+      content: ""; }
+    #share-post ul a[href*="/maps"]:before {
+      content: ""; }
     #share-post ul li {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
@@ -4806,6 +4825,12 @@ html.hash-active.hash-active-header {
     content: ""; }
   #menu-social-menu a[href$=".svg"]:before {
     content: ""; }
+  #menu-social-menu a[href^="mailto:"]:before {
+    content: ""; }
+  #menu-social-menu a[href^="tel:"]:before {
+    content: ""; }
+  #menu-social-menu a[href*="/maps"]:before {
+    content: ""; }
   #menu-social-menu a:before {
     font-size: 1.8rem;
     margin: 0; }
@@ -4865,6 +4890,16 @@ html.hash-active.hash-active-header {
           height: 100%; } }
   #text-block h2 {
     color: #fff; }
+  #text-block a:not(.button) {
+    color: #fff; }
+  #text-block .auto-icons a {
+    display: block;
+    margin: 0 0 1.5rem;
+    text-align: center; }
+    #text-block .auto-icons a:before {
+      display: block;
+      margin: 0 auto 0.75rem;
+      font-size: 1.8rem; }
 
 #text-blocks {
   padding-left: 7.5%;
@@ -5019,8 +5054,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?63751144");
-  src: url("icons/font/fontello.eot?63751144#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?63751144") format("woff2"), url("icons/font/fontello.woff?63751144") format("woff"), url("icons/font/fontello.ttf?63751144") format("truetype"), url("icons/font/fontello.svg?63751144#fontello") format("svg");
+  src: url("icons/font/fontello.eot?27953693");
+  src: url("icons/font/fontello.eot?27953693#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?27953693") format("woff2"), url("icons/font/fontello.woff?27953693") format("woff"), url("icons/font/fontello.ttf?27953693") format("truetype"), url("icons/font/fontello.svg?27953693#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5030,7 +5065,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?63751144#fontello') format('svg');
+    src: url('icons/font/fontello.svg?27953693#fontello') format('svg');
   }
 }
 */
@@ -5622,7 +5657,11 @@ table {
 	'href$=".png"': $icon-image,
 	'href$=".gif"': $icon-image,
 	'href$=".bmp"': $icon-image,
-	'href$=".svg"': $icon-image
+	'href$=".svg"': $icon-image,
+
+	'href^="mailto:"': $icon-mail,
+	'href^="tel:"': $icon-phone,
+	'href*="/maps"': $icon-globe
 ) !default; */
 /**
  * @arrow
@@ -8364,6 +8403,15 @@ p.error {
 #attachments a[href$=".svg"]:before {
   content: ""; }
 
+#attachments a[href^="mailto:"]:before {
+  content: ""; }
+
+#attachments a[href^="tel:"]:before {
+  content: ""; }
+
+#attachments a[href*="/maps"]:before {
+  content: ""; }
+
 #breadcrumbs {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -9710,6 +9758,12 @@ html.hash-active.hash-active-header {
       content: ""; }
     #share-post ul a[href$=".svg"]:before {
       content: ""; }
+    #share-post ul a[href^="mailto:"]:before {
+      content: ""; }
+    #share-post ul a[href^="tel:"]:before {
+      content: ""; }
+    #share-post ul a[href*="/maps"]:before {
+      content: ""; }
     #share-post ul li {
       display: inline-block;
       margin: 0 1.5rem 0 0; }
@@ -9824,6 +9878,12 @@ html.hash-active.hash-active-header {
     content: ""; }
   #menu-social-menu a[href$=".svg"]:before {
     content: ""; }
+  #menu-social-menu a[href^="mailto:"]:before {
+    content: ""; }
+  #menu-social-menu a[href^="tel:"]:before {
+    content: ""; }
+  #menu-social-menu a[href*="/maps"]:before {
+    content: ""; }
   #menu-social-menu a:before {
     font-size: 1.8rem;
     margin: 0; }
@@ -9883,6 +9943,16 @@ html.hash-active.hash-active-header {
           height: 100%; } }
   #text-block h2 {
     color: #fff; }
+  #text-block a:not(.button) {
+    color: #fff; }
+  #text-block .auto-icons a {
+    display: block;
+    margin: 0 0 1.5rem;
+    text-align: center; }
+    #text-block .auto-icons a:before {
+      display: block;
+      margin: 0 auto 0.75rem;
+      font-size: 1.8rem; }
 
 #text-blocks {
   padding-left: 7.5%;
