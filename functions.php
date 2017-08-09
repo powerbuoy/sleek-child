@@ -87,7 +87,7 @@ add_action('acf/init', function () {
 	sleek_register_acf_modules([
 		# Module areas available on pages
 		'page' => [
-			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery'],
+			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery', 'divider'],
 			'next-to-content' => ['page-menu', 'text-block', 'video', 'contact-form', 'attachments'],
 			'inside-hero' => ['buttons']
 		]
