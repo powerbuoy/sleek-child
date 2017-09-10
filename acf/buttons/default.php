@@ -3,7 +3,6 @@
 
 		<?php foreach ($data['buttons'] as $button) : ?>
 			<?php
-			var_dump($button['button-link']);
 				$url = $button['button-link']['url'];
 				$title = $button['button-link']['title'];
 				$target = $button['button-link']['target'] ? 'target="' . $button['button-link']['target'] . '"' : '';
