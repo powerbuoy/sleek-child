@@ -25,10 +25,10 @@ add_action('after_setup_theme', function () {
 	update_option('large_crop', 1);
 
 	# Now set the sizes again so we can specify our own crop  (remove this too if you want users to set their own sizes)
-	add_image_size('thumbnail', 600, 400, ['center', 'top']);
-	add_image_size('medium', 900, 600, ['center', 'top']);
-	add_image_size('medium_large', 1200, 800, ['center', 'top']);
-	add_image_size('large', 1800, 1200, ['center', 'top']);
+	add_image_size('thumbnail', 600, 400, ['center', 'center']);
+	add_image_size('medium', 900, 600, ['center', 'center']);
+	add_image_size('medium_large', 1200, 800, ['center', 'center']);
+	add_image_size('large', 1800, 1200, ['center', 'center']);
 
 	# Add our own sizes if needed (you should probably add  thumbnail, medium and large when adding any custom size so srcset works)
 #	add_image_size('thumbnail_portrait', 400, 600, ['center', 'top']);
