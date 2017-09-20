@@ -28,7 +28,7 @@
 			numSlides = numSlides ? parseInt(numSlides) : 1;
 		var config = {
 			dots: true,
-			arrows: false,
+			arrows: true,
 			slidesToShow: numSlides,
 			slidesToScroll: numSlides,
 			infinite: true,
@@ -36,10 +36,29 @@
 			autoplay: false,
 		//	adaptiveHeight: true,
 			prevArrow: '<a role="button" class="slick-prev"></a>',
-			nextArrow: '<a role="button" class="slick-next"></a>'
+			nextArrow: '<a role="button" class="slick-next"></a>',
+			responsive: []
 		};
 
-		// TODO: Add responsive setting
+		if (numSlides > 1) {
+			config.responsive.push({
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			});
+		}
+
+		if (numSlides > 2) {
+			config.responsive.push({
+				breakpoint: 1080,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			});
+		}
 
 		// Init slideshow
 		if (slides.length > numSlides) {

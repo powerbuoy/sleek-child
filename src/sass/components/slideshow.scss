@@ -66,6 +66,12 @@
 		font-size: 2rem;
 		line-height: 1;
 
+		&:before {
+			@include icon;
+
+			margin: 0;
+		}
+
 		@media #{$bp-tablet-max} {
 			display: none !important;
 		}
@@ -73,9 +79,17 @@
 
 	.slick-prev {
 		left: 0;
+
+		&:before {
+			content: $icon-left;
+		}
 	}
 
 	.slick-next {
 		right: 0;
+
+		&:before {
+			content: $icon-right;
+		}
 	}
 }
