@@ -1,0 +1,121 @@
+@mixin dropdown-menu {
+	margin: 0;
+	list-style: none;
+
+	> li {
+		display: inline-block;
+		margin-right: $margin-default;
+		position: relative;
+
+		> a {
+			@include animated-underline($color-link);
+
+			display: inline-block;
+			padding: $padding-small 0;
+			color: inherit;
+		}
+
+		&.active,
+		&.active-ancestor,
+		&.active-parent,
+		&:hover {
+			> a {
+				@include animated-underline-active;
+			}
+		}
+
+		// Sub menu
+		> ul {
+			@include arrow(top, 8px, $color-white, 0, $color-white, 50%);
+
+			background: $color-white;
+
+			margin: 0;
+			list-style: none;
+
+			position: absolute;
+			left: 50%;
+			top: calc(100% + 16px);
+			z-index: 99;
+
+			transform: translateX(-50%) scaleY(0);
+			transform-origin: 50% top;
+			transition: transform $transition-default $transition-default $transition-easing;
+
+			font-size: $font-size-small;
+
+			border-radius: .25rem;
+			box-shadow: $shadow-1;
+
+			> li {
+				display: block;
+				position: relative;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color-border;
+				}
+
+				> a {
+					display: block;
+					padding: $padding-small;
+					white-space: nowrap;
+					color: $color-text;
+
+					&:hover {
+						color: $color-link;
+					}
+				}
+
+				// Sub-sub menu
+				> ul {
+					@include arrow(left, 8px, $color-white, 0, $color-white, 24px);
+
+					background: $color-white;
+
+					margin: 0;
+					list-style: none;
+
+					position: absolute;
+					left: calc(100% + 16px);
+					top: 0;
+
+					transform: scaleX(0);
+					transform-origin: left top;
+					transition: transform $transition-default $transition-default $transition-easing;
+
+					font-size: $font-size-small;
+
+					border-radius: .25rem;
+					box-shadow: $shadow-1;
+
+					> li {
+						display: block;
+
+						&:not(:last-child) {
+							border-bottom: 1px solid $color-border;
+						}
+
+						> a {
+							display: block;
+							padding: $padding-small;
+							white-space: nowrap;
+							color: $color-text;
+
+							&:hover {
+								color: $color-link;
+							}
+						}
+					}
+				}
+
+				&:hover > ul {
+					transform: scaleX(1);
+				}
+			}
+		}
+
+		&:hover > ul {
+			transform: translateX(-50%) scaleY(1);
+		}
+	}
+}

@@ -6,6 +6,14 @@
 	padding-top: 0;
 	padding-bottom: 0;
 
+	position: sticky;
+	top: $header-height;
+	z-index: 99;
+
+	@media #{$bp-tablet} {
+		top: $header-height-tablet;
+	}
+
 	box-shadow: $shadow-1;
 
 	h2 {
