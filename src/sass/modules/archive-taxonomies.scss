@@ -6,34 +6,13 @@
 	padding-top: 0;
 	padding-bottom: 0;
 
-	position: sticky;
-	top: $header-height;
-	z-index: 99;
-
-	@media #{$bp-tablet} {
-		top: $header-height-tablet;
-	}
-
 	box-shadow: $shadow-1;
 
 	h2 {
 		@include a11y-hide;
 	}
 
-	ul {
-		@include animated-underline-menu;
-
-		li {
-			margin-right: $margin-default;
-
-			a {
-				text-transform: uppercase;
-				color: $color-darkgray;
-			}
-
-			&.active > a {
-				color: $color-link;
-			}
-		}
+	nav > ul {
+		@include dropdown-menu;
 	}
 }

@@ -29,28 +29,3 @@
 		width: 100%;
 	}
 }
-
-@mixin animated-underline-menu ($color: $color-link) {
-	margin: 0;
-	list-style: none;
-
-	> li {
-		display: inline-block;
-
-		> a {
-			@include animated-underline($color);
-
-			display: inline-block;
-			padding: $padding-small 0;
-		}
-
-		&.active,
-		&.active-ancestor,
-		&.active-parent,
-		&:hover {
-			> a {
-				@include animated-underline-active;
-			}
-		}
-	}
-}
