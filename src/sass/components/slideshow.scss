@@ -77,7 +77,7 @@
 		}
 	}
 
-	.slick-prev {
+	a.slick-prev {
 		left: 0;
 
 		&:before {
@@ -85,7 +85,7 @@
 		}
 	}
 
-	.slick-next {
+	a.slick-next {
 		right: 0;
 
 		&:before {
