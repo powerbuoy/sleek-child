@@ -2,7 +2,8 @@
 	@include section;
 
 	article {
-		@include card;
+		background: $color-white;
+		padding: $padding-default;
 
 		figure {
 			margin: -$padding-default;

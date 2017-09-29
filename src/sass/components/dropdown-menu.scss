@@ -18,6 +18,7 @@
 		&.active,
 		&.active-ancestor,
 		&.active-parent,
+		&.current-cat,
 		&:hover {
 			> a {
 				@include animated-underline-active;
@@ -41,8 +42,6 @@
 			transform: translateX(-50%) scaleY(0);
 			transform-origin: 50% top;
 			transition: transform $transition-default $transition-default $transition-easing;
-
-			font-size: $font-size-small;
 
 			border-radius: .25rem;
 			box-shadow: $shadow-1;

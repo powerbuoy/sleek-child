@@ -6,6 +6,11 @@
 	padding-top: 0;
 	padding-bottom: 0;
 
+	font-size: $font-size-small;
+	text-transform: uppercase;
+
+	box-shadow: $shadow-1;
+
 	position: sticky;
 	top: $header-height;
 	z-index: 99;
@@ -13,8 +18,6 @@
 	@media #{$bp-tablet} {
 		top: $header-height-tablet;
 	}
-
-	box-shadow: $shadow-1;
 
 	h2 {
 		@include a11y-hide;
