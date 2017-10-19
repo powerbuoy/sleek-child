@@ -31,8 +31,8 @@ add_action('after_setup_theme', function () {
 	add_image_size('large', 1800, 1200, ['center', 'center']);
 
 	# Add our own sizes if needed (you should probably add  thumbnail, medium and large when adding any custom size so srcset works)
-#	add_image_size('thumbnail_portrait', 400, 600, ['center', 'top']);
-#	add_image_size('thumbnail_square', 600, 600, ['center', 'top']);
+#	add_image_size('thumbnail_portrait', 400, 600, ['center', 'center']);
+#	add_image_size('thumbnail_square', 600, 600, ['center', 'center']);
 });
 
 # Also add our own sizes to the image-size dropdown in the admin
@@ -65,6 +65,18 @@ add_action('init', function () use ($postTypes) {
 # Add meta data (title, description, image) to CPTs
 add_action('admin_menu', function () use ($postTypes) {
 	sleek_register_post_type_meta_data($postTypes); # Pass in more fields as second argument (, ['subtitle' => 'text'])
+});
+
+############################
+# Disable certain post types
+add_filter('template_redirect', function () {
+	global $wp_query;
+
+	# Attachments (NOTE: Add custom post types here as needed (is_singular('office') etc...))
+	if (is_attachment()) {
+		status_header(404);
+		$wp_query->set_404();
+	}
 });
 
 ##############
@@ -167,14 +179,6 @@ add_action('after_setup_theme', function () {
 	# load_theme_textdomain('sleek', get_stylesheet_directory() . '/languages/sleek');
 });
 
-##########################################################
-# Add a 'post_type' argument to get_terms() if you need it
-# add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
-
-####################################################
-# Enable search inside custom fields (including ACF)
-# require_once get_template_directory() . '/inc/include-postmeta-in-search.php';
-
 #################
 # Shorter excerpt
 add_filter('excerpt_length', function () {
@@ -185,14 +189,10 @@ add_filter('excerpt_more', function () {
 	return ' /../';
 });
 
-############################
-# Disable certain post types
-add_filter('template_redirect', function () {
-	global $wp_query;
+##########################################################
+# Add a 'post_type' argument to get_terms() if you need it
+# add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
 
-	# Attachments (NOTE: Add custom post types here as needed (is_singular('office') etc...))
-	if (is_attachment()) {
-		status_header(404);
-		$wp_query->set_404();
-	}
-});
+####################################################
+# Enable search inside custom fields (including ACF)
+# require_once get_template_directory() . '/inc/include-postmeta-in-search.php';
