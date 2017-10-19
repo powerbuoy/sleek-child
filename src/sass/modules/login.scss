@@ -1,0 +1,13 @@
+body.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+
+	#login {
+		background: #fff;
+		max-width: 40rem;
+		padding: 3rem;
+		margin: 2rem auto;
+	}
+}
