@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?41264116");
-  src: url("icons/font/fontello.eot?41264116#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?41264116") format("woff2"), url("icons/font/fontello.woff?41264116") format("woff"), url("icons/font/fontello.ttf?41264116") format("truetype"), url("icons/font/fontello.svg?41264116#fontello") format("svg");
+  src: url("icons/font/fontello.eot?83005293");
+  src: url("icons/font/fontello.eot?83005293#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?83005293") format("woff2"), url("icons/font/fontello.woff?83005293") format("woff"), url("icons/font/fontello.ttf?83005293") format("truetype"), url("icons/font/fontello.svg?83005293#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?41264116#fontello') format('svg');
+    src: url('icons/font/fontello.svg?83005293#fontello') format('svg');
   }
 }
 */
@@ -631,23 +631,6 @@ table {
  * @param:	string	$rotate: X or Y - in which direction to rotate
  */
 /**
- * @col
- *
- * FLoats elements into columns
- *
- * @param	int		$num: how many columns
- * @param	unit	$gutter: space between columns
- * @param	string	$selector: child-selector
- */
-/**
- * @col
- *
- * A single column
- *
- * @param	int		$num: how many items per row
- * @param	unit	$gutter: space between cols
- */
-/**
  * @device
  *
  * Turns an element into a mobile device (Nexus 5-looking)
@@ -735,24 +718,6 @@ table {
   content: ""; }
 
 /***
-    title: Card
-    section: Layout
-    description: A simple box/card. Should be used with the bg-classes.
-    example:
-        <div class="card bg--lightgray">I'm a shadowed card</div>
-***/
-.card {
-  background-color: #fff;
-  display: block;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .card:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-/***
     title: Background Colors
     section: Colors
     description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
@@ -818,7 +783,6 @@ table {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.7); }
@@ -866,7 +830,6 @@ table {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
       background: rgba(255, 255, 255, 0.7); }
@@ -914,7 +877,6 @@ table {
     .bg-overlay--lightgray.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--lightgray.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--lightgray.bg-overlay--hover:hover:before {
       background: rgba(250, 250, 250, 0.7); }
@@ -948,7 +910,6 @@ table {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -1031,215 +992,6 @@ table {
   display: block;
   width: 100%; }
 
-/**
-    title: Cols
-    section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
-    example:
-        <ul class="cols cols--2--bp-tablet cols--3--bp-laptop">
-            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
-        </ul>
-**/
-.cols {
-  clear: both; }
-  .cols:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols > * {
-    margin-bottom: 1.5rem; }
-
-ul.cols,
-ul[class*="cols--"] {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-
-.cols--2 {
-  clear: both; }
-  .cols--2:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--2 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(50% - 0.75rem);
-    margin-right: 1.5rem;
-    width: calc(49.5% - 0.75rem) \9; }
-    .cols--2 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--2 > * {
-        width: calc(49.5% - 0.75rem); } }
-    .cols--2 > *:not(:nth-child(2n)) {
-      margin-right: 1.5rem; }
-    .cols--2 > *:nth-child(2n) {
-      margin-right: 0; }
-  .cols--2 > *:nth-child(2n) + * {
-    clear: both; }
-  .cols--2 > *:not(:nth-child(2n)) + * {
-    clear: none; }
-
-.cols--3 {
-  clear: both; }
-  .cols--3:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--3 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(33.33333% - 1rem);
-    margin-right: 1.5rem;
-    width: calc(33% - 1rem) \9; }
-    .cols--3 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--3 > * {
-        width: calc(33% - 1rem); } }
-    .cols--3 > *:not(:nth-child(3n)) {
-      margin-right: 1.5rem; }
-    .cols--3 > *:nth-child(3n) {
-      margin-right: 0; }
-  .cols--3 > *:nth-child(3n) + * {
-    clear: both; }
-  .cols--3 > *:not(:nth-child(3n)) + * {
-    clear: none; }
-
-@media (min-width: 600px) {
-  .cols--2--bp-tablet {
-    clear: both; }
-    .cols--2--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-tablet > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 600px) {
-      .cols--2--bp-tablet > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-tablet > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-tablet > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-tablet > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 600px) {
-  .cols--3--bp-tablet {
-    clear: both; }
-    .cols--3--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-tablet > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 600px) {
-      .cols--3--bp-tablet > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-tablet > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-tablet > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-tablet > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--2--bp-laptop {
-    clear: both; }
-    .cols--2--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--2--bp-laptop > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 1080px) {
-      .cols--2--bp-laptop > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-laptop > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-laptop > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-laptop > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--3--bp-laptop {
-    clear: both; }
-    .cols--3--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--3--bp-laptop > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 1080px) {
-      .cols--3--bp-laptop > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-laptop > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-laptop > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-laptop > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
 /***
     title: Container
     section: Layout
@@ -1306,8 +1058,7 @@ hr,
 ***/
 .figure-background {
   position: relative;
-  overflow: hidden;
-  z-index: 0; }
+  overflow: hidden; }
   .figure-background figure, .figure-background:before {
     position: absolute;
     left: 0;
@@ -1328,7 +1079,6 @@ hr,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -1414,13 +1164,17 @@ form {
     border: 0;
     text-decoration: none; }
 
-label span.value {
-  float: right; }
-
 label + label {
   margin-left: 1.5rem; }
 
 input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   background: #fff;
   display: inline-block;
   vertical-align: middle;
@@ -1428,10 +1182,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   width: 100%;
   margin: 0;
   padding: 1rem 1rem;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-size: 1rem;
   color: #333;
-  line-height: normal;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1473,10 +1224,10 @@ textarea {
 ::-webkit-input-placeholder {
   color: #bbb; }
 
-::-moz-placeholder {
+:-ms-input-placeholder {
   color: #bbb; }
 
-:-ms-input-placeholder {
+::-ms-input-placeholder {
   color: #bbb; }
 
 ::placeholder {
@@ -1498,7 +1249,6 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
@@ -1519,6 +1269,13 @@ button {
     text-decoration: none; }
 
 select {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1527,7 +1284,6 @@ select {
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 3rem 1rem 1rem;
-  font-size: 1rem;
   color: #333;
   line-height: normal;
   border: 1px solid #dedede;
@@ -1763,7 +1519,6 @@ h6,
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -1793,7 +1548,6 @@ h6,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -1848,7 +1602,6 @@ h6,
     padding-bottom: 4rem;
     position: relative;
     overflow: hidden;
-    z-index: 0;
     overflow: hidden;
     background-size: cover;
     background-position: 50% top;
@@ -1884,7 +1637,6 @@ h6,
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -2054,7 +1806,6 @@ h6,
     -webkit-box-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   [class*="icon-"].icon--round.icon--above, [class*="icon-"].icon--round.icon--below {
     display: -webkit-box;
@@ -2118,6 +1869,40 @@ a:hover .icon--round {
 .img--wide {
   display: block;
   width: 100%; }
+
+.img--bg {
+  position: relative;
+  overflow: hidden; }
+  .img--bg img, .img--bg:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; }
+  .img--bg:before {
+    display: block;
+    content: "";
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); }
+  .img--bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: -2;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .img--bg img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
 
 /***
     title: Inline Grid
@@ -2316,12 +2101,10 @@ a,
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
@@ -2341,7 +2124,6 @@ a,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
     .popup__close:hover {
       -webkit-transform: scale(1.1);
@@ -2349,7 +2131,7 @@ a,
               transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
-  .popup__box, .popup__content {
+  .popup__content {
     background: #fff;
     width: 95%;
     max-width: 45rem;
@@ -2359,9 +2141,9 @@ a,
     padding: 3rem;
     -webkit-overflow-scrolling: touch;
     border-radius: 0; }
-    .popup__box .popup__close, .popup__content .popup__close {
+    .popup__content .popup__close {
       color: inherit; }
-      .popup__box .popup__close:hover, .popup__content .popup__close:hover {
+      .popup__content .popup__close:hover {
         color: inherit; }
 
 /***
@@ -2500,48 +2282,6 @@ a,
   content: ""; }
 
 /***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-        <p class="text--right text--large">This large text is right aligned.</p>
-        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  color: #000;
-  word-wrap: break-word;
-  font-weight: normal;
-  letter-spacing: 0; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--small {
-  font-size: 0.8rem; }
-
-.text--large {
-  font-size: 1.2rem; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-/***
     title: Text Colors
     section: Colors
     description: Use to give an element's text a different color. This class affects everything, including headings and links.
@@ -2594,6 +2334,47 @@ a.color--gray,
 .color--gray a:not(.button),
 .color--gray .link {
   color: #bbb; }
+
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+        <p class="text--right text--large">This large text is right aligned.</p>
+        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
+***/
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 /***
     title: Video
@@ -2930,14 +2711,15 @@ svg {
 
 figure {
   display: block;
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+  /*	figcaption {
+		margin-top: $margin-small;
+		text-align: center;
+		font-style: italic;
+	} */ }
   figure img {
     display: block;
     width: 100%; }
-  figure figcaption {
-    margin-top: 0.75rem;
-    text-align: center;
-    font-style: italic; }
 
 /* Slider */
 .slick-slider {
@@ -2974,7 +2756,9 @@ figure {
   position: relative;
   left: 0;
   top: 0;
-  display: block; }
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
   .slick-track:before, .slick-track:after {
     content: "";
     display: table; }
@@ -3024,7 +2808,6 @@ input[type=submit] {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -3091,7 +2874,6 @@ p.error {
     display: block;
     width: 100%; }
   .google-map div .google-map-info-window {
-    margin: 0;
     font-size: 1rem;
     line-height: 1.6;
     font-family: "Open Sans", Helvetica, sans-serif;
@@ -3254,7 +3036,6 @@ p.error {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -3285,7 +3066,6 @@ p.error {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3369,7 +3149,7 @@ p.error {
       #archive-taxonomies nav > ul > li > a {
         position: relative;
         display: inline-block;
-        padding: 0.75rem 0;
+        padding: 1.5rem 0;
         color: inherit; }
         #archive-taxonomies nav > ul > li > a:after {
           background: #f7c01c;
@@ -3383,7 +3163,6 @@ p.error {
           -webkit-transform: translateX(-50%);
               -ms-transform: translateX(-50%);
                   transform: translateX(-50%);
-          -webkit-transition: width 0.2s ease-out;
           transition: width 0.2s ease-out; }
         #archive-taxonomies nav > ul > li > a:hover:after, #archive-taxonomies nav > ul > li > a.active:after {
           width: 100%; }
@@ -3404,7 +3183,6 @@ p.error {
         -webkit-transform-origin: 50% top;
             -ms-transform-origin: 50% top;
                 transform-origin: 50% top;
-        -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
         transition: -webkit-transform 0.2s 0.2s ease-out;
         transition: transform 0.2s 0.2s ease-out;
         transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -3457,7 +3235,6 @@ p.error {
             -webkit-transform-origin: left top;
                 -ms-transform-origin: left top;
                     transform-origin: left top;
-            -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -3623,7 +3400,6 @@ p.error {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3754,7 +3530,6 @@ p.error {
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3771,7 +3546,6 @@ p.error {
       -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
               transform: translateY(100%);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3829,7 +3603,6 @@ p.error {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3912,7 +3685,6 @@ html.hash-active.hash-active-header {
       -webkit-transform: translateX(100%);
           -ms-transform: translateX(100%);
               transform: translateX(100%);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -3933,7 +3705,7 @@ html.hash-active.hash-active-header {
           #header nav div > ul > li > a {
             position: relative;
             display: inline-block;
-            padding: 0.75rem 0;
+            padding: 1.5rem 0;
             color: inherit; }
             #header nav div > ul > li > a:after {
               background: #f7c01c;
@@ -3947,7 +3719,6 @@ html.hash-active.hash-active-header {
               -webkit-transform: translateX(-50%);
                   -ms-transform: translateX(-50%);
                       transform: translateX(-50%);
-              -webkit-transition: width 0.2s ease-out;
               transition: width 0.2s ease-out; }
             #header nav div > ul > li > a:hover:after, #header nav div > ul > li > a.active:after {
               width: 100%; }
@@ -3968,7 +3739,6 @@ html.hash-active.hash-active-header {
             -webkit-transform-origin: 50% top;
                 -ms-transform-origin: 50% top;
                     transform-origin: 50% top;
-            -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -4021,7 +3791,6 @@ html.hash-active.hash-active-header {
                 -webkit-transform-origin: left top;
                     -ms-transform-origin: left top;
                         transform-origin: left top;
-                -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
                 transition: -webkit-transform 0.2s 0.2s ease-out;
                 transition: transform 0.2s 0.2s ease-out;
                 transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -4080,7 +3849,6 @@ html.hash-active.hash-active-header {
     border-bottom: 0.25rem solid #000;
     position: relative;
     z-index: 99;
-    -webkit-transition: height 0.2s 0.2s ease-out, border-width 0.2s 0.2s ease-out, min-height 0s 0s linear;
     transition: height 0.2s 0.2s ease-out, border-width 0.2s 0.2s ease-out, min-height 0s 0s linear;
     z-index: 100; }
     #header .menu-toggle:before, #header .menu-toggle:after {
@@ -4095,7 +3863,6 @@ html.hash-active.hash-active-header {
       -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
-      -webkit-transition: -webkit-transform 0.2s 0s ease-out;
       transition: -webkit-transform 0.2s 0s ease-out;
       transition: transform 0.2s 0s ease-out;
       transition: transform 0.2s 0s ease-out, -webkit-transform 0.2s 0s ease-out; }
@@ -4110,10 +3877,8 @@ html.hash-active.hash-active-header {
     height: 0;
     min-height: #000;
     border-width: 0;
-    -webkit-transition: height 0.2s 0s ease-out, border-width 0.2s 0s ease-out, min-height 0s 0.2s linear;
     transition: height 0.2s 0s ease-out, border-width 0.2s 0s ease-out, min-height 0s 0.2s linear; }
     #header:target .menu-toggle:before, #header:target .menu-toggle:after {
-      -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
       transition: -webkit-transform 0.2s 0.2s ease-out;
       transition: transform 0.2s 0.2s ease-out;
       transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out; }
@@ -4164,7 +3929,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4198,7 +3962,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4265,7 +4028,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -4284,6 +4046,20 @@ html.hash-active.hash-active-header {
       color: #fff;
       text-decoration: none; }
 
+body.login {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  min-height: 100vh; }
+  body.login #login {
+    background: #fff;
+    max-width: 40rem;
+    padding: 3rem;
+    margin: 2rem auto; }
+
 #page > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -4294,7 +4070,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -4326,7 +4101,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4488,7 +4262,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4555,7 +4328,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -4608,7 +4380,6 @@ html.hash-active.hash-active-header {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -4637,7 +4408,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -4668,7 +4438,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4756,7 +4525,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -4823,7 +4591,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -4968,7 +4735,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   .site-logo:hover:before {
     -webkit-transform: translate(0, -50%) rotate(-10deg) scale(1.4);
@@ -5049,7 +4815,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   color: #fff; }
   @media (min-width: 1129px) {
     #text-block {
@@ -5075,7 +4840,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -5122,7 +4886,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -5183,7 +4946,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -5238,8 +5000,8 @@ html.hash-active.hash-active-header {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?41264116");
-  src: url("icons/font/fontello.eot?41264116#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?41264116") format("woff2"), url("icons/font/fontello.woff?41264116") format("woff"), url("icons/font/fontello.ttf?41264116") format("truetype"), url("icons/font/fontello.svg?41264116#fontello") format("svg");
+  src: url("icons/font/fontello.eot?83005293");
+  src: url("icons/font/fontello.eot?83005293#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?83005293") format("woff2"), url("icons/font/fontello.woff?83005293") format("woff"), url("icons/font/fontello.ttf?83005293") format("truetype"), url("icons/font/fontello.svg?83005293#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5249,7 +5011,7 @@ html.hash-active.hash-active-header {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?41264116#fontello') format('svg');
+    src: url('icons/font/fontello.svg?83005293#fontello') format('svg');
   }
 }
 */
@@ -5868,23 +5630,6 @@ table {
  * @param:	string	$rotate: X or Y - in which direction to rotate
  */
 /**
- * @col
- *
- * FLoats elements into columns
- *
- * @param	int		$num: how many columns
- * @param	unit	$gutter: space between columns
- * @param	string	$selector: child-selector
- */
-/**
- * @col
- *
- * A single column
- *
- * @param	int		$num: how many items per row
- * @param	unit	$gutter: space between cols
- */
-/**
  * @device
  *
  * Turns an element into a mobile device (Nexus 5-looking)
@@ -5972,24 +5717,6 @@ table {
   content: ""; }
 
 /***
-    title: Card
-    section: Layout
-    description: A simple box/card. Should be used with the bg-classes.
-    example:
-        <div class="card bg--lightgray">I'm a shadowed card</div>
-***/
-.card {
-  background-color: #fff;
-  display: block;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .card:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-/***
     title: Background Colors
     section: Colors
     description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
@@ -6055,7 +5782,6 @@ table {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.7); }
@@ -6103,7 +5829,6 @@ table {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
       background: rgba(255, 255, 255, 0.7); }
@@ -6151,7 +5876,6 @@ table {
     .bg-overlay--lightgray.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--lightgray.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--lightgray.bg-overlay--hover:hover:before {
       background: rgba(250, 250, 250, 0.7); }
@@ -6185,7 +5909,6 @@ table {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -6268,215 +5991,6 @@ table {
   display: block;
   width: 100%; }
 
-/**
-    title: Cols
-    section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
-    example:
-        <ul class="cols cols--2--bp-tablet cols--3--bp-laptop">
-            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
-        </ul>
-**/
-.cols {
-  clear: both; }
-  .cols:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols > * {
-    margin-bottom: 1.5rem; }
-
-ul.cols,
-ul[class*="cols--"] {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-
-.cols--2 {
-  clear: both; }
-  .cols--2:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--2 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(50% - 0.75rem);
-    margin-right: 1.5rem;
-    width: calc(49.5% - 0.75rem) \9; }
-    .cols--2 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--2 > * {
-        width: calc(49.5% - 0.75rem); } }
-    .cols--2 > *:not(:nth-child(2n)) {
-      margin-right: 1.5rem; }
-    .cols--2 > *:nth-child(2n) {
-      margin-right: 0; }
-  .cols--2 > *:nth-child(2n) + * {
-    clear: both; }
-  .cols--2 > *:not(:nth-child(2n)) + * {
-    clear: none; }
-
-.cols--3 {
-  clear: both; }
-  .cols--3:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--3 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(33.33333% - 1rem);
-    margin-right: 1.5rem;
-    width: calc(33% - 1rem) \9; }
-    .cols--3 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--3 > * {
-        width: calc(33% - 1rem); } }
-    .cols--3 > *:not(:nth-child(3n)) {
-      margin-right: 1.5rem; }
-    .cols--3 > *:nth-child(3n) {
-      margin-right: 0; }
-  .cols--3 > *:nth-child(3n) + * {
-    clear: both; }
-  .cols--3 > *:not(:nth-child(3n)) + * {
-    clear: none; }
-
-@media (min-width: 600px) {
-  .cols--2--bp-tablet {
-    clear: both; }
-    .cols--2--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-tablet > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 600px) {
-      .cols--2--bp-tablet > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-tablet > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-tablet > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-tablet > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 600px) {
-  .cols--3--bp-tablet {
-    clear: both; }
-    .cols--3--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-tablet > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 600px) {
-      .cols--3--bp-tablet > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-tablet > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-tablet > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-tablet > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--2--bp-laptop {
-    clear: both; }
-    .cols--2--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--2--bp-laptop > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 1080px) {
-      .cols--2--bp-laptop > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-laptop > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-laptop > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-laptop > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--3--bp-laptop {
-    clear: both; }
-    .cols--3--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--3--bp-laptop > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 1080px) {
-      .cols--3--bp-laptop > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-laptop > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-laptop > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-laptop > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
 /***
     title: Container
     section: Layout
@@ -6543,8 +6057,7 @@ hr,
 ***/
 .figure-background {
   position: relative;
-  overflow: hidden;
-  z-index: 0; }
+  overflow: hidden; }
   .figure-background figure, .figure-background:before {
     position: absolute;
     left: 0;
@@ -6565,7 +6078,6 @@ hr,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -6651,13 +6163,17 @@ form {
     border: 0;
     text-decoration: none; }
 
-label span.value {
-  float: right; }
-
 label + label {
   margin-left: 1.5rem; }
 
 input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   background: #fff;
   display: inline-block;
   vertical-align: middle;
@@ -6665,10 +6181,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   width: 100%;
   margin: 0;
   padding: 1rem 1rem;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-size: 1rem;
   color: #333;
-  line-height: normal;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -6710,10 +6223,10 @@ textarea {
 ::-webkit-input-placeholder {
   color: #bbb; }
 
-::-moz-placeholder {
+:-ms-input-placeholder {
   color: #bbb; }
 
-:-ms-input-placeholder {
+::-ms-input-placeholder {
   color: #bbb; }
 
 ::placeholder {
@@ -6735,7 +6248,6 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
@@ -6756,6 +6268,13 @@ button {
     text-decoration: none; }
 
 select {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -6764,7 +6283,6 @@ select {
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 3rem 1rem 1rem;
-  font-size: 1rem;
   color: #333;
   line-height: normal;
   border: 1px solid #dedede;
@@ -7000,7 +6518,6 @@ h6,
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -7030,7 +6547,6 @@ h6,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -7085,7 +6601,6 @@ h6,
     padding-bottom: 4rem;
     position: relative;
     overflow: hidden;
-    z-index: 0;
     overflow: hidden;
     background-size: cover;
     background-position: 50% top;
@@ -7121,7 +6636,6 @@ h6,
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -7291,7 +6805,6 @@ h6,
     -webkit-box-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   [class*="icon-"].icon--round.icon--above, [class*="icon-"].icon--round.icon--below {
     display: -webkit-box;
@@ -7355,6 +6868,40 @@ a:hover .icon--round {
 .img--wide {
   display: block;
   width: 100%; }
+
+.img--bg {
+  position: relative;
+  overflow: hidden; }
+  .img--bg img, .img--bg:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; }
+  .img--bg:before {
+    display: block;
+    content: "";
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); }
+  .img--bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: -2;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .img--bg img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
 
 /***
     title: Inline Grid
@@ -7553,12 +7100,10 @@ a,
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
@@ -7578,7 +7123,6 @@ a,
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
     .popup__close:hover {
       -webkit-transform: scale(1.1);
@@ -7586,7 +7130,7 @@ a,
               transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
-  .popup__box, .popup__content {
+  .popup__content {
     background: #fff;
     width: 95%;
     max-width: 45rem;
@@ -7596,9 +7140,9 @@ a,
     padding: 3rem;
     -webkit-overflow-scrolling: touch;
     border-radius: 0; }
-    .popup__box .popup__close, .popup__content .popup__close {
+    .popup__content .popup__close {
       color: inherit; }
-      .popup__box .popup__close:hover, .popup__content .popup__close:hover {
+      .popup__content .popup__close:hover {
         color: inherit; }
 
 /***
@@ -7737,48 +7281,6 @@ a,
   content: ""; }
 
 /***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-        <p class="text--right text--large">This large text is right aligned.</p>
-        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  color: #000;
-  word-wrap: break-word;
-  font-weight: normal;
-  letter-spacing: 0; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--small {
-  font-size: 0.8rem; }
-
-.text--large {
-  font-size: 1.2rem; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-/***
     title: Text Colors
     section: Colors
     description: Use to give an element's text a different color. This class affects everything, including headings and links.
@@ -7831,6 +7333,47 @@ a.color--gray,
 .color--gray a:not(.button),
 .color--gray .link {
   color: #bbb; }
+
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+        <p class="text--right text--large">This large text is right aligned.</p>
+        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
+***/
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #000;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 /***
     title: Video
@@ -8167,14 +7710,15 @@ svg {
 
 figure {
   display: block;
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+  /*	figcaption {
+		margin-top: $margin-small;
+		text-align: center;
+		font-style: italic;
+	} */ }
   figure img {
     display: block;
     width: 100%; }
-  figure figcaption {
-    margin-top: 0.75rem;
-    text-align: center;
-    font-style: italic; }
 
 /* Slider */
 .slick-slider {
@@ -8211,7 +7755,9 @@ figure {
   position: relative;
   left: 0;
   top: 0;
-  display: block; }
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
   .slick-track:before, .slick-track:after {
     content: "";
     display: table; }
@@ -8261,7 +7807,6 @@ input[type=submit] {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -8328,7 +7873,6 @@ p.error {
     display: block;
     width: 100%; }
   .google-map div .google-map-info-window {
-    margin: 0;
     font-size: 1rem;
     line-height: 1.6;
     font-family: "Open Sans", Helvetica, sans-serif;
@@ -8491,7 +8035,6 @@ p.error {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -8522,7 +8065,6 @@ p.error {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -8606,7 +8148,7 @@ p.error {
       #archive-taxonomies nav > ul > li > a {
         position: relative;
         display: inline-block;
-        padding: 0.75rem 0;
+        padding: 1.5rem 0;
         color: inherit; }
         #archive-taxonomies nav > ul > li > a:after {
           background: #f7c01c;
@@ -8620,7 +8162,6 @@ p.error {
           -webkit-transform: translateX(-50%);
               -ms-transform: translateX(-50%);
                   transform: translateX(-50%);
-          -webkit-transition: width 0.2s ease-out;
           transition: width 0.2s ease-out; }
         #archive-taxonomies nav > ul > li > a:hover:after, #archive-taxonomies nav > ul > li > a.active:after {
           width: 100%; }
@@ -8641,7 +8182,6 @@ p.error {
         -webkit-transform-origin: 50% top;
             -ms-transform-origin: 50% top;
                 transform-origin: 50% top;
-        -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
         transition: -webkit-transform 0.2s 0.2s ease-out;
         transition: transform 0.2s 0.2s ease-out;
         transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -8694,7 +8234,6 @@ p.error {
             -webkit-transform-origin: left top;
                 -ms-transform-origin: left top;
                     transform-origin: left top;
-            -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -8860,7 +8399,6 @@ p.error {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -8991,7 +8529,6 @@ p.error {
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9008,7 +8545,6 @@ p.error {
       -webkit-transform: translateY(100%);
           -ms-transform: translateY(100%);
               transform: translateY(100%);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9066,7 +8602,6 @@ p.error {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9149,7 +8684,6 @@ html.hash-active.hash-active-header {
       -webkit-transform: translateX(100%);
           -ms-transform: translateX(100%);
               transform: translateX(100%);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9170,7 +8704,7 @@ html.hash-active.hash-active-header {
           #header nav div > ul > li > a {
             position: relative;
             display: inline-block;
-            padding: 0.75rem 0;
+            padding: 1.5rem 0;
             color: inherit; }
             #header nav div > ul > li > a:after {
               background: #f7c01c;
@@ -9184,7 +8718,6 @@ html.hash-active.hash-active-header {
               -webkit-transform: translateX(-50%);
                   -ms-transform: translateX(-50%);
                       transform: translateX(-50%);
-              -webkit-transition: width 0.2s ease-out;
               transition: width 0.2s ease-out; }
             #header nav div > ul > li > a:hover:after, #header nav div > ul > li > a.active:after {
               width: 100%; }
@@ -9205,7 +8738,6 @@ html.hash-active.hash-active-header {
             -webkit-transform-origin: 50% top;
                 -ms-transform-origin: 50% top;
                     transform-origin: 50% top;
-            -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: -webkit-transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out;
             transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -9258,7 +8790,6 @@ html.hash-active.hash-active-header {
                 -webkit-transform-origin: left top;
                     -ms-transform-origin: left top;
                         transform-origin: left top;
-                -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
                 transition: -webkit-transform 0.2s 0.2s ease-out;
                 transition: transform 0.2s 0.2s ease-out;
                 transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
@@ -9317,7 +8848,6 @@ html.hash-active.hash-active-header {
     border-bottom: 0.25rem solid #000;
     position: relative;
     z-index: 99;
-    -webkit-transition: height 0.2s 0.2s ease-out, border-width 0.2s 0.2s ease-out, min-height 0s 0s linear;
     transition: height 0.2s 0.2s ease-out, border-width 0.2s 0.2s ease-out, min-height 0s 0s linear;
     z-index: 100; }
     #header .menu-toggle:before, #header .menu-toggle:after {
@@ -9332,7 +8862,6 @@ html.hash-active.hash-active-header {
       -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
-      -webkit-transition: -webkit-transform 0.2s 0s ease-out;
       transition: -webkit-transform 0.2s 0s ease-out;
       transition: transform 0.2s 0s ease-out;
       transition: transform 0.2s 0s ease-out, -webkit-transform 0.2s 0s ease-out; }
@@ -9347,10 +8876,8 @@ html.hash-active.hash-active-header {
     height: 0;
     min-height: #000;
     border-width: 0;
-    -webkit-transition: height 0.2s 0s ease-out, border-width 0.2s 0s ease-out, min-height 0s 0.2s linear;
     transition: height 0.2s 0s ease-out, border-width 0.2s 0s ease-out, min-height 0s 0.2s linear; }
     #header:target .menu-toggle:before, #header:target .menu-toggle:after {
-      -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
       transition: -webkit-transform 0.2s 0.2s ease-out;
       transition: transform 0.2s 0.2s ease-out;
       transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out; }
@@ -9401,7 +8928,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9435,7 +8961,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9502,7 +9027,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -9521,6 +9045,20 @@ html.hash-active.hash-active-header {
       color: #fff;
       text-decoration: none; }
 
+body.login {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  min-height: 100vh; }
+  body.login #login {
+    background: #fff;
+    max-width: 40rem;
+    padding: 3rem;
+    margin: 2rem auto; }
+
 #page > header {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -9531,7 +9069,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -9563,7 +9100,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9725,7 +9261,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9792,7 +9327,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -9845,7 +9379,6 @@ html.hash-active.hash-active-header {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
@@ -9874,7 +9407,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -9905,7 +9437,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -9993,7 +9524,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -10060,7 +9590,6 @@ html.hash-active.hash-active-header {
     text-decoration: none;
     text-align: center;
     border-radius: 0;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     text-shadow: none;
     box-shadow: none; }
@@ -10205,7 +9734,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   .site-logo:hover:before {
     -webkit-transform: translate(0, -50%) rotate(-10deg) scale(1.4);
@@ -10286,7 +9814,6 @@ html.hash-active.hash-active-header {
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  z-index: 0;
   color: #fff; }
   @media (min-width: 1129px) {
     #text-block {
@@ -10312,7 +9839,6 @@ html.hash-active.hash-active-header {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -10359,7 +9885,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -10420,7 +9945,6 @@ html.hash-active.hash-active-header {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
-        -webkit-transition: -webkit-transform 0.2s ease-out;
         transition: -webkit-transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -10657,8 +10181,7 @@ pre {
             <span class="hljs-tag">&lt;<span class="hljs-title">abbr</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Required"</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">abbr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"eg. john.doe@example.com"</span>
-                <span class="hljs-attribute">required</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-attribute">required</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Sex
@@ -10738,9 +10261,9 @@ pre {
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--round"</span>
         <span class="hljs-attribute">title</span>=<span class="hljs-value">"Facebook"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--round"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Twitter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-search"</span>&gt;</span>Find<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-right icon--after"</span>&gt;</span>Icon after text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--round"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Twitter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-search"</span>&gt;</span>Find<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-right icon--after"</span>&gt;</span>Icon after text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex--2"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--above"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -10762,8 +10285,7 @@ pre {
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Card</h3><p><p>A simple box/card. Should be used with the bg-classes.</p>
-</p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--lightgray"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container and pass an optional width;</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container and pass an optional width;</p>
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>In the middle of the page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
