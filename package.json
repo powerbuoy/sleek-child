@@ -4,10 +4,10 @@
   "description": "An example of a SleekWP child theme",
   "main": "style.css",
   "dependencies": {
-    "jump.js": "^1.0.2",
     "normalize-css": "^2.3.1",
     "sleek-css": "github:powerbuoy/sleek-css",
     "slick-carousel": "^1.6.0",
+    "smooth-scroll": "github:powerbuoy/smooth-scroll",
     "toggle-hash": "github:powerbuoy/toggle-hash"
   },
   "devDependencies": {
