@@ -190,6 +190,14 @@ add_filter('excerpt_more', function () {
 # Enable search inside custom fields (including ACF)
 # require_once get_template_directory() . '/inc/include-postmeta-in-search.php';
 
+##################################
+# Require login on the entire site
+/* add_action('init', function () {
+	if (!is_admin() and !sleek_is_login_page() and !is_user_logged_in()) {
+		auth_redirect();
+	}
+}); */
+
 ########################
 # Set up for translation
 # (put your mo/po-files in your-theme/languages/)
