@@ -9,29 +9,29 @@ add_action('after_setup_theme', function () {
 	# (this prevents user's from overriding them inside the  admin - remove if you _want_ users to override your sizes)
 	# Also note that all sizes should maintain the same aspect ratio otherwise WP will _not_ add a srcset attribute
 	update_option('thumbnail_size_w', 600);
-	update_option('thumbnail_size_h', 400);
+	update_option('thumbnail_size_h', 338);
 	update_option('thumbnail_crop', 1);
 
 	update_option('medium_size_w', 900);
-	update_option('medium_size_h', 600);
+	update_option('medium_size_h', 506);
 	update_option('medium_crop', 1);
 
 	update_option('medium_large_size_w', 1200);
-	update_option('medium_large_size_h', 800);
+	update_option('medium_large_size_h', 675);
 	update_option('medium_large_crop', 1);
 
 	update_option('large_size_w', 1800);
-	update_option('large_size_h', 1200);
+	update_option('large_size_h', 1013);
 	update_option('large_crop', 1);
 
 	# Now set the sizes again so we can specify our own crop  (remove this too if you want users to set their own sizes)
-	add_image_size('thumbnail', 600, 400, ['center', 'center']);
-	add_image_size('medium', 900, 600, ['center', 'center']);
-	add_image_size('medium_large', 1200, 800, ['center', 'center']);
-	add_image_size('large', 1800, 1200, ['center', 'center']);
+	add_image_size('thumbnail', 600, 338, ['center', 'center']);
+	add_image_size('medium', 900, 506, ['center', 'center']);
+	add_image_size('medium_large', 1200, 675, ['center', 'center']);
+	add_image_size('large', 1800, 1013, ['center', 'center']);
 
 	# Add our own sizes if needed (you should probably add  thumbnail, medium and large when adding any custom size so srcset works)
-#	add_image_size('thumbnail_portrait', 400, 600, ['center', 'center']);
+#	add_image_size('thumbnail_portrait', 338, 600, ['center', 'center']);
 #	add_image_size('thumbnail_square', 600, 600, ['center', 'center']);
 });
 
