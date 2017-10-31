@@ -8,7 +8,7 @@ body.login {
 	#login {
 		background: #fff;
 
-		width: 40rem;
+		width: 100%;
 		max-width: 100%;
 		min-height: 100vh;
 
@@ -16,8 +16,9 @@ body.login {
 		padding: 3rem;
 
 		@media (min-width: 44rem) {
-			margin: 2rem auto;
+			width: 40rem;
 			min-height: 0;
+			margin: 2rem auto;
 		}
 	}
 }
