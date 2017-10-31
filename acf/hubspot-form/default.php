@@ -21,7 +21,10 @@
 			hbspt.forms.create({
 				css: '',
 				portalId: '<?php echo $hsId ?>',
-				formId: '<?php echo $data['hubspot-form-id'] ?>'
+				formId: '<?php echo $data['hubspot-form-id'] ?>',
+				onFormSubmit: function ($form) {
+					document.getElementById('hubspot-form').scrollIntoView();
+				}
 			});
 		</script>
 
