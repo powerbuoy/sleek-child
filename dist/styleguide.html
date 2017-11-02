@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?43709134");
-  src: url("icons/font/fontello.eot?43709134#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?43709134") format("woff2"), url("icons/font/fontello.woff?43709134") format("woff"), url("icons/font/fontello.ttf?43709134") format("truetype"), url("icons/font/fontello.svg?43709134#fontello") format("svg");
+  src: url("icons/font/fontello.eot?14799425");
+  src: url("icons/font/fontello.eot?14799425#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?14799425") format("woff2"), url("icons/font/fontello.woff?14799425") format("woff"), url("icons/font/fontello.ttf?14799425") format("truetype"), url("icons/font/fontello.svg?14799425#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -12,7 +12,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?43709134#fontello') format('svg');
+    src: url('icons/font/fontello.svg?14799425#fontello') format('svg');
   }
 }
 */
@@ -2985,45 +2985,34 @@ p.error {
   [data-slideshow] a.slick-next:before {
     content: ""; }
 
-/* .video-hero {
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -1;
-	pointer-events: none;
+.video-hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  width: 100%;
+  height: 100%; }
+  @media (max-width: 599px) {
+    .video-hero {
+      display: none; } }
+  .video-hero .video-hero__video,
+  .video-hero iframe {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  @media (min-aspect-ratio: 16 / 12) {
+    .video-hero .video-hero__video {
+      height: 300%;
+      top: -100%; } }
+  @media (max-aspect-ratio: 16 / 12) {
+    .video-hero .video-hero__video {
+      width: 300%;
+      left: -100%; } }
 
-	width: 100%;
-	height: 100%;
-
-	// Hide in low res as it can't autoplay
-	@media (max-width: 1079px) {
-		display: none;
-	}
-
-	.video-hero__video,
-	iframe {
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	// TODO: Find a better solution here... can't get object-fit: cover to work
-	.video-hero__video {
-		@media (min-aspect-ratio: 16/12) { // Instead of 16/9 because video isn't full screen
-			height: 300%;
-			top: -100%;
-		}
-
-		@media (max-aspect-ratio: 16/12) {
-			width: 300%;
-			left: -100%;
-		}
-	}
-}
-*/
 #four-o-four {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -4094,7 +4083,6 @@ body.login {
   background-position: 50% top;
   background-repeat: no-repeat;
   color: #fff;
-  background: #000;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
   @media (min-width: 1129px) {
     #page > header {
@@ -5019,8 +5007,8 @@ body.login {
 ></@charset "UTF-8";
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?43709134");
-  src: url("icons/font/fontello.eot?43709134#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?43709134") format("woff2"), url("icons/font/fontello.woff?43709134") format("woff"), url("icons/font/fontello.ttf?43709134") format("truetype"), url("icons/font/fontello.svg?43709134#fontello") format("svg");
+  src: url("icons/font/fontello.eot?14799425");
+  src: url("icons/font/fontello.eot?14799425#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?14799425") format("woff2"), url("icons/font/fontello.woff?14799425") format("woff"), url("icons/font/fontello.ttf?14799425") format("truetype"), url("icons/font/fontello.svg?14799425#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5030,7 +5018,7 @@ body.login {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?43709134#fontello') format('svg');
+    src: url('icons/font/fontello.svg?14799425#fontello') format('svg');
   }
 }
 */
@@ -8003,45 +7991,34 @@ p.error {
   [data-slideshow] a.slick-next:before {
     content: ""; }
 
-/* .video-hero {
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -1;
-	pointer-events: none;
+.video-hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  width: 100%;
+  height: 100%; }
+  @media (max-width: 599px) {
+    .video-hero {
+      display: none; } }
+  .video-hero .video-hero__video,
+  .video-hero iframe {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  @media (min-aspect-ratio: 16 / 12) {
+    .video-hero .video-hero__video {
+      height: 300%;
+      top: -100%; } }
+  @media (max-aspect-ratio: 16 / 12) {
+    .video-hero .video-hero__video {
+      width: 300%;
+      left: -100%; } }
 
-	width: 100%;
-	height: 100%;
-
-	// Hide in low res as it can't autoplay
-	@media (max-width: 1079px) {
-		display: none;
-	}
-
-	.video-hero__video,
-	iframe {
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	// TODO: Find a better solution here... can't get object-fit: cover to work
-	.video-hero__video {
-		@media (min-aspect-ratio: 16/12) { // Instead of 16/9 because video isn't full screen
-			height: 300%;
-			top: -100%;
-		}
-
-		@media (max-aspect-ratio: 16/12) {
-			width: 300%;
-			left: -100%;
-		}
-	}
-}
-*/
 #four-o-four {
   padding-left: 7.5%;
   padding-right: 7.5%;
@@ -9112,7 +9089,6 @@ body.login {
   background-position: 50% top;
   background-repeat: no-repeat;
   color: #fff;
-  background: #000;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2); }
   @media (min-width: 1129px) {
     #page > header {
