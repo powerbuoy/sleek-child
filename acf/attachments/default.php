@@ -16,8 +16,7 @@
 		<?php foreach ($data['attachments-files'] as $file) : ?>
 			<li>
 				<a href="<?php echo $file['attachments-files-file']['url'] ?>">
-					<?php echo $file['attachments-files-file']['title'] ?>
-					<small>(<?php echo wp_check_filetype($file['attachments-files-file']['filename'])['ext'] ?>)</small>
+					<?php echo $file['attachments-files-file']['title'] ?> <small>(<?php echo wp_check_filetype($file['attachments-files-file']['filename'])['ext'] ?>)</small>
 				</a>
 			</li>
 		<?php endforeach ?>
