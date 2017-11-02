@@ -9,7 +9,7 @@
 	height: 100%;
 
 	// Hide in low res as it can't autoplay
-	@media #{$bp-laptop-max} {
+	@media #{$bp-tablet-max} {
 		display: none;
 	}
 
