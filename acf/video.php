@@ -16,7 +16,6 @@ return [
 		'name' => 'video-code',
 		'label' => __('Video', 'sleek_child'),
 		'instructions' => __('Copy the YouTube/Vimeo URL and paste it here.', 'sleek_child'),
-		'type' => 'oembed',
-		'required' => true
+		'type' => 'oembed'
 	]
 ];

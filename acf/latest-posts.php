@@ -39,7 +39,6 @@ return [
 		'label' => __('Number of Posts', 'sleek_child'),
 		'instructions' => __('How many posts would you like to display?', 'sleek_child'),
 		'type' => 'number',
-		'default_value' => 4,
-		'required' => true
+		'default_value' => 4
 	]
 ];

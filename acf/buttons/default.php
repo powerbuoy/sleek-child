@@ -12,7 +12,11 @@
 			?>
 			<a href="<?php echo $url ?>"
 				<?php echo $target ?>
-				class="button button--<?php echo $color ?> <?php echo $ghost ?> <?php if ($icon) : ?>icon-<?php echo $icon ?> icon--after<?php endif ?>">
+				class="button
+					<?php if ($color) : ?>button--<?php echo $color ?><?php endif ?>
+					<?php echo $ghost ?>
+					<?php if ($icon) : ?>icon-<?php echo $icon ?> icon--after<?php endif ?>
+				">
 				<?php echo $title ?>
 			</a>
 		<?php endforeach ?>

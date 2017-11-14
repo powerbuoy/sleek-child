@@ -16,7 +16,6 @@ return [
 		'name' => 'gallery-images',
 		'label' => __('Images', 'sleek_child'),
 		'instructions' => __('Select any number of images.', 'sleek_child'),
-		'type' => 'gallery',
-		'required' => true
+		'type' => 'gallery'
 	]
 ];

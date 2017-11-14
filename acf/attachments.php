@@ -17,7 +17,6 @@ return [
 		'label' => __('Files', 'sleek_child'),
 		'instructions' => __('Select any number of files.', 'sleek_child'),
 		'type' => 'repeater',
-		'required' => true,
 		'sub_fields' => [
 			[
 				'name' => 'attachments-files-file',

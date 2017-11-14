@@ -18,7 +18,6 @@ return [
 		'instructions' => __('Select a Contact Form 7 form from the dropdown. Please note that this module requires the Contact Form 7 plug-in: https://wordpress.org/plugins/contact-form-7/', 'sleek_child'),
 		'type' => 'post_object',
 		'return_format' => 'id',
-		'post_type' => ['wpcf7_contact_form'],
-		'required' => true
+		'post_type' => ['wpcf7_contact_form']
 	]
 ];

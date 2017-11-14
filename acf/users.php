@@ -18,7 +18,6 @@ return [
 		'instructions' => __('Add any number of users here.', 'sleek_child'),
 		'type' => 'user',
 		'multiple' => true,
-		'allow_null' => false,
-		'required' => true
+		'allow_null' => false
 	]
 ];
