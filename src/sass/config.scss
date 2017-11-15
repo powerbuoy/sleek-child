@@ -82,7 +82,10 @@ $icon-colors: (
 // Add more to use .button--green etc
 $button-colors: (
 	"white": $color-white,
-	"disabled": $color-gray
+	"disabled": $color-gray,
+	"twitter": $color-twitter,
+	"gradient": ($color-white, $color-gray),
+	"facebook": $color-facebook
 );
 
 //Cols

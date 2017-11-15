@@ -13,11 +13,10 @@ $configCss = file_get_contents(get_stylesheet_directory() . '/src/sass/config.sc
 $matches = false;
 $colors = [];
 
-preg_match('/\$button-colors: \((.*?)\)/s', $configCss, $matches);
+preg_match('/\$button-colors: \((.*?)\);/s', $configCss, $matches);
 
 if ($matches and count($matches) > 1) {
-	$matches = preg_replace("/\r|\n/", '', $matches[1]);
-	$matches = explode(',', $matches);
+	$matches = explode("\n", $matches[1]);
 
 	foreach ($matches as $match) {
 		$tmp = explode(':', $match);
