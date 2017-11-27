@@ -32,7 +32,7 @@
 			vertical-align: middle;
 
 			button {
-				background: rgba($color-overlay, .4);
+				background: rgba($overlay-color, .4);
 
 				padding: 0;
 				min-height: 0;
@@ -49,7 +49,7 @@
 
 			&.slick-active {
 				button {
-					background: rgba($color-overlay, .8);
+					background: rgba($overlay-color, .8);
 				}
 			}
 		}
@@ -62,7 +62,7 @@
 		z-index: 97;
 		transform: translateY(-50%);
 
-		color: $color-text;
+		color: $text-color;
 		font-size: 2rem;
 		line-height: 1;
 
@@ -72,7 +72,7 @@
 			margin: 0;
 		}
 
-		@media #{$bp-tablet-max} {
+		@media #{map-get($breakpoints, tablet-max)} {
 			display: none !important;
 		}
 	}

@@ -11,7 +11,7 @@
 	height: 20rem;
 	overflow: hidden;
 
-	@media #{$bp-tablet} {
+	@media #{map-get($breakpoints, tablet)} {
 		height: 30rem;
 	}
 
