@@ -1,12 +1,12 @@
 <?php
 # Get list of all icons
-$icons = file_get_contents(get_stylesheet_directory() . '/icons.json');
+/* $icons = file_get_contents(get_stylesheet_directory() . '/icons.json');
 $icons = json_decode($icons, true);
 $glyphs = [];
 
 foreach ($icons['glyphs'] as $g) {
 	$glyphs[$g['css']] = ucfirst(str_replace(['-', '_'], ' ', $g['css']));
-}
+} */
 
 # Parse config.scss (if it exists) for $button-colors and dynamically populate the button-color select
 $configCss = file_get_contents(get_stylesheet_directory() . '/src/sass/config.scss');
@@ -16,8 +16,7 @@ $colors = [];
 preg_match('/\$colors: \((.*?)\)/s', $configCss, $matches);
 
 if ($matches and count($matches) > 1) {
-	$matches = preg_replace("/\r|\n/", '', $matches[1]);
-	$matches = explode(',', $matches);
+	$matches = explode("\n", $matches[1]);
 
 	foreach ($matches as $match) {
 		$tmp = explode(':', $match);
@@ -38,8 +37,7 @@ return [
 				'name' => 'button-link',
 				'label' => __('Link', 'sleek_child'),
 				'instructions' => __('Choose where this button should link to.', 'sleek_child'),
-				'type' => 'link',
-				'required' => true
+				'type' => 'link'
 			],
 			[
 				'name' => 'button-color',
@@ -56,14 +54,14 @@ return [
 				'message' => __('Transparent button', 'sleek_child'),
 				'type' => 'true_false'
 			],
-			[
+		/*	[
 				'name' => 'button-icon',
 				'label' => __('Icon', 'sleek_child'),
 				'instructions' => __('Select an icon or leave empty for no icon.', 'sleek_child'),
 				'type' => 'select',
 				'allow_null' => true,
 				'choices' => $glyphs
-			]
+			] */
 		]
 	]
 ];
