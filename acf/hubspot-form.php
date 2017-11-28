@@ -16,7 +16,6 @@ return [
 		'name' => 'hubspot-form-id',
 		'label' => __('Form ID', 'sleek_child'),
 		'instructions' => __('Enter the Hubspot Form ID here.', 'sleek_child'),
-		'type' => 'text',
-		'required' => true
+		'type' => 'text'
 	]
 ];
