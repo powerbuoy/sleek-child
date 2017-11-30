@@ -140,7 +140,7 @@ add_action('wp_enqueue_scripts', function () {
 ##############################################################
 # Add more options to Appearance -> Customize -> Theme Options
 # (then use your options with get_theme_mod('option_name') any way you like)
-add_action('customize_register', function ($wpCustomize) {
+/* add_action('customize_register', function ($wpCustomize) {
 	sleek_register_theme_options($wpCustomize, [
 		'hubspot_portal_id' => 'text'
 	], 'sleek_child');
@@ -160,7 +160,7 @@ add_action('wp_head', function () {
 			</script>
 			<!-- End of Async HubSpot Analytics Code -->';
 	}
-});
+}); */
 
 ##########################
 # Add more fields to users
@@ -186,6 +186,15 @@ add_filter('excerpt_length', function () {
 
 add_filter('excerpt_more', function () {
 	return ' /../';
+});
+
+###############################
+# Add custom fields to rest API
+# Add more post types as needed
+add_action('rest_api_init', function () {
+	register_rest_field(['page', 'post'], 'custom_fields', ['get_callback' => function () {
+		return get_post_custom($post['id']);
+	}]);
 });
 
 ##########################################################
