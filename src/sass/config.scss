@@ -191,12 +191,12 @@ $shadow-5: 0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 
  * Typography
  */
 // Font family
-$font-family-default: Helvetica, sans-serif;
+$font-family-default: "Open Sans", Helvetica, sans-serif;
 $font-family-heading: $font-family-default;
 
 // Weigth
 $font-weight-default: normal;
-$font-weight-heading: bold;
+$font-weight-heading: lighter;
 
 // Size
 $font-size-default: 1rem;
