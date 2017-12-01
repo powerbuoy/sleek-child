@@ -1,4 +1,7 @@
 <?php
+/***
+Use the Gallery module to add any number of images to the page.
+***/
 return [
 	[
 		'name' => 'gallery-title',

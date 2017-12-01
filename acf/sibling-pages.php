@@ -1,4 +1,7 @@
 <?php
+/***
+Sibling Pages is very similar to Child Pages but instead of displaying a posts children it displays its siblings. It's common to use Child Pages on the parent and Sibling Pages on every child of the parent.
+***/
 return [
 	[
 		'name' => 'sibling-pages-title',

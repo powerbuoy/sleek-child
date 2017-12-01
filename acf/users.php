@@ -1,4 +1,7 @@
 <?php
+/***
+With the Users module you can list any number of users on the page. Perfect for an Employee page or similar.
+***/
 return [
 	[
 		'name' => 'users-title',

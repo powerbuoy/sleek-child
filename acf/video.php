@@ -1,4 +1,7 @@
 <?php
+/***
+Use the Video module to add a video to the page.
+***/
 return [
 	[
 		'name' => 'video-title',

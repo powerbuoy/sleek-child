@@ -30,8 +30,6 @@
 
 			<?php the_excerpt() ?>
 
-			<?php sleek_get_template_part('acf/buttons/default', ['data' => ['buttons' => get_field('buttons')]]) ?>
-
 			<a href="<?php the_permalink() ?>"><?php _e('Read more', 'sleek') ?></a>
 
 		</article>

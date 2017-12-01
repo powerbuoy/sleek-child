@@ -1,4 +1,7 @@
 <?php
+/***
+The Hubspot Form module allows you to embed a Hubspot form in the page.
+***/
 return [
 	[
 		'name' => 'hubspot-form-title',

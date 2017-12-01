@@ -1,5 +1,4 @@
 <?php
-require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 
 ######################################
@@ -51,37 +50,42 @@ add_action('after_setup_theme', function () {
 
 ###########################################
 # Register custom post types and taxonomies
-$postTypes = ['case', 'guide'];
+# NOTE: This can be an associative array if you need to override default post type config
+$postTypes = ['movie', 'director' => [
+	'description' => __('A list of famous film directors', 'sleek_child')
+]];
 
 add_action('init', function () use ($postTypes) {
 	# Post types
-	sleek_register_post_types($postTypes, 'sleek_child');
+#	sleek_register_post_types($postTypes, 'sleek_child');
 
 	# Taxonomies
-	sleek_register_taxonomies([
-		'case_category' => ['case'],
-		'guide_category' => ['guide']
-	], 'sleek_child');
+/*	sleek_register_taxonomies([
+		'genre' => ['movie'],
+		'country' => ['movie', 'director']
+	], 'sleek_child'); */
 
 	# Array of CPTs that should appear in search (on top of post/page)
-	# (run this function unless you want all your CPTs to appear)
-	sleek_set_cpt_in_search(['case', 'guide']);
+	# NOTE: Run this function unless you want all your CPTs to appear in search
+	# sleek_set_cpt_in_search(['movie']);
 });
 
-# Add meta data (title, description, image) to CPTs
-add_action('admin_menu', function () use ($postTypes) {
-	sleek_register_post_type_meta_data($postTypes); # Pass in more fields as second argument (, ['subtitle' => 'text'])
-});
+###################################################
+# Create archive meta data pages for our post types
+# NOTE: You can add more fields to these pages using the "${postType}-archive-data" key
+/* add_action('acf/init', function () use ($postTypes) {
+	sleek_archive_meta_data($postTypes);
+}); */
 
-############################
-# Disable certain post types
+########################
+# 404 certain post types
 add_filter('template_redirect', function () {
 	global $wp_query;
 
-	# Attachments (NOTE: Add custom post types here as needed (is_singular('office') etc...))
+	# NOTE: Add custom post types here as needed (is_singular('office') etc...)
 	if (is_attachment()) {
-		status_header(404);
-		$wp_query->set_404();
+		status_header(404); # Sets 404 header
+		$wp_query->set_404(); # Shows 404 template
 	}
 });
 
@@ -92,52 +96,137 @@ add_filter('acf/settings/show_admin', '__return_false');
 
 # Register fields
 add_action('acf/init', function () {
-	# ACF in post types
-	sleek_register_acf([
-		# Fields avaiable for pages
-		'page' => ['video-hero'],
+	# Add an options page
+/*	acf_add_options_page([
+		'page_title' => __('Theme settings', 'sleek_child'),
+		'menu_slug' => 'theme-settings',
+		'post_id' => 'theme-settings' # NOTE: Use this id in get_field('my-field', 'theme-settings')
+	]); */
 
-		# Fields available for guides
-		'guide' => ['redirect-url']
-	], 'sleek_child');
-
-	# ACF in module containers
-	sleek_register_acf_modules([
-		# Module areas available on pages
-		'page' => [
-			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery', 'divider'],
-			'next-to-content' => ['page-menu', 'text-block', 'video', 'contact-form', 'attachments'],
-			'inside-hero' => ['buttons']
+	# Add some fields to the options page
+/*	sleek_acf([
+		'key' => 'should-be-unique',
+		'title' => __('Theme settings', 'sleek_child'),
+		'location' => [[[
+			'param' => 'options_page',
+			'operator' => '==',
+			'value' => 'theme-settings'
+		]]],
+		'fields' => [
+			'contact-form'
 		]
-	], 'sleek_child');
+	]); */
 
-	# ACF in options pages
-/*	sleek_register_acf_options([
-		# Option page called "Theme settings"
-		'theme-settings' => ['page-meta', 'redirect-url']
-	], 'sleek_child'); */
+	# Add more fields to the archive options page for cases
+/*	sleek_acf([
+		'key' => 'unique-key',
+		'title' => __('Archive options', 'sleek_child'),
+		'location' => [[[
+			'param' => 'options_page',
+			'operator' => '==',
+			'value' => 'case-archive-data'
+		]]],
+		'fields' => [
+			'contact-form'
+		]
+	]); */
+
+	# Add ACF to a flexible content field named "after-page-content"
+	# NOTE: Render these fields using sleek_acf_render_modules('after-page-content')
+/*	sleek_acf([
+		'key' => 'must-be-unique',
+		'title' => __('Modules', 'sleek_child'),
+		'flexible' => true,
+		'location' => [[[
+			'param' => 'post_type',
+			'operator' => '==',
+			'value' => 'page'
+		]]],
+		'fields' => [
+			'after-page-content' => [
+				'text-block', 'text-blocks', 'post-list', 'latest-posts'
+			]
+		]
+	]); */
+
+	# Add fixed ACF fields to the sidebar
+/*	sleek_acf([
+		'key' => 'must-also-be-unique',
+		'title' => __('Page options', 'sleek_child'),
+		'position' => 'side',
+		'location' => [[[
+			'param' => 'post_type',
+			'operator' => '==',
+			'value' => 'page'
+		]]],
+		'fields' => [
+			'redirect-url'
+		]
+	]); */
+
+	# Add fixed, tabbed ACF fields below the editor
+/*	sleek_acf([
+		'key' => 'must-be-unique-too',
+		'title' => __('Page content', 'sleek_child'),
+		'location' => [[[
+			'param' => 'post_type',
+			'operator' => '==',
+			'value' => 'page'
+		]]],
+		'fields' => [
+			# NOTE: Nested arrays create tabs
+			__('Form', 'sleek_child') => [
+				'contact-form'
+			],
+			__('Additional content', 'sleek_child') => [
+				'text-block'
+			]
+		]
+	]); */
+
+	# Add a single field below the title
+/*	sleek_acf([
+		'key' => 'yea-this-also-needs-to-be-unique',
+		'title' => __('Subtitle'),
+		'position' => 'acf_after_title',
+		'layout' => 'seamless',
+		'location' => [[[
+			'param' => 'post_type',
+			'operator' => '==',
+			'value' => 'page'
+		]]],
+		'fields' => [
+			'subtitle'
+		]
+	]); */
 });
 
 #####################
 # Register CSS and JS
-# (automatically adds dist/all.css and dist/all.js which are generated by $ gulp)
+# (automatically adds dist/all.css and dist/all.js which are generated by Gulp)
 add_action('wp_enqueue_scripts', function () {
-	sleek_register_assets(['https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600']);
+	sleek_register_assets(); # Pass in more as array: ['https://fonts.googleapis.com/css?family=Lato:300,900|Roboto:900']
 });
 
 ###################
 # Register sidebars
-add_action('init', function () {
+/* add_action('init', function () {
 	sleek_register_sidebars([
 		'header' => __('Header', 'sleek_child'),
-		'footer' => __('Footer', 'sleek_child')
+		'footer' => __('Footer', 'sleek_child'),
+		'aside' => [
+			'name' => __('Aside', 'sleek_child'),
+			'before_title' => '<h3>',
+			'after_title' => '</h3>'
+		]
 	]);
-});
+}); */
 
 ##############################################################
 # Add more options to Appearance -> Customize -> Theme Options
 # (then use your options with get_theme_mod('option_name') any way you like)
-add_action('customize_register', function ($wpCustomize) {
+# NOTE: You may want to add these types of fields to an ACF options page instead
+/* add_action('customize_register', function ($wpCustomize) {
 	sleek_register_theme_options($wpCustomize, [
 		'hubspot_portal_id' => 'text'
 	], 'sleek_child');
@@ -157,7 +246,7 @@ add_action('wp_head', function () {
 			</script>
 			<!-- End of Async HubSpot Analytics Code -->';
 	}
-});
+}); */
 
 ##########################
 # Add more fields to users
@@ -185,8 +274,17 @@ add_filter('excerpt_more', function () {
 	return ' /../';
 });
 
+###############################
+# Add custom fields to rest API
+# NOTE: Add more post types here as needed
+add_action('rest_api_init', function () {
+	register_rest_field(['page', 'post'], 'custom_fields', ['get_callback' => function () {
+		return get_post_custom($post['id']);
+	}]);
+});
+
 ##########################################################
-# Add a 'post_type' argument to get_terms() if you need it
+# Add a "post_type" argument to get_terms() if you need it
 # add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
 
 ####################################################
@@ -203,7 +301,7 @@ add_filter('excerpt_more', function () {
 
 ########################
 # Set up for translation
-# (put your mo/po-files in your-theme/languages/)
+# NOTE: Put your mo/po-files in the /languages directory
 add_action('after_setup_theme', function () {
 	load_child_theme_textdomain('sleek_child', get_stylesheet_directory() . '/languages');
 

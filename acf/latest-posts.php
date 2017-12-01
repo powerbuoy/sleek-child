@@ -1,4 +1,7 @@
 <?php
+/***
+The Latest Posts module shows the X latest posts from any post type you select. It automatically updates as you add or remove posts.
+***/
 # TODO: get_post_types() only return built in post types at this point in the code :/
 # TODO: Add support for choosing a taxonomy as well (must depend on which post type is chosen too...)
 $ignore = ['page', 'attachment', 'revision', 'nav_menu_item', 'custom_css', 'customize_changeset', 'acf-field-group', 'acf-field', 'wpcf7_contact_form'];
