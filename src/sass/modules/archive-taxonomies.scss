@@ -9,7 +9,7 @@
 	font-size: $font-size-small;
 	text-transform: uppercase;
 
-	box-shadow: $shadow-1;
+	box-shadow: map-get($shadows, 1);
 
 	position: sticky;
 	top: $header-height;

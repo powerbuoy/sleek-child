@@ -146,27 +146,27 @@ $site-width: 960px; // Max width
 $site-width-min: 85%; // Width before reaching max
 
 // Margins (margins beneath elements)
-$margin-small: .5rem;
-$margin-default: 1rem;
-$margin-large: 2rem;
+$margin-small: .75rem;
+$margin-default: 1.5rem;
+$margin-large: 3rem;
 $margin-x-large: 4rem;
 
 // Paddings (inner padding of boxes)
-$padding-small: .5rem;
-$padding-default: 1rem;
-$padding-large: 2rem;
+$padding-small: .75rem;
+$padding-default: 1.5rem;
+$padding-large: 3rem;
 $padding-x-large: 4rem;
 
 // Gutters (margin between columns)
-$gutter-default: 1.5rem;
-$gutter-large: 3rem;
+$gutter-default: 2rem;
+$gutter-large: 4rem;
 
 // .primary-content's width
 $primary-content-width: 70%;
 
 // Section paddings
-$section-padding: 3rem;
-$section-slant: 3rem;
+$section-padding: 4rem;
+$section-slant: 4rem;
 
 // Transition speeds
 $transition-easing: ease-out;
@@ -181,11 +181,14 @@ $num-cols: 3;
  * Shadows
  */
 // https://codepen.io/sdthornton/pen/wBZdXq
-$shadow-1: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-$shadow-2: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-$shadow-3: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-$shadow-4: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
-$shadow-5: 0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 0, .25);
+// https://codepen.io/sdthornton/pen/wBZdXq
+$shadows: (
+	1: "0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)",
+	2: "0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23)",
+	3: "0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23)",
+	4: "0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25)",
+	5: "0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 0, .25)"
+);
 
 /**
  * Typography

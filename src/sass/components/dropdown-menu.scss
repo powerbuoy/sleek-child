@@ -44,7 +44,7 @@
 			transition: transform $transition-default $transition-default $transition-easing;
 
 			border-radius: .25rem;
-			box-shadow: $shadow-1;
+			box-shadow: map-get($shadows, 1);
 
 			> li {
 				display: block;
@@ -85,7 +85,7 @@
 					font-size: $font-size-small;
 
 					border-radius: .25rem;
-					box-shadow: $shadow-1;
+					box-shadow: map-get($shadows, 1);
 
 					> li {
 						display: block;
