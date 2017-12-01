@@ -2,13 +2,13 @@
 	@include section;
 	@include figure-background;
 
-	color: $color-white;
+	color: $white;
 
 	h2 {
-		color: $color-white;
+		color: $white;
 	}
 
 	a:not(.button) {
-		color: $color-white;
+		color: $white;
 	}
 }

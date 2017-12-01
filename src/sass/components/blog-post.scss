@@ -9,10 +9,10 @@
 
 			font-size: $font-size-small;
 			text-transform: uppercase;
-			color: $color-gray;
+			color: map-get($colors, gray);
 
 			> *:after {
-				color: $color-border;
+				color: $border-color;
 			}
 		}
 	}

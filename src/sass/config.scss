@@ -1,113 +1,84 @@
-// Breakpoints
-$bp-tablet: '(min-width: 600px)';
-$bp-tablet-max: '(max-width: 599px)';
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+	tablet: "(min-width: 600px)",
+	tablet-max: "(max-width: 599px)",
 
-$bp-laptop: '(min-width: 1080px)';
-$bp-laptop-max: '(max-width: 1079px)';
+	laptop: "(min-width: 1080px)",
+	laptop-max: "(max-width: 1079px)",
 
-$bp-desktop: '(min-width: 1260px)';
-$bp-desktop-max: '(max-width: 1259px)';
+	desktop: "(min-width: 1260px)",
+	desktop-max: "(max-width: 1259px)"
+);
 
-
-// Buttons
+/**
+ * Button
+ */
 // Button size
 $button-padding-horizontal: 3.2rem;
 $button-padding-vertical: 1rem;
 $button-empty-padding-horizontal: $button-padding-vertical;
-$button-small-percentage: .75;
-$button-large-percentage: 1.25;
 
-$button-transition: true;
-
-// Button border
+// Button border (for ghost buttons)
 $button-border-width: 1px;
 $button-border-style: solid;
-$button-border-color: false; // false makes non ghost buttons have 0 border, true makes it 10% darker than bg
 $button-border-radius: 0;
 
 // Button background
-$button-color: #f7c01c; // #ffcc34;
-$button-ghost-opacity: .1; // Opacity of a ghost buttons bg on hover
-$button-gradient: false; // false = no gradient, % = darken BG this much %
-$button-shadow: false; // shadow declaration or true for a default shadow
+$button-color: #ffcc34; // Can be a list in which case a gradient bg will be used
+$button-text-color: #fff; // Default button text color (note that if BG is too bright its inverted color will be used for the text instead)
+$button-text-color-dark: #ffcc34; // Button text color when BG-brightness > 90
+$button-ghost-opacity: 1; // Opacity of a ghost buttons bg on hover (works best on non-gradient backgrounds)
+$button-shadow: false; // False for no shadow, otherwise specify a shadow like "0 .25rem .5rem rgba(0, 0, 0, .25)"
+$button-glow: false; // False for no glow, truee for glow on hover, both for glow all the time (NOTE: incompatible with button-shadow)
 
 // Button text
-$button-font-family: false; // false = default font, !false = any font-family
-$button-text-shadow: false; // false = no shadow, true = default shadow or use a text-shadow declaration
-$button-text-color: #fff;
 $button-line-height: 1.2;
 $button-font-size: 1rem;
-$button-font-weight: bold;
+$button-font-weight: normal;
 $button-font-style: normal;
 $button-text-transform: none;
 $button-letter-spacing: false;
+$button-font-family: false; // false = default font, !false = any font-family
+$button-text-shadow: false; // True or false
 
-// Colors
-$color-body-bg: #fff;
+/**
+ * Colors
+ */
+// Specific colors
+$body-bg: #fff;
+$border-color: #dedede;
+$overlay-color: rgba(0, 0, 0, .4);
+$white: #fff;
 
-$color-border: #dedede;
-$color-overlay: rgba(0, 0, 0, .4);
+// Define your general colors here, they may be gradients (by passing in 2 colors)
+// Every color defined will be available in bg--, button--, icon-- etc components
+$colors: (
+	lightgray: #fafafa,
+	gray: #bbb,
+	darkgray: #777,
 
-$color-lightgray: #fafafa;
-$color-gray: #bbb;
-$color-darkgray: #777;
+	white: #fff,
+	black: #000,
 
-$color-white: #fff;
-$color-black: #000;
+	facebook: #3b5998,
+	twitter: #4099FF,
+	linkedin: #0077b5,
 
-$color-facebook: #3b5998;
-$color-twitter: #4099FF;
-$color-linkedin: #0077b5;
-
-// Add more colors as needed...
-// $color-red: #600 etc...
-
-// Define more to use bg--black etc
-$bg-colors: (
-	"white": $color-white,
-	"lightgray": $color-lightgray
+	disabled: #bbb,
+	gradient: (red, green)
 );
 
-// Add more to use .color--red etc
-$text-colors: (
-	"white": $color-white,
-	"gray": $color-gray
-);
-
-// Add more to use .icon--red etc
-$icon-colors: (
-	"lightgray": $color-lightgray
-);
-
-// Add more to use .button--green etc
-$button-colors: (
-	"white": $color-white,
-	"disabled": $color-gray,
-	"twitter": $color-twitter,
-	"gradient": ($color-white, $color-gray),
-	"facebook": $color-facebook
-);
-
-//Cols
-// Add more here to use cols--4, cols--5 etc
-$col-nums: (
-	"2": 2,
-	"3": 3
-);
-
-// Add more here to use cols--3--bp-desktop etc
-$col-breakpoints: (
-	"bp-tablet": $bp-tablet,
-	"bp-laptop": $bp-laptop
-);
-
-// Form
+/**
+ * Form
+ */
 // Background and text colors
-$color-form-field-bg: #fff;
-$color-form-success: #060;
-$color-form-error: #900;
-$color-form-placeholder: #bbb;
-$color-form-text: #333;
+$form-field-bg: #fff;
+$form-success-color: #060;
+$form-error-color: #900;
+$form-placeholder-color: #bbb;
+$form-text-color: #333;
 
 // Padding
 $form-padding-horizontal: $button-padding-vertical;
@@ -134,12 +105,18 @@ $form-range-thumb-border: false;
 $form-range-thumb-border-radius: 50%;
 $form-range-thumb-shadow: true;
 
-// Icons
+/**
+ * Icons
+ */
 $icon-margin: .4em;
 $icon-round-color: #369;
 $icon-large-size: 2em;
 $icon-round-size: 2.2em;
 
+// List of attribute selectors and associated icons
+$auto-icons: ();
+
+// Use these if you have the icons defined
 $auto-icons: (
 	'href*="facebook.com"': $icon-facebook,
 	'href*="twitter.com"': $icon-twitter,
@@ -161,21 +138,23 @@ $auto-icons: (
 	'href*="/maps"': $icon-globe
 );
 
-// Layout
+/**
+ * Layout
+ */
 // Site widths
 $site-width: 960px; // Max width
 $site-width-min: 85%; // Width before reaching max
 
 // Margins (margins beneath elements)
-$margin-small: .75rem;
-$margin-default: 1.5rem;
-$margin-large: 3rem;
+$margin-small: .5rem;
+$margin-default: 1rem;
+$margin-large: 2rem;
 $margin-x-large: 4rem;
 
 // Paddings (inner padding of boxes)
-$padding-small: .75rem;
-$padding-default: 1.5rem;
-$padding-large: 3rem;
+$padding-small: .5rem;
+$padding-default: 1rem;
+$padding-large: 2rem;
 $padding-x-large: 4rem;
 
 // Gutters (margin between columns)
@@ -186,7 +165,7 @@ $gutter-large: 3rem;
 $primary-content-width: 70%;
 
 // Section paddings
-$section-padding: 4rem;
+$section-padding: 3rem;
 $section-slant: 3rem;
 
 // Transition speeds
@@ -195,12 +174,12 @@ $transition-fast: .1s;
 $transition-default: .2s;
 $transition-slow: .4s;
 
-// Popup
-$popup-padding: $padding-large;
-$popup-border-radius: 0;
-$popup-width: 45rem;
+// Max number of col classes
+$num-cols: 3;
 
-// Shadows
+/**
+ * Shadows
+ */
 // https://codepen.io/sdthornton/pen/wBZdXq
 $shadow-1: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 $shadow-2: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
@@ -208,14 +187,16 @@ $shadow-3: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
 $shadow-4: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
 $shadow-5: 0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 0, .25);
 
-// Typography
+/**
+ * Typography
+ */
 // Font family
-$font-family-default: "Open Sans", Helvetica, sans-serif;
-$font-family-heading: "Open Sans", Helvetica, sans-serif;
+$font-family-default: Helvetica, sans-serif;
+$font-family-heading: $font-family-default;
 
 // Weigth
 $font-weight-default: normal;
-$font-weight-heading: normal;
+$font-weight-heading: bold;
 
 // Size
 $font-size-default: 1rem;
@@ -223,11 +204,11 @@ $font-size-small: .8rem;
 $font-size-large: 1.2rem;
 $font-size-x-large: 1.8rem;
 
-$font-size-h1: 3.6rem;
-$font-size-h2: 2.4rem;
-$font-size-h3: 1.8rem;
-$font-size-h4: 1.6rem;
-$font-size-h5: 1.4rem;
+$font-size-h1: 2.4rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.6rem;
+$font-size-h4: 1.4rem;
+$font-size-h5: 1.2rem;
 $font-size-h6: 1.1rem;
 
 // Height and spacing
@@ -238,13 +219,13 @@ $letter-spacing-default: 0;
 $letter-spacing-heading: 0;
 
 // Color
-$color-text: #000;
-$color-heading: #111;
+$text-color: #333;
+$heading-color: #444;
 
 // Links
-$color-link: $button-color;
-$color-link-hover: darken($color-link, 10%);
-$color-link-visited: #609;
+$link-color: #06f;
+$link-color-hover: darken($link-color, 10%);
+$link-color-visited: #609;
 
 $text-decoration-link: none;
 $text-decoration-link-hover: none;

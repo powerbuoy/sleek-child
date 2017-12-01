@@ -31,7 +31,7 @@
 			}
 
 			figcaption {
-				background: $color-overlay;
+				background: $overlay-color;
 
 				position: absolute;
 				left: 0;
@@ -39,7 +39,7 @@
 				bottom: 0;
 				padding: $padding-default;
 
-				color: $color-white;
+				color: $white;
 				font-style: normal;
 				text-align: left;
 
@@ -48,7 +48,7 @@
 
 				h3 {
 					margin: 0 0 $margin-small;
-					color: $color-white;
+					color: $white;
 
 					&:last-child {
 						margin: 0;

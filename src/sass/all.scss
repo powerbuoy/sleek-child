@@ -19,7 +19,7 @@
 
 // Shrink everything slightly in low res
 html {
-	@media #{$bp-tablet-max} {
+	@media #{map-get($breakpoints, tablet-max)} {
 		font-size: 80%;
 	}
 }

@@ -6,7 +6,7 @@ html.hash-active.hash-active-header {
 #header {
 	@include section;
 
-	background: $color-white;
+	background: $white;
 
 	display: flex;
 	align-items: center;
@@ -45,9 +45,9 @@ html.hash-active.hash-active-header {
 	}
 
 	// In low res
-	@media #{$bp-laptop-max} {
+	@media #{map-get($breakpoints, laptop-max)} {
 		nav {
-			background: $color-white;
+			background: $white;
 
 			position: fixed;
 			left: 0;
@@ -72,7 +72,7 @@ html.hash-active.hash-active-header {
 	}
 
 	// In high res
-	@media #{$bp-laptop} {
+	@media #{map-get($breakpoints, laptop)} {
 		nav {
 			div > ul {
 				@include dropdown-menu;
@@ -87,11 +87,11 @@ html.hash-active.hash-active-header {
 
 	// Menu toggle
 	.menu-toggle {
-		@include burger-menu-icon($color-text);
+		@include burger-menu-icon($text-color);
 
 		z-index: 100;
 
-		@media #{$bp-laptop} {
+		@media #{map-get($breakpoints, laptop)} {
 			display: none;
 		}
 	}
@@ -103,7 +103,7 @@ html.hash-active.hash-active-header {
 		}
 
 		.menu-toggle {
-			@include burger-menu-icon-open($color-text);
+			@include burger-menu-icon-open($text-color);
 		}
 	}
 }

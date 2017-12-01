@@ -1,4 +1,4 @@
-@mixin animated-underline ($color: $color-link) {
+@mixin animated-underline ($color: $link-color) {
 	position: relative;
 
 	&:after {

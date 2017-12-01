@@ -4,5 +4,5 @@
 }
 
 #comments {
-	background: $color-lightgray;
+	background: map-get($colors, lightgray);
 }

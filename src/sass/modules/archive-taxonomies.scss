@@ -1,7 +1,7 @@
 #archive-taxonomies {
 	@include section;
 
-	background: $color-white;
+	background: $white;
 
 	padding-top: 0;
 	padding-bottom: 0;
@@ -15,7 +15,7 @@
 	top: $header-height;
 	z-index: 99;
 
-	@media #{$bp-tablet} {
+	@media #{map-get($breakpoints, tablet)} {
 		top: $header-height-tablet;
 	}
 

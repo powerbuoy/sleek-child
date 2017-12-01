@@ -2,7 +2,7 @@
 	@include section;
 
 	article {
-		background: $color-white;
+		background: $white;
 		padding: $padding-default;
 		box-shadow: $shadow-1;
 
@@ -24,7 +24,7 @@
 		}
 	}
 
-	@media #{$bp-tablet} {
+	@media #{map-get($breakpoints, tablet)} {
 		display: flex;
 		align-items: stretch;
 		justify-content: space-between;
