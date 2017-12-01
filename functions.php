@@ -168,7 +168,7 @@ add_action('acf/init', function () {
 	# Add fixed, tabbed ACF fields below the editor
 	sleek_acf([
 		'key' => 'must-be-unique-too',
-		'title' => __('Page content', 'sleek_child'),
+		'title' => __('Page options', 'sleek_child'),
 		'location' => [[[
 			'param' => 'post_type',
 			'operator' => '==',

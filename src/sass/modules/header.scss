@@ -16,8 +16,8 @@ html.hash-active.hash-active-header {
 	top: 0;
 	z-index: 99;
 
-	padding-top: $padding-default;
-	padding-bottom: $padding-default;
+	padding-top: 0;
+	padding-bottom: 0;
 
 	box-shadow: $shadow-1;
 
@@ -28,6 +28,12 @@ html.hash-active.hash-active-header {
 	// Logo
 	.site-logo {
 		// See site-logo.scss
+		margin-top: $padding-default;
+		margin-bottom: $padding-default;
+	}
+
+	.tagline {
+		@include a11y-hide;
 	}
 
 	// Nav
@@ -67,9 +73,6 @@ html.hash-active.hash-active-header {
 
 	// In high res
 	@media #{$bp-laptop} {
-		padding-top: 0;
-		padding-bottom: 0;
-
 		nav {
 			div > ul {
 				@include dropdown-menu;
