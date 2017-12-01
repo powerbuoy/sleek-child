@@ -29,7 +29,7 @@
 
 			<?php the_excerpt() ?>
 
-			<?php sleek_render_acf_modules('inside-hero') ?>
+			<?php sleek_acf_render_modules('inside-hero') ?>
 
 		</header>
 
@@ -47,7 +47,7 @@
 
 				<aside>
 
-					<?php sleek_render_acf_modules('next-to-content') ?>
+					<?php sleek_acf_render_modules('next-to-content') ?>
 
 				</aside>
 

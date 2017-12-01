@@ -3,7 +3,7 @@
 <main>
 
 	<?php get_template_part('modules/page') ?>
-	<?php sleek_render_acf_modules('below-content') ?>
+	<?php sleek_acf_render_modules('below-content') ?>
 
 </main>
 
