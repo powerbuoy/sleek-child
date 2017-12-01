@@ -1,4 +1,7 @@
 <?php
+/***
+Use Text Block to add additional text to the page.
+***/
 $buttonsGroup = include get_stylesheet_directory() . '/acf/buttons.php';
 
 return [

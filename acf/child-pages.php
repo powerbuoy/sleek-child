@@ -1,4 +1,7 @@
 <?php
+/***
+Use the Child Pages module on a parent page to display its children. The Child Pages module automatically updates as you add or remove child pages.
+***/
 return [
 	[
 		'name' => 'child-pages-title',

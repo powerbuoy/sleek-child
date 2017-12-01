@@ -1,4 +1,7 @@
 <?php
+/***
+Display your latest Instagram photos using the Instagram module. First make sure you have installed the WP Instagram Widget plug-in.
+***/
 return [
 	[
 		'name' => 'instagram-title',

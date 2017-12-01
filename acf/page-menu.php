@@ -1,4 +1,7 @@
 <?php
+/***
+Use the Page Menu module to create an automatically generated menu tree based on the page the user is currently on.
+***/
 return [
 	[
 		'name' => 'page-menu-title',

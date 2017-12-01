@@ -1,4 +1,7 @@
 <?php
+/***
+The Attachments module allows you to add any number of files for download.
+***/
 return [
 	[
 		'name' => 'attachments-title',

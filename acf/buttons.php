@@ -1,4 +1,7 @@
 <?php
+/***
+With the Buttons module you can add any number of buttons in different colors.
+***/
 # Get list of all icons
 /* $icons = file_get_contents(get_stylesheet_directory() . '/icons.json');
 $icons = json_decode($icons, true);

@@ -1,4 +1,7 @@
 <?php
+/***
+Unsurprisingly the Google Map module allows you to add a Google Map to your page.
+***/
 return [
 	[
 		'name' => 'google-map-title',

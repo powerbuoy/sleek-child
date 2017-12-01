@@ -1,4 +1,7 @@
 <?php
+/***
+With the Contact Form module you can add a Contact Form 7 form anywhere on the page. Make sure you have installed the Contact Form 7 plug-in first and created at least one form.
+***/
 return [
 	[
 		'name' => 'contact-form-title',
