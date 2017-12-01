@@ -117,14 +117,14 @@ add_action('acf/init', function () {
 		]
 	]); */
 
-	# Add more fields to the archive options page for cases
+	# Add more fields to the archive options page for movies
 /*	sleek_acf([
 		'key' => 'unique-key',
 		'title' => __('Archive options', 'sleek_child'),
 		'location' => [[[
 			'param' => 'options_page',
 			'operator' => '==',
-			'value' => 'case-archive-data'
+			'value' => 'movie-archive-data'
 		]]],
 		'fields' => [
 			'contact-form'
