@@ -134,7 +134,7 @@ add_action('acf/init', function () {
 
 	# Add ACF to a flexible content field named "after-page-content"
 	# NOTE: Render these fields using sleek_acf_render_modules('after-page-content')
-/*	sleek_acf([
+	sleek_acf([
 		'key' => 'must-be-unique',
 		'title' => __('Modules', 'sleek_child'),
 		'flexible' => true,
@@ -144,11 +144,11 @@ add_action('acf/init', function () {
 			'value' => 'page'
 		]]],
 		'fields' => [
-			'after-page-content' => [
-				'text-block', 'text-blocks', 'post-list', 'latest-posts'
-			]
+			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery', 'divider'],
+			'next-to-content' => ['page-menu', 'text-block', 'video', 'contact-form', 'attachments'],
+			'inside-hero' => ['buttons']
 		]
-	]); */
+	]);
 
 	# Add fixed ACF fields to the sidebar
 /*	sleek_acf([
@@ -166,7 +166,7 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add fixed, tabbed ACF fields below the editor
-/*	sleek_acf([
+	sleek_acf([
 		'key' => 'must-be-unique-too',
 		'title' => __('Page content', 'sleek_child'),
 		'location' => [[[
@@ -176,14 +176,11 @@ add_action('acf/init', function () {
 		]]],
 		'fields' => [
 			# NOTE: Nested arrays create tabs
-			__('Form', 'sleek_child') => [
-				'contact-form'
-			],
-			__('Additional content', 'sleek_child') => [
-				'text-block'
+			__('Hero', 'sleek_child') => [
+				'video-hero'
 			]
 		]
-	]); */
+	]);
 
 	# Add a single field below the title
 /*	sleek_acf([
