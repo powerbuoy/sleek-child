@@ -13,7 +13,8 @@ return [
 		'name' => 'post-list-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Enter a description for the posts here.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	],
 	[
 		'name' => 'post-list-posts',
