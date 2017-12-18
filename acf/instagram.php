@@ -13,7 +13,8 @@ return [
 		'name' => 'instagram-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Enter a description for the Instagram feed.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	],
 	[
 		'name' => 'instagram-username',

@@ -13,6 +13,7 @@ return [
 		'name' => 'child-pages-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Enter a description for the child pages.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	]
 ];

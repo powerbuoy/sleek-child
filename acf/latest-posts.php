@@ -24,7 +24,8 @@ return [
 		'name' => 'latest-posts-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Enter a description for the posts here.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	],
 	[
 		'name' => 'latest-posts-post-type',

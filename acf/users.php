@@ -13,7 +13,8 @@ return [
 		'name' => 'users-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Enter a description for the posts users.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	],
 	[
 		'name' => 'users-users',

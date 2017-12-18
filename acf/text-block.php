@@ -22,7 +22,8 @@ return [
 		'name' => 'text-block-description',
 		'label' => __('Description', 'sleek_child'),
 		'instructions' => __('Write a nice message here.', 'sleek_child'),
-		'type' => 'wysiwyg'
+		'type' => 'wysiwyg',
+		'media_upload' => false
 	],
 	[
 		'name' => 'text-block-buttons',
