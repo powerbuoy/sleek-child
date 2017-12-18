@@ -4,49 +4,24 @@ require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
-	# (this prevents user's from overriding them inside the  admin - remove if you _want_ users to override your sizes)
-	# Also note that all sizes should maintain the same aspect ratio otherwise WP will not add a srcset attribute
-	update_option('thumbnail_size_w', 600);
-	update_option('thumbnail_size_h', 338);
-	update_option('thumbnail_crop', 1);
-
-	update_option('medium_size_w', 900);
-	update_option('medium_size_h', 506);
-	update_option('medium_crop', 1);
-
-	update_option('medium_large_size_w', 1200);
-	update_option('medium_large_size_h', 675);
-	update_option('medium_large_crop', 1);
-
-	update_option('large_size_w', 1800);
-	update_option('large_size_h', 1013);
-	update_option('large_crop', 1);
-
-	# Now set the sizes again so we can specify our own crop (note that if you only use this (and remove the above) users can still change the size in the admin)
-	add_image_size('thumbnail', 600, 338, ['center', 'center']);
-	add_image_size('medium', 900, 506, ['center', 'center']);
-	add_image_size('medium_large', 1200, 675, ['center', 'center']);
-	add_image_size('large', 1800, 1013, ['center', 'center']);
-
-	# Add our own sizes if needed (you should probably add thumbnail, medium and large version of all your custom sizes so srcset works for them too)
-#	add_image_size('thumbnail_portrait', 338, 600, ['center', 'center']);
-#	add_image_size('medium_portrait', 506, 900, ['center', 'center']);
-#	add_image_size('medium_large_portrait', 675, 1200, ['center', 'center']);
-#	add_image_size('large_portrait', 1013, 1800, ['center', 'center']);
-
-#	add_image_size('thumbnail_square', 600, 600, ['center', 'center']);
-#	add_image_size('medium_square', 900, 900, ['center', 'center']);
-#	add_image_size('medium_large_square', 1200, 1200, ['center', 'center']);
-#	add_image_size('large_square', 1800, 1800, ['center', 'center']);
+	# Pass in the width/height of the largest image. Sizes will be registered for
+	# thumbnail (25%), medium (50%), medium_large (75%) and large (the size you pass in)
+	sleek_register_image_sizes(1920, 1080, ['center', 'center']/*,
+		# Pass in additional sizes as last array
+		[
+			'portrait' => [
+				'width' => 1080,
+				'height' => 1920,
+				'crop' => ['center', 'center']
+			],
+			'square' => [
+				'width' => 1920,
+				'height' => 1920,
+				'crop' => ['center', 'center']
+			],
+		]
+	*/);
 });
-
-# Also add our own sizes to the image-size dropdown in the admin if you want
-/* add_filter('image_size_names_choose', function ($sizes) {
-	return array_merge($sizes, [
-		'medium_portrait' => __('Thumbnail (portrait)', 'sleek_child'),
-		'medium_square' => __('Thumbnail (square)', 'sleek_child')
-	]);
-}); */
 
 ###########################################
 # Register custom post types and taxonomies
