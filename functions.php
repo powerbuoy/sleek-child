@@ -197,6 +197,12 @@ add_action('wp_enqueue_scripts', function () {
 	]);
 }); */
 
+###################
+# Add menu location
+add_action('after_setup_theme', function () {
+	register_nav_menu('header', __('Header menu', 'sleek_child'));
+});
+
 ##############################################################
 # Add more options to Appearance -> Customize -> Theme Options
 # (then use your options with get_theme_mod('option_name') any way you like)

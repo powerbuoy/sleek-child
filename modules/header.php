@@ -11,7 +11,10 @@
 	<?php endif ?>
 
 	<nav>
-		<?php dynamic_sidebar('header') ?>
+		<?php wp_nav_menu([
+			'menu' => 'header',
+			'container' => false
+		]) ?>
 	</nav>
 
 	<a href="#header" class="menu-toggle" title="<?php _e('Open menu', 'sleek') ?>" data-toggle-hash></a>
