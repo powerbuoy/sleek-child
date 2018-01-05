@@ -1,6 +1,5 @@
 <?php
 require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
-require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 
 ######################################
 # Modify WP's built in thumbnail sizes
@@ -188,6 +187,12 @@ add_action('init', function () {
 		'header' => __('Header', 'sleek_child'),
 		'footer' => __('Footer', 'sleek_child')
 	]);
+});
+
+###################
+# Add menu location
+add_action('after_setup_theme', function () {
+	register_nav_menu('header', __('Header menu', 'sleek_child'));
 });
 
 ##############################################################

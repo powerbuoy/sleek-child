@@ -12,3 +12,8 @@
 
 	border-radius: 0 !important;
 }
+
+.button--ghost {
+	background: transparent !important;
+	border: 1px solid #06f !important;
+}
