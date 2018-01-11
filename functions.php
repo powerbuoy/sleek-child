@@ -4,21 +4,11 @@
 add_action('after_setup_theme', function () {
 	# Pass in the width/height of the largest image. Sizes will be registered for
 	# thumbnail (25%), medium (50%), medium_large (75%) and large (the size you pass in)
-	sleek_register_image_sizes(1920, 1080, ['center', 'center']/*,
-		# Pass in additional sizes as last array
-		[
-			'portrait' => [
-				'width' => 1080,
-				'height' => 1920,
-				'crop' => ['center', 'center']
-			],
-			'square' => [
-				'width' => 1920,
-				'height' => 1920,
-				'crop' => ['center', 'center']
-			],
-		]
-	*/);
+	# Pass in additional sizes as last array
+	sleek_register_image_sizes(1920, 1080, ['center', 'center']/*, [
+		'portrait' => ['width' => 1080, 'height' => 1920],
+		'square' => ['width' => 1920, 'height' => 1920],
+	]*/);
 });
 
 ###########################################
@@ -80,11 +70,7 @@ add_action('acf/init', function () {
 /*	sleek_acf([
 		'key' => 'should-be-unique',
 		'title' => __('Theme settings', 'sleek_child'),
-		'location' => [[[
-			'param' => 'options_page',
-			'operator' => '==',
-			'value' => 'theme-settings'
-		]]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme-settings']]],
 		'fields' => [
 			'contact-form'
 		]
@@ -94,11 +80,7 @@ add_action('acf/init', function () {
 /*	sleek_acf([
 		'key' => 'unique-key',
 		'title' => __('Archive options', 'sleek_child'),
-		'location' => [[[
-			'param' => 'options_page',
-			'operator' => '==',
-			'value' => 'movie-archive-data'
-		]]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie-archive-data']]],
 		'fields' => [
 			'contact-form'
 		]
@@ -110,14 +92,10 @@ add_action('acf/init', function () {
 		'key' => 'must-be-unique',
 		'title' => __('Modules', 'sleek_child'),
 		'flexible' => true,
-		'location' => [[[
-			'param' => 'post_type',
-			'operator' => '==',
-			'value' => 'page'
-		]]],
+		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			'after-page-content' => [
-				'text-block', 'text-blocks', 'post-list', 'latest-posts'
+				'text-block', 'text-blocks', 'featured-posts', 'latest-posts'
 			]
 		]
 	]); */
@@ -127,11 +105,7 @@ add_action('acf/init', function () {
 		'key' => 'must-also-be-unique',
 		'title' => __('Page options', 'sleek_child'),
 		'position' => 'side',
-		'location' => [[[
-			'param' => 'post_type',
-			'operator' => '==',
-			'value' => 'page'
-		]]],
+		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			'redirect-url'
 		]
@@ -141,11 +115,7 @@ add_action('acf/init', function () {
 /*	sleek_acf([
 		'key' => 'must-be-unique-too',
 		'title' => __('Page content', 'sleek_child'),
-		'location' => [[[
-			'param' => 'post_type',
-			'operator' => '==',
-			'value' => 'page'
-		]]],
+		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			# NOTE: Nested arrays create tabs
 			__('Form', 'sleek_child') => [
@@ -163,11 +133,7 @@ add_action('acf/init', function () {
 		'title' => __('Subtitle'),
 		'position' => 'acf_after_title',
 		'layout' => 'seamless',
-		'location' => [[[
-			'param' => 'post_type',
-			'operator' => '==',
-			'value' => 'page'
-		]]],
+		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			'subtitle'
 		]
