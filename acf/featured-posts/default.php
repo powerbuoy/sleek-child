@@ -1,20 +1,20 @@
 <?php global $post ?>
 
-<section id="post-list">
+<section id="featured-posts">
 
-	<?php if ($data['post-list-title'] or $data['post-list-description']) : ?>
+	<?php if ($data['featured-posts-title'] or $data['featured-posts-description']) : ?>
 		<header>
 
-			<?php if ($data['post-list-title']) : ?>
-				<h2><?php echo $data['post-list-title'] ?></h2>
+			<?php if ($data['featured-posts-title']) : ?>
+				<h2><?php echo $data['featured-posts-title'] ?></h2>
 			<?php endif ?>
 
-			<?php echo $data['post-list-description'] ?>
+			<?php echo $data['featured-posts-description'] ?>
 
 		</header>
 	<?php endif ?>
 
-	<?php foreach ($data['post-list-posts'] as $post) : setup_postdata($post) ?>
+	<?php foreach ($data['featured-posts-posts'] as $post) : setup_postdata($post) ?>
 		<?php # TODO: If redirect-url is set - open links in new windows ?>
 		<article>
 
