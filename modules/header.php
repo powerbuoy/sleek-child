@@ -10,12 +10,14 @@
 		</p>
 	<?php endif ?>
 
-	<nav>
-		<?php wp_nav_menu([
-			'menu' => 'header',
-			'container' => false
-		]) ?>
-	</nav>
+	<?php if (has_nav_menu('header')) : ?>
+		<nav>
+			<?php wp_nav_menu([
+				'menu' => 'header',
+				'container' => false
+			]) ?>
+		</nav>
+	<?php endif ?>
 
 	<a href="#header" class="menu-toggle" title="<?php _e('Open menu', 'sleek') ?>" data-toggle-hash></a>
 
