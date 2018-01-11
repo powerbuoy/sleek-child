@@ -9,7 +9,9 @@
 				<h2><?php echo $data['page-menu-title'] ?></h2>
 			<?php else : ?>
 				<h2>
-					<a href="<?php echo $sub_nav_tree['url'] ?>"><?php echo $sub_nav_tree['title'] ?></a>
+					<a href="<?php echo $sub_nav_tree['url'] ?>">
+						<?php echo $sub_nav_tree['title'] ?>
+					</a>
 				</h2>
 			<?php endif ?>
 
