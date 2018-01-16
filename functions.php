@@ -84,15 +84,9 @@ add_action('acf/init', function () {
 		'flexible' => true,
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
-<<<<<<< HEAD
 			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery', 'divider'],
 			'next-to-content' => ['page-menu', 'text-block', 'video', 'contact-form', 'attachments'],
 			'inside-hero' => ['buttons']
-=======
-			'after-page-content' => [
-				'text-block', 'text-blocks', 'featured-posts', 'latest-posts'
-			]
->>>>>>> master
 		]
 	]);
 
@@ -110,17 +104,12 @@ add_action('acf/init', function () {
 	# Add fixed, tabbed ACF fields below the editor
 	sleek_acf([
 		'key' => 'must-be-unique-too',
-<<<<<<< HEAD
 		'title' => __('Page options', 'sleek_child'),
 		'location' => [[[
 			'param' => 'post_type',
 			'operator' => '==',
 			'value' => 'page'
 		]]],
-=======
-		'title' => __('Page content', 'sleek_child'),
-		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
->>>>>>> master
 		'fields' => [
 			# NOTE: Nested arrays create tabs
 			__('Hero', 'sleek_child') => [
