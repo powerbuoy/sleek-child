@@ -40,18 +40,6 @@ add_action('init', function () use ($postTypes) {
 	sleek_archive_meta_data($postTypes);
 }); */
 
-########################
-# 404 certain post types
-add_filter('template_redirect', function () {
-	global $wp_query;
-
-	# NOTE: Add custom post types here as needed (is_singular('office') etc...)
-	if (is_attachment()) {
-		status_header(404); # Sets 404 header
-		$wp_query->set_404(); # Shows 404 template
-	}
-});
-
 ##############
 # Register ACF
 # Hide ACF from admin altogether (to prevent users from adding ACF from there)
