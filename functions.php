@@ -1,4 +1,6 @@
 <?php
+require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
+
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
