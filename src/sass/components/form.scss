@@ -1,0 +1,59 @@
+input[type=submit] {
+	@include button;
+}
+
+textarea {
+	min-height: 10rem;
+}
+
+// CF7
+.screen-reader-response {
+	display: none;
+}
+
+.wpcf7-not-valid-tip {
+	margin: $margin-small 0 0;
+}
+
+// HS
+.hs-form-field {
+	display: block;
+	margin: 0 0 $margin-default;
+
+	// Labels
+	> label {
+		display: block;
+		margin: 0 0 $margin-small;
+	}
+
+	// Checkboxes / radios
+	ul.inputs-list {
+		margin: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 0 $margin-default $margin-default 0;
+		}
+	}
+
+	// Don't show *
+	.hs-form-required {
+		display: none;
+	}
+
+	// List of errors
+	ul.hs-error-msgs {
+		margin: $margin-small 0 0;
+		list-style: none;
+		font-style: italic;
+
+		li {
+			display: block;
+		}
+	}
+}
+
+.hs_error_rollup {
+	display: none;
+}
