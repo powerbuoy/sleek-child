@@ -1,4 +1,5 @@
 <?php
+require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
 
 ######################################
