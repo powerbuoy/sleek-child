@@ -16,3 +16,10 @@
 
 // Our modules
 @import "modules/*";
+
+// TEMP!
+#header,
+#footer,
+main > * {
+	@include container;
+}
