@@ -50,7 +50,7 @@ add_filter('acf/settings/show_admin', '__return_false');
 # Register fields
 add_action('acf/init', function () {
 	# Add an options page
-/*	acf_add_options_page([
+/*	sleek_acf_add_options_page([
 		'page_title' => __('Theme settings', 'sleek_child'),
 		'menu_slug' => 'theme-settings',
 		'post_id' => 'theme-settings' # NOTE: Use this id in get_field('my-field', 'theme-settings')
