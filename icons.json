@@ -53,6 +53,12 @@
       "css": "down",
       "code": 61703,
       "src": "fontawesome"
+    },
+    {
+      "uid": "9bd60140934a1eb9236fd7a8ab1ff6ba",
+      "css": "spinner",
+      "code": 59444,
+      "src": "fontelico"
     }
   ]
 }
