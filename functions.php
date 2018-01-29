@@ -37,7 +37,7 @@ add_action('init', function () use ($postTypes) {
 
 ###################################################
 # Create archive meta data pages for our post types
-# NOTE: You can add more fields to these pages using the "${postType}-archive-data" key
+# NOTE: You can add more fields to these pages using the "${postType}-archive-meta" key
 /* add_action('acf/init', function () use ($postTypes) {
 	sleek_archive_meta_data($postTypes);
 }); */
@@ -70,7 +70,7 @@ add_action('acf/init', function () {
 /*	sleek_acf([
 		'key' => 'b',
 		'title' => __('Archive options', 'sleek_child'),
-		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie-archive-data']]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie-archive-meta']]],
 		'fields' => [
 			'contact-form'
 		]
