@@ -17,7 +17,10 @@
 			<li>
 				<a href="<?php echo $file['attachments-files-file']['url'] ?>">
 					<?php echo $file['attachments-files-file']['title'] ?>
-					<small>(<?php echo wp_check_filetype($file['attachments-files-file']['filename'])['ext'] ?>)</small>
+					<small>
+						(<?php echo wp_check_filetype($file['attachments-files-file']['filename'])['ext'] ?>,
+						<?php echo size_format(filesize(get_attached_file($file['attachments-files-file']['id']))) ?>)
+					</small>
 				</a>
 			</li>
 		<?php endforeach ?>

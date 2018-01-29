@@ -1,6 +1,6 @@
 <?php
 /***
-The Redirect URL field allows you to redirect this post to another URL. If you want to add a normal 301 redirect you should use a redirection plug-in or .htaccess instead. Redirect URL is useful if you want to display a post on your page but have it link elsewhere.
+The Redirect URL field allows you to redirect this post to another URL. If you want to add a normal 301 redirect you should use a redirection plug-in or .htaccess instead. This module is useful if you want to display a post on your page but have it link elsewhere.
 ***/
 # Make sure the_permalink() points to the redirect URL
 if (!function_exists('sleek_redirect_url_permalink_filter')) {
