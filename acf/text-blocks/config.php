@@ -2,7 +2,7 @@
 /***
 Text Blocks, like Text Block, allows you to add additional text to the page. But Text Blocks, unlike Text Bock, allows you to add any number of blocks in columns or slideshows or´etc.
 ***/
-$textBlock = include get_stylesheet_directory() . '/acf/text-block.php';
+$textBlock = include get_stylesheet_directory() . '/acf/text-block/config.php';
 
 return [
 	[
