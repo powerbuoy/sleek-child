@@ -18,6 +18,4 @@
 
 	<?php echo $data['text-block-description'] ?>
 
-	<?php sleek_get_template_part('acf/buttons/default', ['data' => ['buttons' => $data['text-block-buttons']]]) ?>
-
 </section>

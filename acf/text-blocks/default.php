@@ -27,8 +27,6 @@
 
 			<?php echo $block['text-block-description'] ?>
 
-			<?php sleek_get_template_part('acf/buttons/default', ['data' => ['buttons' => $block['text-block-buttons']]]) ?>
-
 		</article>
 	<?php endforeach ?>
 

@@ -2,8 +2,6 @@
 /***
 Use Text Block to add additional text to the page.
 ***/
-$buttonsGroup = include get_stylesheet_directory() . '/acf/buttons.php';
-
 return [
 	[
 		'name' => 'text-block-title',
@@ -24,13 +22,5 @@ return [
 		'instructions' => __('Write a nice message here.', 'sleek_child'),
 		'type' => 'wysiwyg',
 		'media_upload' => false
-	],
-	[
-		'name' => 'text-block-buttons',
-		'label' => __('Buttons', 'sleek_child'),
-		'instructions' => __('Add any number of buttons to this text block.', 'sleek_child'),
-		'button_label' => __('Add a button', 'sleek_child'),
-		'type' => 'repeater',
-		'sub_fields' => $buttonsGroup[0]['sub_fields']
 	]
 ];
