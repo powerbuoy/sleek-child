@@ -85,7 +85,9 @@ add_action('acf/init', function () {
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			'below-content' => [
-				'text-block', 'text-blocks', 'featured-posts', 'latest-posts'
+				'attachments', 'child-pages', 'contact-form', 'counter', 'divider', 'featured-posts', 'gallery',
+				'google-map', 'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
+				'share-page', 'sibling-pages', 'sticky-post', 'text-block', 'text-blocks', 'users', 'video'
 			]
 		]
 	]); */
