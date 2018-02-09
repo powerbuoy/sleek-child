@@ -52,15 +52,15 @@ add_action('acf/init', function () {
 	# Add an options page
 /*	sleek_acf_add_options_page([
 		'page_title' => __('Theme settings', 'sleek_child'),
-		'menu_slug' => 'theme-settings',
-		'post_id' => 'theme-settings' # NOTE: Use this id in get_field('my-field', 'theme-settings')
+		'menu_slug' => 'theme_settings',
+		'post_id' => 'theme_settings' # NOTE: Use this id in get_field('my_field', 'theme_settings')
 	]); */
 
 	# Add some fields to the options page
 /*	sleek_acf([
 		'key' => 'a',
 		'title' => __('Theme settings', 'sleek_child'),
-		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme-settings']]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme_settings']]],
 		'fields' => [
 			'contact-form'
 		]
@@ -70,7 +70,7 @@ add_action('acf/init', function () {
 /*	sleek_acf([
 		'key' => 'b',
 		'title' => __('Archive options', 'sleek_child'),
-		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie-archive-meta']]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie_archive_meta']]],
 		'fields' => [
 			'contact-form'
 		]
@@ -84,7 +84,7 @@ add_action('acf/init', function () {
 		'flexible' => true,
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
-			'below-content' => [
+			'below_content' => [
 				'attachments', 'child-pages', 'contact-form', 'counter', 'divider', 'featured-posts', 'gallery',
 				'google-map', 'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
 				'share-page', 'sibling-pages', 'sticky-post', 'text-block', 'text-blocks', 'users', 'video'
