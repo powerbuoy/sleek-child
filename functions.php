@@ -37,7 +37,7 @@ add_action('init', function () use ($postTypes) {
 
 ###################################################
 # Create archive meta data pages for our post types
-# NOTE: You can add more fields to these pages using the "${postType}-archive-meta" key
+# NOTE: You can add more fields to these pages using the "${postType}_archive_meta" key
 /* add_action('acf/init', function () use ($postTypes) {
 	sleek_archive_meta_data($postTypes);
 }); */
@@ -77,7 +77,7 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add ACF to a flexible content field named "after-page-content"
-	# NOTE: Render these fields using sleek_acf_render_modules('below-content')
+	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
 /*	sleek_acf([
 		'key' => 'c',
 		'title' => __('Modules', 'sleek_child'),
