@@ -108,6 +108,7 @@ add_action('acf/init', function () {
 		'key' => 'e',
 		'title' => __('Page content', 'sleek_child'),
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
+		'tab_placement' => 'left',
 		'fields' => [
 			# NOTE: Nested arrays create tabs
 			__('Form', 'sleek_child') => [
@@ -173,6 +174,16 @@ add_action('wp_enqueue_scripts', function () {
 	$fields['github'] = __('GitHub', 'sleek_child');
 
 	return $fields;
+}); */
+
+########################
+# Add more theme options
+/* add_action('customize_register', function ($wpCustomize) {
+	# The hubspot_portal_id is used by the HS-modules
+	# Note that the HS tracking script should be added inside the Customize->Theme settings screen - not here
+	sleek_register_theme_options($wpCustomize, [
+		'hubspot_portal_id' => 'text'
+	], 'sleek_child');
 }); */
 
 ################
