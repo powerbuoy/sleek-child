@@ -1,7 +1,7 @@
 #posts {
 	@include header-and-cards;
 
-	background: map-get($colors, lightgray);
+	background: color(lightgray);
 
 	article {
 		@include blog-post;

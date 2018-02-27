@@ -15,7 +15,7 @@
 	top: $header-height;
 	z-index: 99;
 
-	@media #{map-get($breakpoints, tablet)} {
+	@media #{breakpoint(tablet)} {
 		top: $header-height-tablet;
 	}
 

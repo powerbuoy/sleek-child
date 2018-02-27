@@ -13,6 +13,7 @@
 .icon-book:before { content: '\e80c'; } /* '' */
 .icon-lock:before { content: '\e80d'; } /* '' */
 .icon-lock-open:before { content: '\e80e'; } /* '' */
+.icon-spinner:before { content: '\e834'; } /* '' */
 .icon-mail:before { content: '\f0e0'; } /* '' */
 .icon-document:before { content: '\f0f6'; } /* '' */
 .icon-pdf:before { content: '\f1c1'; } /* '' */

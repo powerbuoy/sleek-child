@@ -9,7 +9,7 @@
 
 			font-size: $font-size-small;
 			text-transform: uppercase;
-			color: map-get($colors, gray);
+			color: color(gray);
 
 			> *:after {
 				color: $border-color;

@@ -45,7 +45,7 @@ html.hash-active.hash-active-header {
 	}
 
 	// In low res
-	@media #{map-get($breakpoints, laptop-max)} {
+	@media #{breakpoint(laptop-max)} {
 		nav {
 			background: $white;
 
@@ -72,7 +72,7 @@ html.hash-active.hash-active-header {
 	}
 
 	// In high res
-	@media #{map-get($breakpoints, laptop)} {
+	@media #{breakpoint(laptop)} {
 		nav {
 			div > ul {
 				@include dropdown-menu;
@@ -87,11 +87,11 @@ html.hash-active.hash-active-header {
 
 	// Menu toggle
 	.menu-toggle {
-		@include burger-menu-icon($text-color);
+		@include burger-menu($text-color);
 
 		z-index: 100;
 
-		@media #{map-get($breakpoints, laptop)} {
+		@media #{breakpoint(laptop)} {
 			display: none;
 		}
 	}
@@ -103,7 +103,7 @@ html.hash-active.hash-active-header {
 		}
 
 		.menu-toggle {
-			@include burger-menu-icon-open($text-color);
+			@include burger-menu-open($text-color);
 		}
 	}
 }

@@ -9,7 +9,7 @@
 	height: 100%;
 
 	// Hide in low res as it can't autoplay
-	@media #{map-get($breakpoints, tablet-max)} {
+	@media #{breakpoint(tablet-max)} {
 		display: none;
 	}
 

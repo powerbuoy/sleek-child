@@ -8,7 +8,7 @@
 	line-height: 1;
 
 	// Make room for icon in low res
-	@media #{map-get($breakpoints, laptop-max)} {
+	@media #{breakpoint(laptop-max)} {
 		margin-left: 2.5rem;
 	}
 

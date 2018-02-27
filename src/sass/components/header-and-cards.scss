@@ -24,7 +24,7 @@
 		}
 	}
 
-	@media #{map-get($breakpoints, tablet)} {
+	@media #{breakpoint(tablet)} {
 		display: flex;
 		align-items: stretch;
 		justify-content: space-between;

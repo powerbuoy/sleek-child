@@ -8,7 +8,7 @@
 
 // Third party
 @import "../../node_modules/normalize-css/normalize";
-@import "../../node_modules/sleek-css/sleek-css-lite.scss";
+@import "../../node_modules/sleek-css/sleek-css.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
 // Our components
@@ -19,7 +19,7 @@
 
 // Shrink everything slightly in low res
 html {
-	@media #{map-get($breakpoints, tablet-max)} {
+	@media #{breakpoint(tablet-max)} {
 		font-size: 80%;
 	}
 }
