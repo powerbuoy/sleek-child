@@ -58,7 +58,7 @@ add_action('acf/init', function () {
 
 	# Add some fields to the options page
 /*	sleek_acf([
-		'key' => 'a',
+		'key' => 'theme_settings',
 		'title' => __('Theme settings', 'sleek_child'),
 		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme_settings']]],
 		'fields' => [
@@ -68,7 +68,7 @@ add_action('acf/init', function () {
 
 	# Add more fields to the archive options page for movies
 /*	sleek_acf([
-		'key' => 'b',
+		'key' => 'archive_fields',
 		'title' => __('Archive options', 'sleek_child'),
 		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie_archive_meta']]],
 		'fields' => [
@@ -79,7 +79,7 @@ add_action('acf/init', function () {
 	# Add ACF to a flexible content field named "after-page-content"
 	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
 /*	sleek_acf([
-		'key' => 'c',
+		'key' => 'modules',
 		'title' => __('Modules', 'sleek_child'),
 		'flexible' => true,
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -94,7 +94,7 @@ add_action('acf/init', function () {
 
 	# Add fixed ACF fields to the sidebar
 /*	sleek_acf([
-		'key' => 'd',
+		'key' => 'page_options',
 		'title' => __('Page options', 'sleek_child'),
 		'position' => 'side',
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -105,7 +105,7 @@ add_action('acf/init', function () {
 
 	# Add fixed, tabbed ACF fields below the editor
 /*	sleek_acf([
-		'key' => 'e',
+		'key' => 'page_content',
 		'title' => __('Page content', 'sleek_child'),
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'tab_placement' => 'left',
@@ -122,7 +122,7 @@ add_action('acf/init', function () {
 
 	# Add a single field below the title
 /*	sleek_acf([
-		'key' => 'f',
+		'key' => 'below_title',
 		'title' => __('Subtitle'),
 		'position' => 'acf_after_title',
 		'layout' => 'seamless',
@@ -163,7 +163,7 @@ add_action('wp_enqueue_scripts', function () {
 ##########################
 # Add more fields to users
 /* add_filter('user_contactmethods', function () {
-	$fields['job_title'] = __('Job title', 'sleek_child');
+	$fields['tagline'] = __('Tagline', 'sleek_child');
 	$fields['phone'] = __('Telephone', 'sleek_child');
 	$fields['facebook'] = __('Facebook', 'sleek_child');
 	$fields['twitter'] = __('Twitter', 'sleek_child');
@@ -180,7 +180,6 @@ add_action('wp_enqueue_scripts', function () {
 # Add more theme options
 /* add_action('customize_register', function ($wpCustomize) {
 	# The hubspot_portal_id is used by the HS-modules
-	# Note that the HS tracking script should be added inside the Customize->Theme settings screen - not here
 	sleek_register_theme_options($wpCustomize, [
 		'hubspot_portal_id' => 'text'
 	], 'sleek_child');
