@@ -1,6 +1,8 @@
 #instagram {
 	> header {
-		@include section;
+		@include container;
+
+		margin-bottom: 0;
 	}
 
 	ul {

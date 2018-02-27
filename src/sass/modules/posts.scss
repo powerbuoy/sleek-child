@@ -1,9 +1,0 @@
-#posts {
-	@include header-and-cards;
-
-	background: color(lightgray);
-
-	article {
-		@include blog-post;
-	}
-}

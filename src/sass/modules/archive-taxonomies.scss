@@ -11,7 +11,8 @@
 
 	box-shadow: shadow(1);
 
-	h2 {
+	h2,
+	h3 {
 		@include a11y-hide;
 	}
 

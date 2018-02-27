@@ -1,5 +1,7 @@
 #google-map {
 	> header {
-		@include section;
+		@include container;
+
+		margin-bottom: 0;
 	}
 }

@@ -7,8 +7,9 @@
 	padding-bottom: $padding-small;
 
 	font-size: $font-size-small;
+	color: color(gray);
 
-	#home-page & {
+	#front-page & {
 		display: none;
 	}
 }

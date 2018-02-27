@@ -1,3 +1,39 @@
+////////////////////
+// Animate underline
+@mixin animated-underline ($color: $link-color) {
+	position: relative;
+
+	&:after {
+		background: $color;
+
+		display: block;
+		content: "";
+
+		width: 0%;
+		height: .25rem;
+
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+
+		transform: translateX(-50%);
+		transition: width $transition-default $transition-easing;
+	}
+
+	&:hover,
+	&.active {
+		@include animated-underline-active;
+	}
+}
+
+@mixin animated-underline-active {
+	&:after {
+		width: 100%;
+	}
+}
+
+////////////////
+// Dropdown menu
 @mixin dropdown-menu {
 	margin: 0;
 	list-style: none;
@@ -115,6 +151,86 @@
 
 		&:hover > ul {
 			transform: translateX(-50%) scaleY(1);
+		}
+	}
+}
+
+///////////////////
+// Header and cards
+@mixin header-and-cards {
+	@include container;
+
+	article {
+		background: $white;
+
+		margin: 0 0 $margin-large;
+		padding: $padding-default;
+
+		box-shadow: shadow(1);
+
+		figure {
+			margin: -$padding-default;
+			margin-bottom: $padding-default;
+			overflow: hidden;
+
+			img {
+				display: block;
+				width: 100%;
+				transform: scale(1);
+				transition: transform $transition-default $transition-easing;
+
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+
+		header {
+			h2,
+			h3 {
+				font-size: $font-size-h3;
+			}
+
+			p {
+				@include separated-list(' | ', $margin-small / 2);
+
+				font-size: $font-size-small;
+				text-transform: uppercase;
+				color: color(gray);
+
+				> *:after {
+					color: $border-color;
+				}
+			}
+		}
+
+		> a:last-child {
+			@include button;
+		}
+	}
+
+	@media #{breakpoint(tablet)} {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		> header {
+			@include flex-width(100%);
+		}
+
+		article {
+			@include flex-width(50%, $gutter-default);
+
+			// NOTE: This is to bottom align any potential buttons
+		/*	display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-direction: column;
+
+			> a:last-child {
+				margin-top: auto;
+			} */
 		}
 	}
 }

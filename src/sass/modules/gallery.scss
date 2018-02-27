@@ -1,6 +1,8 @@
 #gallery {
 	> header {
-		@include section;
+		@include container;
+
+		margin-bottom: 0;
 	}
 
 	ul {
@@ -16,6 +18,11 @@
 			overflow: hidden;
 			flex: 0 0 50%;
 			width: 50%;
+
+			@media #{breakpoint(tablet)} {
+				flex: 0 0 25%;
+				width: 25%;
+			}
 		}
 
 		figure {
@@ -47,6 +54,8 @@
 				transition: transform $transition-default $transition-easing;
 
 				h3 {
+					@include text;
+
 					margin: 0 0 $margin-small;
 					color: $white;
 

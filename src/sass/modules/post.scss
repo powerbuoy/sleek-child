@@ -1,6 +1,4 @@
 #post {
-	@include blog-post;
-
 	> header {
 		@include hero;
 
@@ -8,7 +6,7 @@
 	}
 
 	> article {
-		@include section;
+		@include container($site-width * .75);
 		@include post-content;
 	}
 }

@@ -14,7 +14,7 @@
 
 	// Page without right col
 	> article {
-		@include section;
+		@include container($site-width * .75);
 	}
 
 	// Right col
@@ -25,25 +25,17 @@
 
 		h2 {
 			font-size: $font-size-h4;
+			margin: 0 0 $margin-small;
 		}
 
-		ul {
-			margin: 0;
-			list-style: none;
-
-			li {
-				margin-bottom: $margin-small;
-			}
-
-			ul {
-				margin: $margin-small 0 0 $margin-small;
-			}
+		p {
+			margin: 0 0 $margin-small;
 		}
 	}
 
 	// If the page has modules to the right, a div wraps the article and aside
 	> div {
-		@include section;
+		@include container;
 
 		// Display them in columns in high res
 		@media #{breakpoint(tablet)} {
@@ -52,15 +44,11 @@
 			justify-content: space-between;
 
 			> article {
-				flex: 0 0 #{$primary-content-width} - #{$gutter-large / 2};
-				width: calc(#{$primary-content-width} - #{$gutter-large / 2});
+				flex: 0 0 70%;
 			}
 
 			> aside {
-				$aside-width: 100% - $primary-content-width;
-
-				flex: 0 0 #{$aside-width} - #{$gutter-large / 2};
-				width: calc(#{$aside-width} - #{$gutter-large / 2});
+				flex: 0 0 25%;
 			}
 		}
 	}

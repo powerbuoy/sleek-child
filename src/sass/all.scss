@@ -11,10 +11,9 @@
 @import "../../node_modules/sleek-css/sleek-css.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
-// Our components
+// Our stuff
+@import "mixins";
 @import "components/*";
-
-// Our modules
 @import "modules/*";
 
 // Shrink everything slightly in low res
@@ -22,4 +21,35 @@ html {
 	@media #{breakpoint(tablet-max)} {
 		font-size: 80%;
 	}
+}
+
+// Make basically everything a container
+#four-o-four,
+#pagination,
+#video,
+#comments,
+#post-comment,
+#contact-form {
+	@include container;
+}
+
+#pagination {
+	text-align: center;
+}
+
+// Or a hero
+#archive-header {
+	@include hero;
+
+	text-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .2);
+}
+
+// Or cards in cols
+#child-pages,
+#featured-posts,
+#latest-posts,
+#posts,
+#text-blocks,
+#users {
+	@include header-and-cards;
 }
