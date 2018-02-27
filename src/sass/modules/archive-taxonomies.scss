@@ -11,14 +11,6 @@
 
 	box-shadow: shadow(1);
 
-	position: sticky;
-	top: $header-height;
-	z-index: 99;
-
-	@media #{breakpoint(tablet)} {
-		top: $header-height-tablet;
-	}
-
 	h2 {
 		@include a11y-hide;
 	}
