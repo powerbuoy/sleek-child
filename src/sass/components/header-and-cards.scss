@@ -4,7 +4,7 @@
 	article {
 		background: $white;
 		padding: $padding-default;
-		box-shadow: map-get($shadows, 1);
+		box-shadow: shadow(1);
 
 		figure {
 			margin: -$padding-default;

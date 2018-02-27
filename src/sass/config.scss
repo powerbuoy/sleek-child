@@ -75,8 +75,6 @@ $colors: (
  */
 // Background and text colors
 $form-field-bg: #fff;
-$form-success-color: #060;
-$form-error-color: #900;
 $form-placeholder-color: #bbb;
 $form-text-color: #333;
 
@@ -85,7 +83,7 @@ $form-padding-horizontal: $button-padding-vertical;
 $form-padding-vertical: $button-padding-vertical;
 
 // Border
-$form-border: true;
+$form-border: 1px solid lightgray;
 $form-border-radius: .2rem;
 
 // Select elements

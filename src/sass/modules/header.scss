@@ -19,7 +19,7 @@ html.hash-active.hash-active-header {
 	padding-top: 0;
 	padding-bottom: 0;
 
-	box-shadow: map-get($shadows, 1);
+	box-shadow: shadow(1);
 
 	a {
 		color: inherit;
