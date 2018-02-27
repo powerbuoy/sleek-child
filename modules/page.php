@@ -29,13 +29,11 @@
 
 			<?php the_excerpt() ?>
 
-			<?php sleek_acf_render_modules('inside-hero') ?>
-
 		</header>
 
 		<?php get_template_part('modules/breadcrumbs') ?>
 
-		<?php if (get_field('modules-next-to-content') and !post_password_required()) : ?>
+		<?php if (get_field('aside_content') and !post_password_required()) : ?>
 			<div>
 
 				<article>
@@ -47,7 +45,7 @@
 
 				<aside>
 
-					<?php sleek_acf_render_modules('next-to-content') ?>
+					<?php sleek_acf_render_modules('aside_content') ?>
 
 				</aside>
 

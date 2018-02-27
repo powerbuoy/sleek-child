@@ -1,24 +1,15 @@
 <header id="header">
 
-	<a href="<?php echo home_url('/') ?>" class="site-logo">
+	<a href="<?php echo home_url('/') ?>">
 		<?php echo sleek_get_site_logo() ?>
 	</a>
 
 	<?php if (get_bloginfo('description')) : ?>
-		<p class="tagline">
-			<?php echo str_replace(['&lt;', '&gt;'], ['<', '>'], get_bloginfo('description')) # Support for HTML in site tagline ?>
-		</p>
+		<p><?php echo get_bloginfo('description') ?></p>
 	<?php endif ?>
 
-	<?php if (has_nav_menu('header')) : ?>
-		<nav>
-			<?php wp_nav_menu([
-				'menu' => 'header',
-				'container' => false
-			]) ?>
-		</nav>
-	<?php endif ?>
+	<?php dynamic_sidebar('header') ?>
 
-	<a href="#header" class="menu-toggle" title="<?php _e('Open menu', 'sleek') ?>" data-toggle-hash></a>
+	<a href="#header" title="<?php _e('Open menu', 'sleek') ?>" data-toggle-hash></a>
 
 </header>

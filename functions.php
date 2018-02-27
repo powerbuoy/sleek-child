@@ -1,13 +1,12 @@
 <?php
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
-require_once get_stylesheet_directory() . '/inc/add-youtube-args.php';
 
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
 	# Pass in the width/height of the largest image. Sizes will be registered for
 	# thumbnail (25%), medium (50%), medium_large (75%) and large (the size you pass in)
-	# Pass in additional sizes as last array
+	# Pass in additional sizes as last array with an optional 'crop' key
 	sleek_register_image_sizes(1920, 1080, ['center', 'center']/*, [
 		'portrait' => ['width' => 1080, 'height' => 1920],
 		'square' => ['width' => 1920, 'height' => 1920],
@@ -38,7 +37,7 @@ add_action('init', function () use ($postTypes) {
 
 ###################################################
 # Create archive meta data pages for our post types
-# NOTE: You can add more fields to these pages using the "${postType}-archive-data" key
+# NOTE: You can add more fields to these pages using the "${postType}_archive_meta" key
 /* add_action('acf/init', function () use ($postTypes) {
 	sleek_archive_meta_data($postTypes);
 }); */
@@ -51,17 +50,17 @@ add_filter('acf/settings/show_admin', '__return_false');
 # Register fields
 add_action('acf/init', function () {
 	# Add an options page
-/*	acf_add_options_page([
+/*	sleek_acf_add_options_page([
 		'page_title' => __('Theme settings', 'sleek_child'),
-		'menu_slug' => 'theme-settings',
-		'post_id' => 'theme-settings' # NOTE: Use this id in get_field('my-field', 'theme-settings')
+		'menu_slug' => 'theme_settings',
+		'post_id' => 'theme_settings' # NOTE: Use this id in get_field('my_field', 'theme_settings')
 	]); */
 
 	# Add some fields to the options page
 /*	sleek_acf([
-		'key' => 'should-be-unique',
+		'key' => 'theme_settings',
 		'title' => __('Theme settings', 'sleek_child'),
-		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme-settings']]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme_settings']]],
 		'fields' => [
 			'contact-form'
 		]
@@ -69,31 +68,38 @@ add_action('acf/init', function () {
 
 	# Add more fields to the archive options page for movies
 /*	sleek_acf([
-		'key' => 'unique-key',
+		'key' => 'archive_fields',
 		'title' => __('Archive options', 'sleek_child'),
-		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie-archive-data']]],
+		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie_archive_meta']]],
 		'fields' => [
 			'contact-form'
 		]
 	]); */
 
 	# Add ACF to a flexible content field named "after-page-content"
-	# NOTE: Render these fields using sleek_acf_render_modules('after-page-content')
+	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
 	sleek_acf([
-		'key' => 'must-be-unique',
+		'key' => 'modules',
 		'title' => __('Modules', 'sleek_child'),
 		'flexible' => true,
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
-			'below-content' => ['text-block', 'text-blocks', 'post-list', 'latest-posts', 'child-pages', 'sibling-pages', 'users', 'video', 'instagram', 'contact-form', 'hubspot-form', 'hubspot-cta', 'google-map', 'gallery', 'divider'],
-			'next-to-content' => ['page-menu', 'text-block', 'video', 'contact-form', 'attachments'],
-			'inside-hero' => ['buttons']
+			'below_content' => [
+				'attachments', 'child-pages', 'contact-form', 'counter', 'divider', 'featured-posts', 'gallery',
+				'google-map', 'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
+				'share-page', 'sibling-pages', 'sticky-post', 'text-block', 'text-blocks', 'users', 'video'
+			],
+			'aside_content' => [
+				'attachments', 'child-pages', 'contact-form', 'counter', 'divider', 'featured-posts', 'gallery',
+				'google-map', 'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
+				'share-page', 'sibling-pages', 'sticky-post', 'text-block', 'text-blocks', 'users', 'video'
+			]
 		]
 	]);
 
 	# Add fixed ACF fields to the sidebar
 /*	sleek_acf([
-		'key' => 'must-also-be-unique',
+		'key' => 'page_options',
 		'title' => __('Page options', 'sleek_child'),
 		'position' => 'side',
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -104,13 +110,10 @@ add_action('acf/init', function () {
 
 	# Add fixed, tabbed ACF fields below the editor
 	sleek_acf([
-		'key' => 'must-be-unique-too',
-		'title' => __('Page options', 'sleek_child'),
-		'location' => [[[
-			'param' => 'post_type',
-			'operator' => '==',
-			'value' => 'page'
-		]]],
+		'key' => 'page_content',
+		'title' => __('Page content', 'sleek_child'),
+		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
+		'tab_placement' => 'left',
 		'fields' => [
 			# NOTE: Nested arrays create tabs
 			__('Hero', 'sleek_child') => [
@@ -121,7 +124,7 @@ add_action('acf/init', function () {
 
 	# Add a single field below the title
 /*	sleek_acf([
-		'key' => 'yea-this-also-needs-to-be-unique',
+		'key' => 'below_title',
 		'title' => __('Subtitle'),
 		'position' => 'acf_after_title',
 		'layout' => 'seamless',
@@ -150,41 +153,15 @@ add_action('init', function () {
 
 ###################
 # Add menu location
-add_action('after_setup_theme', function () {
+/* add_action('after_setup_theme', function () {
 	register_nav_menu('header', __('Header menu', 'sleek_child'));
-});
-
-##############################################################
-# Add more options to Appearance -> Customize -> Theme Options
-# (then use your options with get_theme_mod('option_name') any way you like)
-# NOTE: You may want to add these types of fields to an ACF options page instead
-/* add_action('customize_register', function ($wpCustomize) {
-	sleek_register_theme_options($wpCustomize, [
-		'hubspot_portal_id' => 'text'
-	], 'sleek_child');
-});
-
-add_action('wp_head', function () {
-	# HubSpot tracking code
-	if ($hsId = get_theme_mod('hubspot_portal_id')) {
-		echo '<!-- Start of Async HubSpot Analytics Code -->
-			<script type="text/javascript">
-				(function(d,s,i,r) {
-				if (d.getElementById(i)){return;}
-				var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
-				n.id=i;n.src=\'//js.hs-analytics.net/analytics/\'+(Math.ceil(new Date()/r)*r)+\'/' . $hsId . '.js\';
-				e.parentNode.insertBefore(n, e);
-				})(document,"script","hs-analytics",300000);
-			</script>
-			<!-- End of Async HubSpot Analytics Code -->';
-	}
 }); */
 
 ##########################
 # Add more fields to users
 /* add_filter('user_contactmethods', function () {
-	$fields['job_title'] = __('Job title', 'sleek_child');
-	$fields['tel'] = __('Telephone', 'sleek_child');
+	$fields['tagline'] = __('Tagline', 'sleek_child');
+	$fields['phone'] = __('Telephone', 'sleek_child');
 	$fields['facebook'] = __('Facebook', 'sleek_child');
 	$fields['twitter'] = __('Twitter', 'sleek_child');
 	$fields['instagram'] = __('Instagram', 'sleek_child');
@@ -196,8 +173,17 @@ add_action('wp_head', function () {
 	return $fields;
 }); */
 
-#################
-# Shorter excerpt
+########################
+# Add more theme options
+/* add_action('customize_register', function ($wpCustomize) {
+	# The hubspot_portal_id is used by the HS-modules
+	sleek_register_theme_options($wpCustomize, [
+		'hubspot_portal_id' => 'text'
+	], 'sleek_child');
+}); */
+
+################
+# Modify excerpt
 add_filter('excerpt_length', function () {
 	return 25;
 });

@@ -1,18 +1,39 @@
 input[type=submit] {
-	@include button;
+//	@include button;
 }
 
 textarea {
-	min-height: 10rem;
+	height: 12rem;
 }
 
 // CF7
-.screen-reader-response {
-	display: none;
-}
+.wpcf7 {
+	.screen-reader-response {
+		display: none;
+	}
 
-.wpcf7-not-valid-tip {
-	margin: $margin-small 0 0;
+	.wpcf7-not-valid-tip {
+		margin: $margin-small 0 0;
+	}
+
+	.ajax-loader {
+		display: none;
+		margin-left: $gutter-default;
+
+		&:before {
+			@include icon($icon-spinner);
+
+			margin: 0;
+		}
+
+		&.is-active {
+			display: inline;
+
+			&:before {
+				animation: spin 2s infinite linear;
+			}
+		}
+	}
 }
 
 // HS
@@ -46,7 +67,6 @@ textarea {
 	ul.hs-error-msgs {
 		margin: $margin-small 0 0;
 		list-style: none;
-		font-style: italic;
 
 		li {
 			display: block;
