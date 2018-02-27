@@ -2,7 +2,7 @@
 	'use strict';
 
 	var acceptsCookies = window.localStorage.getItem('accepts_cookies');
-	var cookieMessage = 'We use cookies to bring you the best possible experience when using our site. <a href="https://cookiesandyou.com/" target="_blank">Read more about cookies</a> | <a href="#" class=" close">Accept</a>';
+	var cookieMessage = 'We use cookies to bring you the best possible experience when browsing our site. <a href="https://cookiesandyou.com/" target="_blank">Read more about cookies</a> | <a href="#" class=" close">Accept</a>';
 
 	if (!acceptsCookies) {
 		var warning = document.createElement('div');
