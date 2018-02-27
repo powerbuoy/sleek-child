@@ -1,7 +1,7 @@
 #cookie-consent {
 	background: rgba($white, .9);
 
-	padding: $padding-default;
+	padding: $padding-small;
 
 	position: fixed;
 	left: 0;
@@ -11,4 +11,6 @@
 
 	font-size: $font-size-small;
 	text-align: center;
+
+	box-shadow: shadow(1);
 }
