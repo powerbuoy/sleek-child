@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?65928564');
-  src: url('../font/fontello.eot?65928564#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?65928564') format('woff2'),
-       url('../font/fontello.woff?65928564') format('woff'),
-       url('../font/fontello.ttf?65928564') format('truetype'),
-       url('../font/fontello.svg?65928564#fontello') format('svg');
+  src: url('../font/fontello.eot?34121648');
+  src: url('../font/fontello.eot?34121648#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?34121648') format('woff2'),
+       url('../font/fontello.woff?34121648') format('woff'),
+       url('../font/fontello.ttf?34121648') format('truetype'),
+       url('../font/fontello.svg?34121648#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?65928564#fontello') format('svg');
+    src: url('../font/fontello.svg?34121648#fontello') format('svg');
   }
 }
 */
