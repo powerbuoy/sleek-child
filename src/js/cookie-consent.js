@@ -2,7 +2,7 @@
 	'use strict';
 
 	var acceptsCookies = window.localStorage.getItem('cookie_consent');
-	var cookieMessage = sleek_child_config.COOKIE_CONSENT;
+	var cookieMessage = SLEEK_CHILD_CONFIG.COOKIE_CONSENT;
 
 	if (!acceptsCookies) {
 		var el = document.createElement('div');
