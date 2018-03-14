@@ -140,7 +140,7 @@ add_action('wp_enqueue_scripts', function () {
 	sleek_register_assets(); # Pass in more as array: ['https://fonts.googleapis.com/css?family=Lato:300,900|Roboto:900']
 
 	# Add more JS config here (under the "sleek"-handle (but using your own variable name "sleek_child_config"))
-	wp_localize_script('sleek', 'sleek_child_config', [
+	wp_localize_script('sleek', 'SLEEK_CHILD_CONFIG', [
 		'COOKIE_CONSENT' => __('We use cookies to bring you the best possible experience when browsing our site. <a href="https://cookiesandyou.com/" target="_blank">Read more about cookies</a> | <a href="#" class=" close">Accept</a>', 'sleek_child')
 	]);
 });
