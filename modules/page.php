@@ -31,8 +31,6 @@
 
 		</header>
 
-		<?php get_template_part('modules/breadcrumbs') ?>
-
 		<?php if (get_field('modules_aside_content') and !post_password_required()) : ?>
 			<div>
 
