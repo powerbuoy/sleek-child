@@ -9,6 +9,10 @@
 		return;
 	}
 
+	if (!(SLEEK_CONFIG && SLEEK_CONFIG.GOOGLE_MAPS_API_KEY)) {
+		return;
+	}
+
 	var createMap = function (mapEl, lat, lng, infoWinContent) {
 		lat = parseFloat(lat);
 		lng = parseFloat(lng);
