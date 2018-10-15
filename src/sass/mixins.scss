@@ -192,7 +192,7 @@
 			}
 
 			p {
-				@include separated-list(' | ', $margin-small / 2);
+				@include separated-list;
 
 				font-size: $font-size-small;
 				text-transform: uppercase;
