@@ -201,11 +201,11 @@ add_filter('excerpt_more', function () {
 # Add custom fields to rest API
 # NOTE: Add more post types here as needed
 add_action('rest_api_init', function () {
-	register_rest_field(['page', 'post'], 'custom_fields', ['get_callback' => function () {
+	register_rest_field(['page', 'post'], 'custom_fields', ['get_callback' => function ($post) {
 		return get_post_custom($post['id']);
 	}]);
 
-	register_rest_field(['page'], 'modules_below_content', ['get_callback' => function () {
+	register_rest_field(['page'], 'modules_below_content', ['get_callback' => function ($post) {
 		return get_field('modules_below_content', $post['id']);
 	}]);
 });
