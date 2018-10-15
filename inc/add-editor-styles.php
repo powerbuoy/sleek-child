@@ -7,11 +7,12 @@ add_filter('tiny_mce_before_init', function ($settings) {
 	}
 
 	$newFormats = array_merge($oldFormats, [
-		[
+		# Call to action
+	/*	[
 			'title' => __('Call to Action', 'invise'),
 			'selector' => 'p',
 			'classes' => 'cta'
-		]
+		] */
 	]);
 
 	$settings['style_formats'] = json_encode($newFormats);
