@@ -32,4 +32,13 @@
 			closePopups();
 		}
 	});
+
+	// Popup templates
+	$('[data-popup-template]').click(function () {
+		var clicked = $(this);
+		var popupId = clicked.attr('href').substr(1);
+		var templateId = clicked.attr('data-popup-template');
+
+		$('#' + popupId).find('div.popup-template-content').html($('#' + templateId).html());
+	});
 })();
