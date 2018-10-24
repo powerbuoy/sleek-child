@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	if (!(SLEEK_CHILD_CONFIG && SLEEK_CHILD_CONFIG.COOKIE_CONSENT)) {
+	if (typeof SLEEK_CHILD_CONFIG == 'undefined') {
 		return;
 	}
 
