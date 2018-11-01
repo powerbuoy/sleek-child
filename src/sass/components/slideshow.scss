@@ -94,4 +94,27 @@
 			content: $icon-right;
 		}
 	}
+
+	// White version
+	&.slideshow--white {
+		.slick-next,
+		.slick-prev {
+			color: $white;
+		}
+
+		.slick-dots {
+			li {
+				button {
+					background: transparent;
+					border: 1px solid $white;
+				}
+
+				&.slick-active {
+					button {
+						background: $white;
+					}
+				}
+			}
+		}
+	}
 }
