@@ -9,7 +9,7 @@
 		return;
 	}
 
-	if (!(SLEEK_CONFIG && SLEEK_CONFIG.GOOGLE_MAPS_API_KEY)) {
+	if (typeof SLEEK_CONFIG == 'undefined' || typeof SLEEK_CONFIG.GOOGLE_MAPS_API_KEY == 'undefined') {
 		return;
 	}
 
@@ -64,7 +64,7 @@
 			var mapEl = $(this);
 			var lat = mapEl.attr('data-lat');
 			var lng = mapEl.attr('data-lng');
-			var address = mapEl.attr('data-google-map');
+			var address = mapEl.attr('data-address');
 			var infoWin = mapEl.find('.google-map-info-window');
 				infoWin = infoWin.length ? infoWin.html() : false;
 
@@ -77,12 +77,9 @@
 			}
 
 			if (address) {
-				$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key' + SLEEK_CONFIG.GOOGLE_MAPS_API_KEY, function (data) {
+				$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + SLEEK_CONFIG.GOOGLE_MAPS_API_KEY, function (data) {
 					if (data && data.results && data.results.length && data.results[0].geometry && data.results[0].geometry.location) {
 						createMap(mapEl[0], data.results[0].geometry.location.lat, data.results[0].geometry.location.lng, infoWin);
-					}
-					else {
-					//	console.dir(data);
 					}
 				});
 			}
