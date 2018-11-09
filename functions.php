@@ -1,5 +1,6 @@
 <?php
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
+require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
 ######################################
 # Modify WP's built in thumbnail sizes
@@ -16,9 +17,13 @@ add_action('after_setup_theme', function () {
 ###########################################
 # Register custom post types and taxonomies
 # NOTE: This can be an associative array if you need to override default post type config
-$postTypes = ['movie', 'director' => [
-	'description' => __('A list of famous film directors', 'sleek_child')
-]];
+$postTypes = [
+	'movie',
+	'director' => [
+		'menu_icon' => 'dashicons-businessman',
+		'description' => __('A list of famous film directors', 'sleek_child')
+	]
+];
 
 add_action('init', function () use ($postTypes) {
 	# Post types
