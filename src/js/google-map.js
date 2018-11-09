@@ -77,9 +77,11 @@
 			}
 
 			if (address) {
-				$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + SLEEK_CONFIG.GOOGLE_MAPS_API_KEY, function (data) {
-					if (data && data.results && data.results.length && data.results[0].geometry && data.results[0].geometry.location) {
-						createMap(mapEl[0], data.results[0].geometry.location.lat, data.results[0].geometry.location.lng, infoWin);
+				var geocoder = new google.maps.Geocoder();
+
+				geocoder.geocode({'address': address}, function (results, status) {
+					if (status === 'OK') {
+						createMap(mapEl[0], results[0].geometry.location.lat(), results[0].geometry.location.lng(), infoWin);
 					}
 				});
 			}
