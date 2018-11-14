@@ -148,7 +148,7 @@ add_action('wp_enqueue_scripts', function () {
 
 	# Add more JS config here (under the "sleek"-handle (but using your own variable name "SLEEK_CHILD_CONFIG"))
 	wp_localize_script('sleek', 'SLEEK_CHILD_CONFIG', [
-		'COOKIE_CONSENT' => __('We use cookies to bring you the best possible experience when browsing our site. <a href="https://cookiesandyou.com/" target="_blank">Read more about cookies</a> | <a href="#" class=" close">Accept</a>', 'sleek_child')
+		'COOKIE_CONSENT' => __('We use cookies to bring you the best possible experience when browsing our site. <a href="https://cookiesandyou.com/" target="_blank">Read more about cookies</a> | <a href="#" class="close">Accept</a>', 'sleek')
 	]);
 });
 
