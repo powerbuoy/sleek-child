@@ -185,7 +185,7 @@ add_action('wp_head', function () {
 
 ##########################
 # Add more fields to users
-/* add_filter('user_contactmethods', function () {
+/* add_filter('user_contactmethods', function ($fields) {
 	$fields['tagline'] = __('Tagline', 'sleek_child');
 	$fields['phone'] = __('Telephone', 'sleek_child');
 	$fields['facebook'] = __('Facebook', 'sleek_child');
