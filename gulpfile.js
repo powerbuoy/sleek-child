@@ -1,113 +1,122 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
+const gulpSass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const sourcemaps = require('gulp-sourcemaps');
+const clean = require('gulp-clean');
+const fontello = require('gulp-fontello');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const gulpGettext = require('gulp-gettext');
+const browserify = require('browserify');
+const vinylSourceStream = require('vinyl-source-stream');
+const vinylBuffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
 
-var paths = {
-	sass: 'src/sass/',
-	js: 'src/js/',
-	dest: 'dist/',
-	icons: 'dist/icons/',
-	lang: 'languages/',
-	assets: 'src/assets/'
+/////////
+// Assets
+function cleanAssets () {
+	return gulp.src('dist/assets/', {read: false, allowEmpty: true}).pipe(clean());
+}
+
+function copyAssets () {
+	return gulp.src('src/assets/**/*').pipe(gulp.dest('dist/assets/'));
+}
+
+gulp.task('assets', gulp.series(cleanAssets, copyAssets));
+
+////////
+// Icons
+function downloadIcons () {
+	return gulp.src('icons.json').pipe(fontello()).pipe(gulp.dest('dist/icons/'));
+}
+
+function rewriteIconCSS () {
+	var afterClass = 'icon--after';
+
+	var baseFind = /\[class\^="icon-"\]:before, \[class\*=" icon-"\]:before/g;
+	var baseReplace = '[class^="icon-"]:before, [class*=" icon-"]:before,\n[class^="icon-"]:after, [class*=" icon-"]:after';
+
+	var iconFind = /\.icon-(.*?):before {(.*?)}/g;
+	var iconReplace = '.icon-$1:before {$2}\n.icon-$1.' + afterClass + ':before {content: normal}\n.icon-$1.' + afterClass + ':after {$2}';
+
+	var pathFind = /\.\.\/font\/fontello/g;
+	var pathReplace = 'icons/font/fontello';
+
+	return gulp.src('dist/icons/css/fontello.css')
+		.pipe(replace(baseFind, baseReplace))
+		.pipe(replace(iconFind, iconReplace))
+		.pipe(replace(pathFind, pathReplace))
+		.pipe(rename('icons.scss'))
+		.pipe(gulp.dest('src/sass/'));
+}
+
+function generateIconVars () {
+	var find = /\.icon-(.*?):before \{ content: '(.*?)'; \} \/\*.*?\*\//g;
+	var rep = '\$icon-$1: "$2";';
+
+	return gulp.src('dist/icons/css/fontello-codes.css').pipe(replace(find, rep)).pipe(rename('icon-vars.scss')).pipe(gulp.dest('src/sass/'));
+}
+
+gulp.task('icons', gulp.series(downloadIcons, rewriteIconCSS, generateIconVars));
+
+///////
+// SASS
+function sass () {
+	return gulp.src('src/sass/all.scss')
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(sassGlob())
+		.pipe(gulpSass())
+		.pipe(autoprefixer({
+			browsers: ['last 1 version', 'IE 9', 'IE 10', '> 2%', 'Safari >= 8'],
+			grid: true
+		}))
+		.pipe(cssnano())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('dist/'));
 };
 
-/**
- * SASS
- */
-var sleekSASS = require(__dirname + '/../sleek/gulp/sass.js');
+gulp.task('sass-only', sass);
+gulp.task('sass', gulp.series(downloadIcons, rewriteIconCSS, generateIconVars, sass));
 
-gulp.task('sass', ['icons', 'svg'], function () {
-	return sleekSASS(paths.sass + 'all.scss', paths.dest);
-});
+//////////
+// Gettext
+function gettext () {
+	return gulp.src('languages/**/*.po').pipe(gulpGettext()).pipe(gulp.dest('languages/'));
+}
 
-gulp.task('sass-only', function () {
-	return sleekSASS(paths.sass + 'all.scss', paths.dest);
-});
+gulp.task('gettext', gettext);
 
-/**
- * Icons
- */
-var sleekIcons = require(__dirname + '/../sleek/gulp/icons.js');
+/////////////
+// JavaScript
+function js () {
+	return browserify('src/js/all.js', {debug: true})
+		.transform({global: true}, 'browserify-shim')
+		.transform('require-globify')
+		.bundle()
+		.pipe(vinylSourceStream('all.js'))
+		.pipe(vinylBuffer())
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('dist/'));
+}
 
-gulp.task('generate-icon-vars', ['rewrite-icon-css'], function () {
-	return sleekIcons.generateIconVars(paths.icons, paths.sass);
-});
+gulp.task('js', js);
 
-gulp.task('rewrite-icon-css', ['download-icons'], function () {
-	return sleekIcons.rewriteCSS(paths.icons, paths.sass);
-});
+//////////
+// Default
+gulp.task('default', gulp.parallel('gettext', 'assets', 'sass', 'js'));
 
-gulp.task('download-icons', function () {
-	return sleekIcons.download('icons.json', paths.icons);
-});
+////////
+// Watch
+function watchFiles () {
+	gulp.watch('src/sass/**/*.scss', sass);
+	gulp.watch('src/js/**/*.js', js);
+	gulp.watch('icons.json', gulp.series(downloadIcons, rewriteIconCSS, generateIconVars, sass));
+	gulp.watch('languages/**/*.po', gettext);
+	gulp.watch('src/assets/**/*', gulp.series(cleanAssets, copyAssets));
+}
 
-gulp.task('icons', ['generate-icon-vars']);
-
-/**
- * JS
- */
-var sleekJS = require(__dirname + '/../sleek/gulp/js.js');
-var sleekJSHint = require(__dirname + '/../sleek/gulp/jshint.js');
-
-gulp.task('js', ['js-hint'], function () {
-	return sleekJS(paths.js, paths.dest);
-});
-
-gulp.task('js-hint', function () {
-	return sleekJSHint(paths.js);
-});
-
-/**
- * Styleguide
- */
-var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
-
-gulp.task('styleguide', ['sass'], function () {
-	return sleekStyleguide(paths.sass + 'all.scss', paths.dest);
-});
-
-
-/**
- * GetText
- */
-var sleekGetText = require(__dirname + '/../sleek/gulp/gettext.js');
-
-gulp.task('gettext', function () {
-	return sleekGetText(paths.lang);
-});
-
-/**
- * Copy Assets (TODO: Should delete first!)
- */
-gulp.task('assets', function () {
-	return gulp.src([paths.assets + '**/*', '!' + paths.assets + '**/*.svg']).pipe(gulp.dest(paths.dest + 'assets'));
-});
-
-/**
- * Merge and min SVGs
- */
-var sleekSvg = require(__dirname + '/../sleek/gulp/svg.js');
-
-gulp.task('svgmin', function () {
-	return sleekSvg.min(paths.assets + '**/*.svg', paths.dest + 'assets');
-});
-
-gulp.task('svgstore', ['svgmin'], function () {
-	return sleekSvg.store(paths.assets + '**/*.svg', paths.dest + 'assets');
-});
-
-gulp.task('svg', ['svgstore'], function () {
-	return sleekSvg.css(paths.dest + '**/*.svg', paths.sass + 'svg.scss');
-});
-
-/**
- * Watch and default
- */
-gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
-
-gulp.task('watch', ['default'], function () {
-	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
-	gulp.watch(paths.js + '**/*.js', ['js']);
-	gulp.watch('icons.json', ['sass']);
-	gulp.watch(paths.lang + '**/*.po', ['gettext']);
-	gulp.watch(paths.assets + '**/*', ['assets']);
-	gulp.watch(paths.assets + '**/*.svg', ['sass']);
-});
+gulp.task('watch', gulp.series('default', watchFiles));
