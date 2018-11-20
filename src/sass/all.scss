@@ -1,13 +1,12 @@
 // Icons (generated)
 @import "icon-vars";
 @import "icons";
-@import "svg";
 
 // Our SleekCSS config
 @import "config";
 
 // Third party
-@import url("../../node_modules/normalize-css/normalize.css");
+@import "../../node_modules/normalize-css/normalize";
 @import "../../node_modules/sleek-css/sleek-css.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
@@ -15,6 +14,7 @@
 @import "mixins";
 @import "components/*";
 @import "modules/*";
+@import "../../acf/**/*.scss";
 
 // Shrink everything slightly in low res
 html {
@@ -29,7 +29,10 @@ html {
 #video,
 #comments,
 #post-comment,
-#contact-form {
+#contact-form,
+#header,
+#footer,
+main > * {
 	@include container;
 }
 
