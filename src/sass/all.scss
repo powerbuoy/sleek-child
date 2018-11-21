@@ -6,7 +6,8 @@
 @import "config";
 
 // Third party
-@import "../../node_modules/normalize-css/normalize.css";
+@import "../../node_modules/normalize-css/normalize";
+@import "../../node_modules/sleek-css/sleek-css.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
 // Our stuff
