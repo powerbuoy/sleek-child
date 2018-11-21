@@ -22,13 +22,13 @@
 	}
 
 	.slick-dots {
-		margin: $margin-default 0 0;
+		margin: $spacing-default 0 0;
 		list-style: none;
 		text-align: center;
 
 		li {
 			display: inline-block;
-			margin: 0 ($margin-small / 2);
+			margin: 0 ($spacing-small / 2);
 			vertical-align: middle;
 
 			button {

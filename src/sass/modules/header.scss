@@ -54,7 +54,7 @@ html.hash-active.hash-active-header {
 			height: 100%;
 			z-index: 99;
 
-			padding: 6rem $site-padding $padding-large;
+			padding: 6rem $site-padding $spacing-large;
 			overflow: auto;
 
 			transform: translateX(100%);
@@ -63,7 +63,7 @@ html.hash-active.hash-active-header {
 			div > ul {
 				> li {
 					display: block;
-					margin: 0 0 $margin-default;
+					margin: 0 0 $spacing-default;
 				}
 			}
 		}
@@ -77,7 +77,7 @@ html.hash-active.hash-active-header {
 
 				> li {
 					margin-right: 0;
-					margin-left: $margin-default;
+					margin-left: $spacing-default;
 				}
 			}
 		}

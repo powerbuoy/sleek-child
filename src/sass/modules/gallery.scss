@@ -44,7 +44,7 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-				padding: $padding-default;
+				padding: $spacing-default;
 
 				color: $white;
 				font-style: normal;
@@ -56,7 +56,7 @@
 				h3 {
 					@include text;
 
-					margin: 0 0 $margin-small;
+					margin: 0 0 $spacing-small;
 					color: $white;
 
 					&:last-child {

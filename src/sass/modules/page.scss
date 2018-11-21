@@ -20,16 +20,16 @@
 	// Right col
 	> div > aside {
 		> * {
-			margin-bottom: $margin-large;
+			margin-bottom: $spacing-large;
 		}
 
 		h2 {
 			font-size: $font-size-h4;
-			margin: 0 0 $margin-small;
+			margin: 0 0 $spacing-small;
 		}
 
 		p {
-			margin: 0 0 $margin-small;
+			margin: 0 0 $spacing-small;
 		}
 	}
 
