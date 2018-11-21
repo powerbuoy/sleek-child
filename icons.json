@@ -26,26 +26,26 @@
     },
     {
       "uid": "0e5740f288f6f5cb04eef63f7f0a1506",
-      "css": "googleplus",
+      "css": "googleplus-1",
       "code": 62217,
       "src": "websymbols"
     },
     {
       "uid": "f3f90c8c89795da30f7444634476ea4f",
       "css": "left",
-      "code": 59396,
-      "src": "entypo"
+      "code": 59394,
+      "src": "fontawesome"
     },
     {
       "uid": "749e7d90a9182938180f1d2d8c33584e",
       "css": "right",
-      "code": 59397,
+      "code": 59402,
       "src": "entypo"
     },
     {
       "uid": "9c7ff134960bb5a82404e4aeaab366d9",
       "css": "up",
-      "code": 59398,
+      "code": 59403,
       "src": "entypo"
     },
     {
@@ -69,13 +69,13 @@
     {
       "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
       "css": "phone",
-      "code": 59402,
+      "code": 59397,
       "src": "fontawesome"
     },
     {
       "uid": "197375a3cea8cb90b02d06e4ddf1433d",
       "css": "globe",
-      "code": 59403,
+      "code": 59398,
       "src": "fontawesome"
     },
     {
@@ -83,12 +83,6 @@
       "css": "googleplus",
       "code": 62223,
       "src": "entypo"
-    },
-    {
-      "uid": "ccc2329632396dc096bb638d4b46fb98",
-      "css": "mail",
-      "code": 61664,
-      "src": "fontawesome"
     },
     {
       "uid": "48b79f27e4798f23bafa07b55dbe5b73",
@@ -139,24 +133,6 @@
       "src": "fontelico"
     },
     {
-      "uid": "9daa1fdf0838118518a7e22715e83abc",
-      "css": "pdf",
-      "code": 61889,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "5408be43f7c42bccee419c6be53fdef5",
-      "css": "document",
-      "code": 61686,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "3c961c1a8d874815856fc6637dc5a13c",
-      "css": "image",
-      "code": 61893,
-      "src": "fontawesome"
-    },
-    {
       "uid": "e80ae555c1413a4ec18b33fb348b4049",
       "css": "zip",
       "code": 61894,
@@ -166,18 +142,6 @@
       "uid": "bf882b30900da12fca090d9796bc3030",
       "css": "mail",
       "code": 59396,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
-      "css": "phone",
-      "code": 59397,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "197375a3cea8cb90b02d06e4ddf1433d",
-      "css": "globe",
-      "code": 59398,
       "src": "fontawesome"
     }
   ]
