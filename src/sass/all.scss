@@ -10,13 +10,9 @@
 @import "../../node_modules/sleek-css/sleek-css-lite.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
-// Our components
+// Our stuff
 @import "components/*";
-
-// Our modules
 @import "modules/*";
-
-// ACF modules
 @import "../../acf/**/*.scss";
 
 // TEMP!

@@ -13,7 +13,7 @@ textarea {
 	}
 
 	.wpcf7-not-valid-tip {
-		margin: $margin-small 0 0;
+		margin: $spacing-small 0 0;
 	}
 
 	.ajax-loader {
@@ -39,12 +39,12 @@ textarea {
 // HS
 .hs-form-field {
 	display: block;
-	margin: 0 0 $margin-default;
+	margin: 0 0 $spacing-default;
 
 	// Labels
 	> label {
 		display: block;
-		margin: 0 0 $margin-small;
+		margin: 0 0 $spacing-small;
 	}
 
 	// Checkboxes / radios
@@ -54,7 +54,7 @@ textarea {
 
 		li {
 			display: inline-block;
-			margin: 0 $margin-default $margin-default 0;
+			margin: 0 $spacing-default $spacing-default 0;
 		}
 	}
 
@@ -65,7 +65,7 @@ textarea {
 
 	// List of errors
 	ul.hs-error-msgs {
-		margin: $margin-small 0 0;
+		margin: $spacing-small 0 0;
 		list-style: none;
 
 		li {
