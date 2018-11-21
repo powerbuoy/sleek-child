@@ -3,6 +3,7 @@ const gulpSass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
 const fontello = require('gulp-fontello');
@@ -72,7 +73,8 @@ function sass () {
 			browsers: ['last 1 version', 'IE 9', 'IE 10', '> 2%', 'Safari >= 8'],
 			grid: true
 		}))
-		.pipe(cssnano())
+		// .pipe(cssnano()) // NOTE: Causes issues :/
+		.pipe(cleanCss())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('dist/'));
 };
