@@ -7,13 +7,13 @@
 
 // Third party
 @import "../../node_modules/normalize-css/normalize.css";
-@import "../../node_modules/sleek-css/sleek-css.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
 // Our stuff
 @import "mixins";
 @import "components/*";
 @import "modules/*";
+@import "../../acf/**/*.scss";
 
 // Shrink everything slightly in low res
 html {

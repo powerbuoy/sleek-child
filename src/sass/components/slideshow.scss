@@ -12,108 +12,80 @@
             <div>Slide 6</div>
         </div>
 ***/
-[data-slideshow] {
-	&.slick-slider {
-		position: static; // It gets relative from slick.scss but we need it to be static so we can position the arrows relative to the slideshow's parent
-	}
+.slideshow-pages {
+	margin: $spacing-default 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 
-	.slick-slide {
-		outline: 0;
-	}
+	a {
+		background: rgba($overlay-color, .4);
+		display: block;
+		width: .75rem;
+		height: .75rem;
+		margin: 0 ($spacing-small / 2);
+		font-size: 0;
+		border-radius: 50%;
 
-	.slick-dots {
-		margin: $margin-default 0 0;
-		list-style: none;
-		text-align: center;
-
-		li {
-			display: inline-block;
-			margin: 0 ($margin-small / 2);
-			vertical-align: middle;
-
-			button {
-				background: rgba($overlay-color, .4);
-
-				padding: 0;
-				min-height: 0;
-				width: .75rem;
-				height: .75rem;
-
-				font-size: 0;
-				line-height: 0;
-				text-indent: -10000px;
-
-				outline: 0;
-				border: 0;
-				border-radius: 50%;
-				box-shadow: none;
-			}
-
-			&.slick-active {
-				button {
-					background: rgba($overlay-color, .8);
-				}
-			}
+		&.active {
+			background: rgba($overlay-color, .8);
 		}
 	}
+}
 
-	a.slick-prev,
-	a.slick-next {
-		position: absolute;
-		top: 50%;
-		z-index: 97;
-		transform: translateY(-50%);
+a.slideshow-prev,
+a.slideshow-next {
+	position: absolute;
+	top: 50%;
+	z-index: 97;
+	transform: translateY(-50%);
+	font-size: 0;
+
+	&:before {
+		@include icon;
 
 		color: $text-color;
 		font-size: 2rem;
 		line-height: 1;
-
-		&:before {
-			@include icon;
-
-			margin: 0;
-		}
-
-		@media #{breakpoint(tablet-max)} {
-			display: none !important;
-		}
+		margin: 0;
 	}
 
-	a.slick-prev {
-		left: 0;
+	@media #{breakpoint(tablet-max)} {
+		display: none !important;
+	}
+}
 
-		&:before {
-			content: $icon-left;
-		}
+a.slideshow-prev {
+	left: 0;
+
+	&:before {
+		content: $icon-left;
+	}
+}
+
+a.slideshow-next {
+	right: 0;
+
+	&:before {
+		content: $icon-right;
+	}
+}
+
+// White version
+.slideshow--white {
+	.slideshow-next,
+	.slideshow-prev {
+		color: $white;
 	}
 
-	a.slick-next {
-		right: 0;
+	.slideshow-pages {
+		a {
+			background: transparent;
+			border: 1px solid $white;
 
-		&:before {
-			content: $icon-right;
-		}
-	}
-
-	// White version
-	&.slideshow--white {
-		.slick-next,
-		.slick-prev {
-			color: $white;
-		}
-
-		.slick-dots {
-			li {
-				button {
-					background: transparent;
-					border: 1px solid $white;
-				}
-
-				&.slick-active {
-					button {
-						background: $white;
-					}
-				}
+			&.active {
+				background: $white;
 			}
 		}
 	}
