@@ -212,6 +212,16 @@ add_filter('excerpt_more', function () {
 	return ' /../';
 });
 
+#####################
+# Change email sender
+/* add_filter('wp_mail_from', function () {
+	return get_option('admin_email');
+});
+
+add_filter('wp_mail_from_name', function () {
+	return get_bloginfo('name');
+}); */
+
 ###############################
 # Add custom fields to rest API
 # NOTE: Add more post types and fields as needed
