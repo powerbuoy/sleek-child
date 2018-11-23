@@ -169,17 +169,20 @@ add_action('init', function () {
 
 ########################
 # Add more theme options
-/* add_action('customize_register', function ($wpCustomize) {
-	# The hubspot_portal_id is used by the HS-modules
-	sleek_register_theme_options($wpCustomize, [
-		'hubspot_portal_id' => 'text'
-	], 'sleek_child');
+/* add_action('admin_init', function () {
+	add_settings_field(SLEEK_SETTINGS_NAME . '_hubspot_portal_id', __('Hubspot Portal ID', 'sleek_child'), function () {
+		$options = get_option(SLEEK_SETTINGS_NAME);
+
+		echo '<input type="text" name="' . SLEEK_SETTINGS_NAME . '[hubspot_portal_id]" value="' . $options['hubspot_portal_id'] . '">';
+	}, SLEEK_SETTINGS_SECTION_NAME, SLEEK_SETTINGS_SECTION_NAME);
 });
 
 # Use the new theme options
 add_action('wp_head', function () {
-	if ($hspid = get_theme_mod('hubspot_portal_id')) {
-		echo '<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/' . $hspid . '.js"></script>';
+	$options = get_option(SLEEK_SETTINGS_NAME);
+
+	if (isset($options['hubspot_portal_id']) and !empty($options['hubspot_portal_id'])) {
+		echo '<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/' . $options['hubspot_portal_id'] . '.js"></script>';
 	}
 }); */
 
@@ -208,6 +211,16 @@ add_filter('excerpt_length', function () {
 add_filter('excerpt_more', function () {
 	return ' /../';
 });
+
+#####################
+# Change email sender
+/* add_filter('wp_mail_from', function () {
+	return get_option('admin_email');
+});
+
+add_filter('wp_mail_from_name', function () {
+	return get_bloginfo('name');
+}); */
 
 ###############################
 # Add custom fields to rest API
