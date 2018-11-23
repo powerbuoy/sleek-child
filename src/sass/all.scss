@@ -24,7 +24,7 @@ html {
 
 // Make basically everything a container
 #four-o-four,
-#pagination,
+nav.pagination,
 #video,
 #comments,
 #post-comment,
@@ -32,7 +32,7 @@ html {
 	@include container;
 }
 
-#pagination {
+nav.pagination {
 	text-align: center;
 }
 
