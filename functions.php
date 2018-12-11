@@ -2,6 +2,10 @@
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
+###################
+# Disable Gutenberg
+# add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
@@ -81,7 +85,7 @@ add_action('acf/init', function () {
 		]
 	]); */
 
-	# Add ACF to a flexible content field named "after-page-content"
+	# Add ACF to a flexible content field named "below_content"
 	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
 	sleek_acf([
 		'key' => 'modules',
