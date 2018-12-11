@@ -2,6 +2,10 @@
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
+###################
+# Disable Gutenberg
+# add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
@@ -81,7 +85,7 @@ add_action('acf/init', function () {
 		]
 	]); */
 
-	# Add ACF to a flexible content field named "after-page-content"
+	# Add ACF to a flexible content field named "below_content"
 	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
 /*	sleek_acf([
 		'key' => 'modules',
@@ -90,9 +94,9 @@ add_action('acf/init', function () {
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
 		'fields' => [
 			'below_content' => [
-				'attachments', 'child-pages', 'contact-form', 'counter', 'divider', 'featured-posts', 'gallery',
-				'google-map', 'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
-				'share-page', 'sibling-pages', 'sticky-post', 'text-block', 'text-blocks', 'users', 'video'
+				'attachments', 'child-pages', 'contact-form', 'featured-posts', 'gallery', 'google-map',
+				'hubspot-cta', 'hubspot-form', 'instagram', 'latest-posts', 'next-post', 'page-menu',
+				'share-page', 'sibling-pages', 'text-block', 'text-blocks', 'users', 'video'
 			]
 		]
 	]); */
