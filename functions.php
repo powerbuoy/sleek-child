@@ -226,6 +226,14 @@ add_filter('wp_mail_from_name', function () {
 	return get_bloginfo('name');
 }); */
 
+###################
+# Allow SVG uploads
+/* add_action('upload_mimes', function ($file_types) {
+	$file_types['svg'] = 'image/svg+xml';
+
+	return $file_types;
+}); */
+
 ###############################
 # Add custom fields to rest API
 # NOTE: Add more post types and fields as needed
