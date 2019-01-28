@@ -2,6 +2,22 @@
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
+add_action('init', function () {
+	if (isset($_GET['sleek_create_post'])) {
+		wp_insert_post([
+			'post_title' => 'Post ' . time(),
+			'post_content' => 'Post content ' . time(),
+			'post_status' => 'publish'
+		]);
+	}
+
+	if (isset($_GET['sleek_clear_cache'])) {
+		if (function_exists('WpeCommon::purge_varnish_cache')) {
+			WpeCommon::purge_varnish_cache();
+		}
+	}
+});
+
 ###################
 # Disable Gutenberg
 # add_filter('use_block_editor_for_post_type', '__return_false', 10);
