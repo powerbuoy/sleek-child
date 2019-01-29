@@ -4,7 +4,7 @@ require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
 ###################
 # Disable Gutenberg
-# add_filter('use_block_editor_for_post_type', '__return_false', 10);
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
 ######################################
 # Modify WP's built in thumbnail sizes
