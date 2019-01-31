@@ -114,11 +114,13 @@ gulp.task('default', gulp.parallel('gettext', 'assets', 'sass', 'js'));
 ////////
 // Watch
 function watchFiles () {
-	gulp.watch('src/sass/**/*.scss', {usePolling: true}, sass);
-	gulp.watch('src/js/**/*.js', {usePolling: true}, js);
-	gulp.watch('icons.json', {usePolling: true}, gulp.series(downloadIcons, rewriteIconCSS, generateIconVars, sass));
-	gulp.watch('languages/**/*.po', {usePolling: true}, gettext);
-	gulp.watch('src/assets/**/*', {usePolling: true}, gulp.series(cleanAssets, copyAssets));
+	gulp.watch('src/sass/**/*.scss', sass);
+	gulp.watch('acf/**/*.scss', sass);
+	gulp.watch('src/js/**/*.js', js);
+	gulp.watch('acf/**/*.js', js);
+	gulp.watch('icons.json', gulp.series(downloadIcons, rewriteIconCSS, generateIconVars, sass));
+	gulp.watch('languages/**/*.po', gettext);
+	gulp.watch('src/assets/**/*', gulp.series(cleanAssets, copyAssets));
 }
 
 gulp.task('watch', gulp.series('default', watchFiles));
