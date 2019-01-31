@@ -41,11 +41,11 @@ a.slideshow-next {
 	z-index: 97;
 	transform: translateY(-50%);
 	font-size: 0;
+	color: $text-color;
 
 	&:before {
 		@include icon;
 
-		color: $text-color;
 		font-size: 2rem;
 		line-height: 1;
 		margin: 0;
