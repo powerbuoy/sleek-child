@@ -2,7 +2,7 @@
 
 <main>
 
-	<?php get_template_part('modules/single-page') ?>
+	<?php get_template_part('modules/page') ?>
 	<?php sleek_acf_render_modules('below_content') ?>
 
 </main>
