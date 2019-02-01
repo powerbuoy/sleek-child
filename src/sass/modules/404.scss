@@ -1,0 +1,29 @@
+#four-o-four {
+	@include container;
+
+	header {
+
+	}
+
+	article {
+		aside {
+			margin-top: $spacing-large;
+
+			@media #{breakpoint(laptop)} {
+				@include flex-grid(3, $gutter-default);
+
+				h2 {
+					min-width: 100%;
+				}
+			}
+		}
+	}
+
+	footer {
+		form {
+			button {
+				width: 100%;
+			}
+		}
+	}
+}
