@@ -2,7 +2,7 @@
 	'use strict';
 
 	var $ = require('jquery');
-	var SleekMap = require('./inc/SleekMap.js');
+	var SleekMap = require('sleek-map');
 
 	// Make sure we have an API key
 	if (typeof gmInit === 'undefined' || typeof SLEEK_CONFIG === 'undefined' || typeof SLEEK_CONFIG.GOOGLE_MAPS_API_KEY === 'undefined') {
