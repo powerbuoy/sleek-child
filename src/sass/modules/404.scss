@@ -6,11 +6,23 @@
 	}
 
 	article {
+		margin-bottom: $spacing-large;
+
 		aside {
 			margin-top: $spacing-large;
 
 			@media #{breakpoint(laptop)} {
 				@include flex-grid(3, $gutter-default);
+
+				&::before,
+				&::after {
+					@include flex-grid-item(3, $gutter-default);
+
+					display: block;
+					content: "";
+					margin: 0;
+					order: 9999;
+				}
 
 				h2 {
 					min-width: 100%;
