@@ -5,6 +5,21 @@ require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 ###################
 # Disable Gutenberg
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
+<<<<<<< HEAD
+=======
+
+###########################
+# Disable colors in WYSIWYG
+add_filter('mce_buttons_2', 'sleek_disable_wysiwyg_colors');
+
+###############
+# Paste as text
+add_filter('tiny_mce_before_init', function ($init) {
+	$init['paste_as_text'] = true;
+
+	return $init;
+});
+>>>>>>> master
 
 ######################################
 # Modify WP's built in thumbnail sizes
@@ -155,7 +170,7 @@ add_action('wp_enqueue_scripts', function () {
 
 	# Add more JS config here (under the "sleek"-handle (but using your own variable name "SLEEK_CHILD_CONFIG"))
 	wp_localize_script('sleek', 'SLEEK_CHILD_CONFIG', [
-		'COOKIE_CONSENT' => sprintf(__('We use cookies to bring you the best possible experience when browsing our site. <a href="%s" target="_blank">Read more</a> | <a href="#" class="close">Accept</a>', 'sleek'), $cookieUrl)
+		'COOKIE_CONSENT' => sprintf(__('We use cookies to bring you the best possible experience when browsing our site. <a href="%s" target="_blank" rel="noopener">Read more</a> | <a role="button" class="close">Accept</a>', 'sleek'), $cookieUrl)
 	]);
 });
 
