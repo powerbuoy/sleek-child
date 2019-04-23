@@ -1,38 +1,8 @@
-/***
-    title: Google Map
-    section: Widgets
-    description: Use to render a Google Map.
-    example:
-        <div class="google-map" data-lat="40.7058253" data-lng="-74.1180864">
-            <img src="https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&amp;center=40.7058253,-74.1180864&amp;markers=40.7058253,-74.1180864&amp;zoom=14&amp;size=600x400&amp;key=GOOGLE_MAPS_API_KEY">
-        </div>
-***/
 .google-map {
 	height: 20rem;
 	overflow: hidden;
 
 	@media #{breakpoint(tablet)} {
 		height: 30rem;
-	}
-
-	// Static map
-	> img {
-		display: block;
-		width: 100%;
-	}
-
-	// Info window (once JS maps have loaded (hence the div))
-	div .google-map-info-window {
-		@include text;
-
-		padding: $spacing-default;
-
-		h2 {
-			font-size: $font-size-h3;
-		}
-
-		> :last-child {
-			margin-bottom: 0;
-		}
 	}
 }
