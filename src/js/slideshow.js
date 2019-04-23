@@ -25,8 +25,8 @@
 		var slides = wrap.find('> *');
 		var totalSlides = slides.length;
 		var numSlides = wrap.attr('data-slideshow');
-		var prev = $('<a href="#" class="slideshow-prev">Prev</a>').appendTo(wrap.parent());
-		var next = $('<a href="#" class="slideshow-next">Next</a>').appendTo(wrap.parent());
+		var prev = $('<a role="button" class="slideshow-prev"></a>').appendTo(wrap.parent());
+		var next = $('<a role="button" class="slideshow-next"></a>').appendTo(wrap.parent());
 		var pages = $('<nav class="slideshow-pages"></nav>');
 
 		numSlides = numSlides ? parseInt(numSlides) : 1;
@@ -36,7 +36,10 @@
 			selector: this,
 			duration: 400,
 			easing: 'ease-out',
-			perPage: numSlides,
+			perPage: {
+				600: numSlides > 2 ? 2 : 1,
+				1080: numSlides
+			},
 			startIndex: 0,
 			draggable: true,
 			multipleDrag: true,
@@ -60,7 +63,7 @@
 		var pagesHTML = '';
 
 		for (var i = 0; i < totalSlides; i++) {
-			pagesHTML += '<a href="#" data-slideshow-page="' + i + '">' + (i + 1) + '</a>';
+			pagesHTML += '<a role="button" data-slideshow-page="' + i + '">' + (i + 1) + '</a>';
 		}
 
 		pages.html(pagesHTML).appendTo(wrap.parent());
@@ -81,11 +84,6 @@
 			pages.find('a').removeClass('active');
 			pages.find('[data-slideshow-page="' + currentSlide + '"]').addClass('active');
 		};
-
-		// Always one per page in low res
-		if (window.matchMedia('(max-width: 600px)').matches) {
-			config.perPage = 1;
-		}
 
 		// Create slideshow
 		var slider = new Siema(config);
