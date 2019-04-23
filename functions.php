@@ -51,9 +51,9 @@ add_action('init', function () use ($postTypes) {
 		'country' => ['movie', 'director']
 	], 'sleek_child'); */
 
-	# Array of CPTs that should appear in search (on top of post/page)
+	# Array of CPTs that should appear in search
 	# NOTE: Run this function unless you want all your CPTs to appear in search
-	# sleek_set_cpt_in_search(['movie']);
+	# sleek_set_cpt_in_search(['post', 'page', 'movie']);
 });
 
 ###################################################
@@ -71,15 +71,15 @@ add_filter('acf/settings/show_admin', '__return_false');
 # Register fields
 add_action('acf/init', function () {
 	# Add an options page
-/*	sleek_acf_add_options_page([
+/*	SleekACF::addOptionsPage([
 		'page_title' => __('Theme settings', 'sleek_child'),
 		'menu_slug' => 'theme_settings',
 		'post_id' => 'theme_settings' # NOTE: Use this id in get_field('my_field', 'theme_settings')
 	]); */
 
 	# Add some fields to the options page
-/*	sleek_acf([
-		'key' => 'theme_settings',
+/*	SleekACF::addFieldGroup([
+		'key' => 'theme_settings', # NOTE: This doesn't have to be the same as the post_id above, but it doesn't hurt either
 		'title' => __('Theme settings', 'sleek_child'),
 		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'theme_settings']]],
 		'fields' => [
@@ -88,8 +88,8 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add more fields to the archive options page for movies
-/*	sleek_acf([
-		'key' => 'archive_fields',
+/*	SleekACF::addFieldGroup([
+		'key' => 'movie_archive_meta',
 		'title' => __('Archive options', 'sleek_child'),
 		'location' => [[['param' => 'options_page', 'operator' => '==', 'value' => 'movie_archive_meta']]],
 		'fields' => [
@@ -98,9 +98,9 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add ACF to a flexible content field named "below_content"
-	# NOTE: Render these fields using sleek_acf_render_modules('below_content')
-/*	sleek_acf([
-		'key' => 'modules',
+	# NOTE: Render these fields using SleekACF::renderModules('below_content')
+/*	SleekACF::addFieldGroup([
+		'key' => 'page_modules',
 		'title' => __('Modules', 'sleek_child'),
 		'flexible' => true,
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -114,8 +114,8 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add fixed ACF fields to the sidebar
-/*	sleek_acf([
-		'key' => 'page_options',
+/*	SleekACF::addFieldGroup([
+		'key' => 'page_meta',
 		'title' => __('Page options', 'sleek_child'),
 		'position' => 'side',
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -125,7 +125,7 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add fixed, tabbed ACF fields below the editor
-/*	sleek_acf([
+/*	SleekACF::addFieldGroup([
 		'key' => 'page_content',
 		'title' => __('Page content', 'sleek_child'),
 		'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
@@ -142,8 +142,8 @@ add_action('acf/init', function () {
 	]); */
 
 	# Add a single field below the title
-/*	sleek_acf([
-		'key' => 'below_title',
+/*	SleekACF::addFieldGroup([
+		'key' => 'page_below_title',
 		'title' => __('Subtitle'),
 		'position' => 'acf_after_title',
 		'layout' => 'seamless',
