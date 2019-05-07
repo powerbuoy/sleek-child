@@ -18,6 +18,17 @@ add_filter('tiny_mce_before_init', function ($init) {
 	return $init;
 });
 
+##########################
+# Disable 404 URL guessing
+# https://core.trac.wordpress.org/ticket/16557
+add_filter('redirect_canonical', function ($url) {
+	if (is_404() and !isset($_GET['p'])) {
+		return false;
+	}
+
+	return $url;
+});
+
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
