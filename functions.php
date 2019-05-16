@@ -10,13 +10,9 @@ add_filter('use_block_editor_for_post_type', '__return_false', 10);
 # Disable colors in WYSIWYG
 add_filter('mce_buttons_2', 'sleek_disable_wysiwyg_colors');
 
-###############
-# Paste as text
-add_filter('tiny_mce_before_init', function ($init) {
-	$init['paste_as_text'] = true;
-
-	return $init;
-});
+#############
+# Clean paste
+add_filter('tiny_mce_before_init', 'sleek_tinymce_clean_paste');
 
 ##########################
 # Disable 404 URL guessing
