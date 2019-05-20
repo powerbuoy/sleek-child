@@ -1,18 +1,17 @@
 (function () {
 	'use strict';
 
-	if (typeof SLEEK_CHILD_CONFIG == 'undefined') {
+	if (typeof SLEEK_COOKIE_CONSENT == 'undefined') {
 		return;
 	}
 
 	var acceptsCookies = window.localStorage.getItem('cookie_consent');
-	var cookieMessage = SLEEK_CHILD_CONFIG.COOKIE_CONSENT;
 
 	if (!acceptsCookies) {
 		var el = document.createElement('div');
 
 		el.id = 'cookie-consent';
-		el.innerHTML = cookieMessage;
+		el.innerHTML = SLEEK_COOKIE_CONSENT;
 
 		document.body.appendChild(el);
 
