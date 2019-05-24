@@ -1,0 +1,20 @@
+#site-notice {
+	background: rgba($white, .9);
+
+	padding: $spacing-small;
+
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+
+	font-size: $font-size-small;
+	text-align: center;
+
+	box-shadow: shadow(1);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

@@ -1,22 +1,14 @@
 #four-o-four {
-	@include container;
+	@include container($site-width);
 
-	header {
-
-	}
-
-	article {
-		margin-bottom: $spacing-large;
-
-		aside {
-			margin-top: $spacing-large;
-
+	> aside {
+		> section {
 			@media #{breakpoint(laptop)} {
-				@include flex-grid(3, $gutter-default);
+				@include flex-grid(3, $spacing-default);
 
 				&::before,
 				&::after {
-					@include flex-grid-item(3, $gutter-default);
+					@include flex-grid-item(3, $spacing-default);
 
 					display: block;
 					content: "";
@@ -24,17 +16,9 @@
 					order: 9999;
 				}
 
-				h2 {
+				> h3 {
 					min-width: 100%;
 				}
-			}
-		}
-	}
-
-	footer {
-		form {
-			button {
-				width: 100%;
 			}
 		}
 	}
