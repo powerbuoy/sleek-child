@@ -18,7 +18,7 @@ textarea {
 
 	.ajax-loader {
 		display: none;
-		margin-left: $gutter-default;
+		margin-left: $spacing-default;
 
 		&:before {
 			@include icon($icon-spinner);
