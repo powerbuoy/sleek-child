@@ -267,7 +267,7 @@ add_action('rest_api_init', function () {
 ##################################
 # Require login on the entire site
 /* add_action('init', function () {
-	if (!is_admin() and !sleek_is_login_page() and !is_user_logged_in()) {
+	if (!defined('WP_CLI') and !is_admin() and !sleek_is_login_page() and !is_user_logged_in()) {
 		auth_redirect();
 	}
 }); */
