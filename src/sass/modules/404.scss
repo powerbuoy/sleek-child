@@ -4,11 +4,11 @@
 	> aside {
 		> section {
 			@media #{breakpoint(laptop)} {
-				@include flex-grid(3, $grid-gutter);
+				@include flex-grid(3, $grid-gap);
 
 				&::before,
 				&::after {
-					@include flex-grid-item(3, $grid-gutter);
+					@include flex-grid-item(3, $grid-gap);
 
 					display: block;
 					content: "";
