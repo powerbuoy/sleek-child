@@ -2,29 +2,6 @@
 require_once get_stylesheet_directory() . '/inc/add-editor-styles.php';
 require_once get_stylesheet_directory() . '/inc/add-wp-admin-cols.php';
 
-###################
-# Disable Gutenberg
-add_filter('use_block_editor_for_post_type', '__return_false', 10);
-
-###########################
-# Disable colors in WYSIWYG
-add_filter('mce_buttons_2', 'sleek_disable_wysiwyg_colors');
-
-#############
-# Clean paste
-add_filter('tiny_mce_before_init', 'sleek_tinymce_clean_paste');
-
-##########################
-# Disable 404 URL guessing
-# https://core.trac.wordpress.org/ticket/16557
-add_filter('redirect_canonical', function ($url) {
-	if (is_404() and !isset($_GET['p'])) {
-		return false;
-	}
-
-	return $url;
-});
-
 ######################################
 # Modify WP's built in thumbnail sizes
 add_action('after_setup_theme', function () {
