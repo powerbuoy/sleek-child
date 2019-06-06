@@ -193,26 +193,6 @@ add_action('wp_head', function () {
 	return $fields;
 }); */
 
-################
-# Modify excerpt
-add_filter('excerpt_length', function () {
-	return 25;
-});
-
-add_filter('excerpt_more', function () {
-	return ' /../';
-});
-
-#####################
-# Change email sender
-/* add_filter('wp_mail_from', function () {
-	return get_option('admin_email');
-});
-
-add_filter('wp_mail_from_name', function () {
-	return get_bloginfo('name');
-}); */
-
 ###################
 # Allow SVG uploads
 /* add_action('upload_mimes', function ($file_types) {
@@ -237,10 +217,6 @@ add_action('rest_api_init', function () {
 ##########################################################
 # Add a "post_type" argument to get_terms() if you need it
 # add_filter('terms_clauses', 'sleek_terms_clauses', 10, 3);
-
-####################################################
-# Enable search inside custom fields (including ACF)
-# require_once get_template_directory() . '/inc/include-postmeta-in-search.php';
 
 ##################################
 # Require login on the entire site
