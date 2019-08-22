@@ -43,7 +43,7 @@
 
 				<aside>
 
-					<?php sleek_acf_render_modules('aside_content') ?>
+					<?php SleekACF::renderModules('aside_content') ?>
 
 				</aside>
 
