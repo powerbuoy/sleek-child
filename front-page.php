@@ -2,8 +2,8 @@
 
 <main>
 
-	<?php get_template_part('modules/page') ?>
-	<?php sleek_acf_render_modules('below_content') ?>
+	<?php get_template_part('modules/single-post-page') ?>
+	<?php SleekACF::renderModules('below_content') ?>
 
 </main>
 
