@@ -220,7 +220,7 @@
 		}
 
 		article {
-			@include flex-width(50%, $gutter-default);
+			@include flex-width(50%, $grid-gap);
 
 			// NOTE: This is to bottom align any potential buttons
 		/*	display: flex;
