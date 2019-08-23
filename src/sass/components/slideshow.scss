@@ -1,7 +1,7 @@
 /***
     title: Slideshow
     section: Widgets
-    description: Styling for the Slick Carousel jQuery Plugin.
+    description: Styling for the slideshow.
     example:
         <div data-slideshow="3">
             <div>Slide 1</div>
@@ -28,7 +28,8 @@
 		font-size: 0;
 		border-radius: 50%;
 
-		&.active {
+		&.active,
+		&.glide__bullet--active {
 			background: rgba($overlay-color, .8);
 		}
 	}
