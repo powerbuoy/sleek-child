@@ -23,7 +23,7 @@
 	$('[data-slideshow]').each(function () {
 		// Wrap [data-slideshow] in needed divs
 		var wrap = $(this);
-		var numSlides = wrap.data('slideshow') || 1;
+		var perPage = wrap.data('slideshow') || 1;
 		var outer = $('<div class="glide"><div class="glide__track" data-glide-el="track"></div></div>').insertBefore(wrap);
 		var track = outer.find('div.glide__track');
 
@@ -45,7 +45,7 @@
 		// Initialize Glide
 		new Glide(outer[0], {
 			type: 'carousel',
-			perView: numSlides,
+			perView: perPage,
 			focusAt: 'center'
 		}).mount();
 	});
