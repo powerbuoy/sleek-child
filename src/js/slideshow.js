@@ -2,90 +2,51 @@
 	'use strict';
 
 	var $ = require('jquery');
-	var Siema = require('siema');
+	var Glide = require('@glidejs/glide');
 
 	// Wrap WP galleries in [data-slideshow] (TODO: Should be optional!)
 	$('div.gallery').each(function () {
 		var numCols = 1;
 		var gallery = $(this).addClass('is-slideshow');
 		var colClass = gallery.attr('class').split(' ').filter(function (val) {
-			return val.indexOf('gallery-columns-') != -1;
+			return val.indexOf('gallery--cols-') != -1;
 		});
 
 		if (colClass && colClass.length) {
-			numCols = colClass[0].replace('gallery-columns-', '');
+			numCols = colClass[0].replace('gallery--cols-', '');
 		}
 
 		gallery.wrapInner('<div data-slideshow="' + numCols + '"></div>');
 	});
 
-	// Init slideshows
+	// Modify all [data-slideshow] to work with Glide
 	$('[data-slideshow]').each(function () {
+		// Wrap [data-slideshow] in needed divs
 		var wrap = $(this);
-		var slides = wrap.find('> *');
-		var totalSlides = slides.length;
-		var numSlides = wrap.attr('data-slideshow');
-		var prev = $('<a role="button" class="slideshow-prev"></a>').appendTo(wrap.parent());
-		var next = $('<a role="button" class="slideshow-next"></a>').appendTo(wrap.parent());
-		var pages = $('<nav class="slideshow-pages"></nav>');
+		var numSlides = wrap.data('slideshow') || 1;
+		var outer = $('<div class="glide"><div class="glide__track" data-glide-el="track"></div></div>').insertBefore(wrap);
+		var track = outer.find('div.glide__track');
 
-		numSlides = numSlides ? parseInt(numSlides) : 1;
+		wrap.addClass('glide__slides').children().addClass('glide__slide');
+		track.append(wrap);
 
-		// Siema config
-		var config = {
-			selector: this,
-			duration: 400,
-			easing: 'ease-out',
-			perPage: {
-				600: numSlides > 2 ? 2 : 1,
-				1080: numSlides
-			},
-			startIndex: 0,
-			draggable: true,
-			multipleDrag: true,
-			threshold: 20,
-			loop: true,
-			rtl: false
-		};
+		// Create buttons
+		var buttons = $('<div data-glide-el="controls"><a data-glide-dir="<" class="slideshow-prev">&larr;</a><a data-glide-dir=">" class="slideshow-next">&rarr;</a></div>').appendTo(outer);
+		var nav = '<div data-glide-el="controls[nav]" class="slideshow-pages">';
 
-		// Hook up prev/next
-		prev.on('click', function (e) {
-			e.preventDefault();
-			slider.prev();
+		wrap.children().each(function (i) {
+			nav += '<a data-glide-dir="=' + i + '">' + i + '</a>';
 		});
 
-		next.on('click', function (e) {
-			e.preventDefault();
-			slider.next();
-		});
+		nav += '</div>';
 
-		// Hook up pages
-		var pagesHTML = '';
+		nav = $(nav).appendTo(outer);
 
-		for (var i = 0; i < totalSlides; i++) {
-			pagesHTML += '<a role="button" data-slideshow-page="' + i + '">' + (i + 1) + '</a>';
-		}
-
-		pages.html(pagesHTML).appendTo(wrap.parent());
-
-		pages.on('click', 'a', function (e) {
-			e.preventDefault();
-			slider.goTo(parseInt(this.getAttribute('data-slideshow-page')));
-		});
-
-		config.onInit = config.onChange = function () {
-			// BUG: https://github.com/pawelgrzybek/siema/issues/151
-			var currentSlide = this.currentSlide;
-
-			if (currentSlide < 0) {
-				currentSlide = totalSlides + currentSlide;
-			}
-
-			pages.find('a').removeClass('active');
-			pages.find('[data-slideshow-page="' + currentSlide + '"]').addClass('active');
-		};
-
-		// Create slideshow
-		var slider = new Siema(config);
+		// Initialize Glide
+		new Glide(outer[0], {
+			type: 'carousel',
+			perView: numSlides,
+			focusAt: 'center'
+		}).mount();
 	});
 })();
