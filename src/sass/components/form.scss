@@ -72,6 +72,10 @@ textarea {
 			display: block;
 		}
 	}
+
+	.hs-error-msg {
+		color: color(error);
+	}
 }
 
 .hs_error_rollup {

@@ -42,6 +42,11 @@
 
 		nav = $(nav).appendTo(outer);
 
+		// Move potential classes
+		if (wrap.is('.slideshow--white')) {
+			outer.addClass('slideshow--white');
+		}
+
 		// Initialize Glide
 		new Glide(outer[0], {
 			type: 'carousel',
