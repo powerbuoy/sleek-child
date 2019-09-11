@@ -85,7 +85,8 @@ a.slideshow-next {
 			background: transparent;
 			border: 1px solid $white;
 
-			&.active {
+			&.active,
+			&.glide__bullet--active {
 				background: $white;
 			}
 		}
