@@ -15,10 +15,14 @@
 
 		document.body.appendChild(el);
 
-		el.querySelector('a.close').addEventListener('click', function (e) {
-			e.preventDefault();
-			window.localStorage.setItem('cookie_consent', true);
-			el.parentNode.removeChild(el);
-		});
+		var close = el.querySelector('a.close');
+
+		if (close) {
+			close.addEventListener('click', function (e) {
+				e.preventDefault();
+				window.localStorage.setItem('cookie_consent', true);
+				el.parentNode.removeChild(el);
+			});
+		}
 	}
 })();
